@@ -140,6 +140,8 @@
   .stat { min-width: 0; }
   table.fin-t { font-size: .78rem; min-width: 460px; }
   table.fin-t td, table.fin-t th { padding: 6px 3px; }
+  .explain { margin-top: 12px; padding: 12px; background: var(--soft); border-radius: 8px; font-size: .84rem; }
+  .explain p { margin: 6px 0 0; }
 </style>
 </head>
 <body>
@@ -410,8 +412,21 @@ function battle(itemLists) {
   return `<h3 style="margin-top:0">ルール vs AI 的中率くらべ</h3>
     <table><thead><tr><th>期間</th><th class="r">ルール</th><th class="r">AI</th><th class="r">いつも上昇</th></tr></thead>
     <tbody>${rows}</tbody></table>
-    <div class="small" style="margin-top:6px">このページと「個別」タブの全銘柄について、過去2年の的中率を平均したものです。
-    いちばん高いものを太字にしています。「いつも上昇」を上回れなければ、予想に意味はないということです。</div>`;
+    <div class="small" style="margin-top:6px">過去2年間、毎日その方法で予想していたら何%当たったかを、このページと「個別」タブの全銘柄で平均したものです。
+    いちばん高いものを太字にしています。</div>
+    <div class="explain">
+      <b>表の見方（天気予報にたとえると）</b>
+      <p><b>ルール</b>：「夕焼けが出たら明日は晴れ」のような、昔からある言い伝えで予想する方法です。
+      株の場合は「株価が最近の平均より高い → +1点」「この1週間で上がっている → +1点」のようにチェックして、
+      合計がプラスなら「上がる」、マイナスなら「下がる」と予想します。</p>
+      <p><b>AI</b>：過去のチャートの形と「その後に上がったか下がったか」の関係をコンピューターに学習させて、
+      上がる確率を計算する方法です。</p>
+      <p><b>いつも上昇</b>：毎日なにも考えずに「明日は晴れ」と言い続ける人のようなものです。
+      晴れの日が多い地域なら、それだけで6〜7割当たってしまいます。株も長い目で見ると上がる日の方が多いので、
+      毎日「上がる」と言うだけで、そこそこ当たります。</p>
+      <p><b>なぜ比べるの？</b>「60%当たります」と言われても、毎日「上がる」と言うだけで65%当たるなら、その予想に意味はありません。
+      ルールやAIが「いつも上昇」より高く当たって、初めて「ちゃんと予想できている」と言えます。</p>
+    </div>`;
 }
 
 // ---- 予想タブ ----
