@@ -640,10 +640,23 @@ def build_yutai():
 # ---- 米国企業の決算解説 -------------------------------------------------
 
 def build_financials():
+    import traceback
     import financials
     vr = load_json("value_ranking.json", {}).get("markets", {}).get("us", {}).get("items", [])
     sectors = {r["code"]: r["sector"] for r in vr if r.get("sector") not in (None, "-")}
-    items = financials.build(US_STOCKS, sectors)
+    try:
+        items = financials.build(US_STOCKS, sectors)
+    except Exception as e:
+        # 失敗しても前回の結果は残し、原因を記録する
+        prev = load_json("financials.json", None)
+        status = {"updated_at": now_jst(), "error": f"{type(e).__name__}: {e}",
+                  "trace": traceback.format_exc()[-1500:]}
+        save_json("financials_status.json", status)
+        print(f"[決算] 失敗: {status['error']}")
+        if prev is None:
+            save_json("financials.json", {"updated_at": now_jst(), "count": 0, "ok": 0, "items": []})
+        return
+    save_json("financials_status.json", {"updated_at": now_jst(), "error": None})
     ok = sum(1 for i in items if "error" not in i)
     save_json("financials.json", {"updated_at": now_jst(), "count": len(items), "ok": ok, "items": items})
     print(f"[決算] {ok}/{len(items)}社")
