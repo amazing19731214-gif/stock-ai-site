@@ -12,8 +12,15 @@ import time
 import urllib.request
 from datetime import date
 
-# SECはアクセス元の連絡先をUser-Agentに書くよう求めている
-USER_AGENT = "stock-ai-site (github.com/amazing19731214-gif/stock-ai-site) amazing19731214-gif@users.noreply.github.com"
+# SECはアクセス元の名前と連絡先をUser-Agentに書くよう求めている
+# （書式が合わないと拒否されるため、いくつかの書き方を順に試す）
+USER_AGENTS = [
+    "StockAiSite amazing19731214-gif@users.noreply.github.com",
+    "stock-ai-site/1.0 amazing19731214-gif@users.noreply.github.com",
+    "Mozilla/5.0 (compatible; StockAiSite/1.0; +https://github.com/amazing19731214-gif/stock-ai-site) amazing19731214-gif@users.noreply.github.com",
+]
+_working_ua = None
+PROBE_LOG = []
 
 # 指標ごとに、使われる勘定科目の候補（会社や年によって名前が違う）
 CONCEPTS = {
@@ -40,10 +47,23 @@ YEARS = 5
 
 
 def _get_json(url):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
-                                               "Accept-Encoding": "identity"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode("utf-8"))
+    global _working_ua
+    import urllib.error
+    candidates = [_working_ua] if _working_ua else USER_AGENTS
+    last = None
+    for ua in candidates:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": ua, "Accept-Encoding": "identity", "Accept": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            _working_ua = ua
+            return data
+        except urllib.error.HTTPError as e:
+            PROBE_LOG.append(f"{url.split('/')[2]} {e.code} UA={ua[:40]}")
+            last = e
+            time.sleep(1)
+    raise last
 
 
 def load_cik_map():
