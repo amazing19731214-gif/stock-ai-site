@@ -637,9 +637,21 @@ def build_yutai():
     print(f"[優待] {len(rows)}銘柄")
 
 
+# ---- 米国企業の決算解説 -------------------------------------------------
+
+def build_financials():
+    import financials
+    vr = load_json("value_ranking.json", {}).get("markets", {}).get("us", {}).get("items", [])
+    sectors = {r["code"]: r["sector"] for r in vr if r.get("sector") not in (None, "-")}
+    items = financials.build(US_STOCKS, sectors)
+    ok = sum(1 for i in items if "error" not in i)
+    save_json("financials.json", {"updated_at": now_jst(), "count": len(items), "ok": ok, "items": items})
+    print(f"[決算] {ok}/{len(items)}社")
+
+
 if __name__ == "__main__":
     # 1つ失敗しても他は作れるように、個別に実行する
-    for step in (build_forecast, build_diagnosis, build_watch, build_ranking, build_value, build_yutai):
+    for step in (build_forecast, build_diagnosis, build_watch, build_ranking, build_value, build_financials, build_yutai):
         try:
             step()
         except Exception as e:

@@ -124,6 +124,22 @@
   .hz .d2 { font-weight: 800; font-size: .9rem; }
   td.win { font-weight: 800; }
   .hz .hit { font-size: .68rem; color: var(--sub); line-height: 1.45; margin-top: 3px; border-top: 1px solid var(--line); padding-top: 3px; white-space: nowrap; }
+  .fscore { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+  .fscore small { font-size: .7rem; margin-left: 1px; }
+  ul.fin-sum { margin: 8px 0 0; padding-left: 1.2em; font-size: .88rem; }
+  ul.fin-sum li { margin-bottom: 2px; }
+  svg.fin-chart { width: 100%; height: auto; display: block; margin-top: 10px; }
+  .fin-chart .bar-rev, .legend .bar-rev { fill: var(--sub); background: var(--sub); opacity: .55; }
+  .fin-chart .bar-ni, .legend .bar-ni { fill: var(--up); background: var(--up); }
+  .fin-chart .bar-neg { fill: var(--down); }
+  .fin-chart .ax { font-size: 10px; fill: var(--sub); }
+  .fin-chart .axl { stroke: var(--line); }
+  .legend { display: flex; gap: 12px; font-size: .72rem; color: var(--sub); margin: 2px 0 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+  .grid > * { min-width: 0; }
+  .stat { min-width: 0; }
+  table.fin-t { font-size: .78rem; min-width: 460px; }
+  table.fin-t td, table.fin-t th { padding: 6px 3px; }
 </style>
 </head>
 <body>
@@ -134,6 +150,7 @@
     <a href="#watch" data-tab="watch">注目株</a>
     <a href="#ranking" data-tab="ranking">値上がり</a>
     <a href="#value" data-tab="value">割安株</a>
+    <a href="#fin" data-tab="fin">米国決算</a>
     <a href="#yutai" data-tab="yutai">優待</a>
     <a href="#diagnosis" data-tab="diagnosis">個別</a>
     <a href="#board" data-tab="board">掲示板</a>
@@ -228,6 +245,28 @@
       ただし、業績悪化の見込みや業種の特徴で低くなっている場合も多く、
       「低い＝お買い得」とは限りません。米国株は日本株よりPER・PBRが高く出やすいため、市場ごとに比べています。
       赤字などでPERが計算できない銘柄は「-」になります。財務データは取得元の都合で古い・欠けている場合があります。
+    </footer>
+  </section>
+
+  <!-- 米国決算 -->
+  <section id="fin">
+    <h2>米国企業の決算まるわかり</h2>
+    <div class="updated" id="fin-updated">読み込み中…</div>
+    <input id="fin-search" type="search" placeholder="会社名・ティッカーで検索（例：アップル、NVDA）" style="margin-bottom:10px">
+    <div class="seg" id="fin-sort">
+      <button data-k="score" class="on">スコア</button>
+      <button data-k="growth">売上成長</button>
+      <button data-k="margin">利益率</button>
+      <button data-k="name">名前</button>
+    </div>
+    <div class="grid" id="fin-list"></div>
+    <footer>
+      <b>データ</b>：米国証券取引委員会（SEC）に提出された年次決算（10-K）の数字です。金額は米ドルです。<br>
+      <b>解説</b>：数字から決まったルールで自動作成した文章です。人やAIが内容を確認したものではありません。
+      会計方針の変更や特別な損益は反映していないため、正確な内容は各社の決算資料でご確認ください。<br>
+      <b>財務スコア</b>は、成長性・収益性・現金を稼ぐ力・財務の安全性をそれぞれ25点満点で評価し、100点満点に換算した目安です。
+      銀行など、比べにくい項目がある会社はスコアを出していません。<br>
+      特定の銘柄の売買をおすすめするものではありません。
     </footer>
   </section>
 
@@ -513,6 +552,102 @@ const valueMarket = seg("value-market", renderValue);
 const valueSort = seg("value-sort", renderValue);
 load("value_ranking.json").then(data => { valueData = data; renderValue(); })
   .catch(() => failed("value-updated"));
+
+// ---- 米国決算 ----
+function usdJa(v) {
+  if (v == null) return "-";
+  const a = Math.abs(v), s = v < 0 ? "-" : "";
+  if (a >= 1e12) return s + (a / 1e12).toFixed(2) + "兆ドル";
+  if (a >= 1e8) return s + Math.round(a / 1e8).toLocaleString() + "億ドル";
+  if (a >= 1e4) return s + Math.round(a / 1e4).toLocaleString() + "万ドル";
+  return s + Math.round(a).toLocaleString() + "ドル";
+}
+function finChart(years) {
+  const w = 320, h = 140, top = 14, bottom = 22, left = 4, right = 4;
+  const vals = years.flatMap(y => [y.revenue, y.net_income]).filter(v => v != null);
+  if (!vals.length) return "";
+  const max = Math.max(...vals, 0), min = Math.min(...vals, 0);
+  const y0 = v => top + (max - v) / ((max - min) || 1) * (h - top - bottom);
+  const gw = (w - left - right) / years.length, bw = gw * 0.32;
+  const bars = years.map((y, i) => {
+    const x = left + i * gw + gw / 2;
+    const bar = (v, dx, cls) => v == null ? "" :
+      `<rect class="${cls}" x="${(x + dx).toFixed(1)}" y="${Math.min(y0(v), y0(0)).toFixed(1)}"
+        width="${bw.toFixed(1)}" height="${Math.max(Math.abs(y0(v) - y0(0)), 1).toFixed(1)}" rx="2"/>`;
+    return bar(y.revenue, -bw - 1, "bar-rev") + bar(y.net_income, 1, y.net_income < 0 ? "bar-neg" : "bar-ni") +
+      `<text x="${x.toFixed(1)}" y="${h - 6}" text-anchor="middle" class="ax">${esc(y.end.slice(0, 4))}</text>`;
+  }).join("");
+  return `<svg class="fin-chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="売上高と純利益の推移">
+    <line x1="0" x2="${w}" y1="${y0(0).toFixed(1)}" y2="${y0(0).toFixed(1)}" class="axl"/>${bars}</svg>
+    <div class="legend"><span><i class="bar-rev"></i>売上高</span><span><i class="bar-ni"></i>純利益</span></div>`;
+}
+const FIN_SECTIONS = [["growth", "成長性"], ["profit", "収益性"], ["cash", "現金を稼ぐ力"], ["safety", "財務の安全性"], ["return", "株主還元"]];
+function finCard(c) {
+  if (c.error) return `<div class="card"><div class="name">${esc(c.name)} <span class="small">${esc(c.ticker)}</span></div>
+    <div class="err">${esc(c.error)}</div></div>`;
+  const m = c.metrics, last = c.years[c.years.length - 1];
+  const f1 = v => v == null ? "-" : v.toFixed(1) + "%";
+  const table = `<table class="fin-t"><thead><tr><th>決算期</th><th class="r">売上高</th><th class="r">営業利益</th>
+    <th class="r">純利益</th><th class="r">FCF</th><th class="r">EPS</th></tr></thead><tbody>` +
+    c.years.slice().reverse().map(y => `<tr><td>${esc(y.fy.replace("年", "/").replace("月期", ""))}</td>
+      <td class="r num">${usdJa(y.revenue)}</td><td class="r num">${usdJa(y.operating_income)}</td>
+      <td class="r num ${y.net_income < 0 ? "down" : ""}">${usdJa(y.net_income)}</td>
+      <td class="r num ${y.fcf < 0 ? "down" : ""}">${usdJa(y.fcf)}</td>
+      <td class="r num">${y.eps == null ? "-" : "$" + y.eps.toFixed(2)}</td></tr>`).join("") + `</tbody></table>`;
+  const pts = c.points || {};
+  const breakdown = FIN_SECTIONS.slice(0, 4).map(([k, label]) =>
+    `<div class="stat"><div class="k">${label}</div><div class="v">${pts[k] == null ? "-" : pts[k] + " / 25"}</div></div>`).join("");
+  return `<div class="card">
+    <div class="head"><span class="name">${esc(c.name)} <span class="small">${esc(c.ticker)}</span></span>
+      <span class="fscore ${c.score == null ? "" : c.score >= 75 ? "up" : c.score >= 50 ? "flat" : "down"}">
+        ${c.score == null ? "-" : c.score}<small>点</small></span></div>
+    <div class="small">${esc(c.en_name)}${c.sector ? "・" + esc(c.sector) : ""}・${esc(last.fy)}決算</div>
+    <div class="tags">${c.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+    <ul class="fin-sum">${c.summary.map(s => `<li>${esc(s)}</li>`).join("")}</ul>
+    <details><summary>詳しく見る</summary>
+      ${finChart(c.years)}
+      <div class="stats" style="grid-template-columns:repeat(3,1fr)">
+        <div class="stat"><div class="k">売上成長(前年比)</div><div class="v">${f1(m.revenue_growth)}</div></div>
+        <div class="stat"><div class="k">営業利益率</div><div class="v">${f1(m.op_margin)}</div></div>
+        <div class="stat"><div class="k">自己資本比率</div><div class="v">${f1(m.equity_ratio)}</div></div>
+      </div>
+      <div style="overflow-x:auto">${table}</div>
+      ${FIN_SECTIONS.map(([k, label]) => (c.notes[k] || []).length ? `<div class="hd"><b>${label}</b>
+        ${c.notes[k].map(t => `<div class="small" style="color:var(--text)">${esc(t)}</div>`).join("")}</div>` : "").join("")}
+      <div class="hd"><b>財務スコアの内訳</b><div class="stats" style="grid-template-columns:repeat(4,1fr)">${breakdown}</div></div>
+    </details>
+  </div>`;
+}
+let finData = null;
+function renderFin() {
+  if (!finData) return;
+  const q = document.getElementById("fin-search").value.trim().toLowerCase();
+  const key = finSort();
+  const val = c => c.error ? null : key === "score" ? c.score : key === "growth" ? c.metrics.revenue_cagr
+    : key === "margin" ? (c.metrics.op_margin ?? c.metrics.net_margin) : null;
+  let items = finData.items.filter(c => !q || c.name.toLowerCase().includes(q) ||
+    c.ticker.toLowerCase().includes(q) || (c.en_name || "").toLowerCase().includes(q));
+  items = items.slice().sort((a, b) => {
+    if (key === "name") return a.name.localeCompare(b.name, "ja");
+    const x = val(a), y = val(b);
+    if (x == null && y == null) return 0;
+    if (x == null) return 1;
+    if (y == null) return -1;
+    return y - x;
+  });
+  document.getElementById("fin-list").innerHTML = items.length ? items.map(finCard).join("")
+    : `<div class="card"><p class="empty" style="margin:0">見つかりませんでした</p></div>`;
+}
+const finSort = seg("fin-sort", renderFin);
+document.getElementById("fin-search").addEventListener("input", renderFin);
+load("financials.json").then(data => {
+  finData = data;
+  document.getElementById("fin-updated").textContent =
+    `最終更新：${data.updated_at}（${data.count}社中${data.ok}社の決算を表示）`;
+  renderFin();
+}).catch(() => {
+  document.getElementById("fin-updated").textContent = "準備中です（次回の自動更新で表示されます）";
+});
 
 // ---- 株主優待 ----
 load("yutai_ranking.json").then(data => {
