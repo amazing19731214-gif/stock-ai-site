@@ -1,0 +1,169 @@
+{
+  "tickers": 91,
+  "test_days": 500,
+  "by_horizon": {
+    "1d": {
+      "label": "明日",
+      "always_up_all_days": 51.2,
+      "strategies": {
+        "全一致": {
+          "coverage": 35.2,
+          "calls": 16033,
+          "hit_rate": 50.3,
+          "always_up_same_days": 50.7,
+          "edge": -0.3,
+          "significant": false,
+          "up_calls": 11492,
+          "up_hit": 50.7,
+          "down_calls": 4541,
+          "down_hit": 49.4
+        },
+        "長期＋短期": {
+          "coverage": 45.1,
+          "calls": 20499,
+          "hit_rate": 50.2,
+          "always_up_same_days": 50.9,
+          "edge": -0.8,
+          "significant": false,
+          "up_calls": 14159,
+          "up_hit": 50.8,
+          "down_calls": 6340,
+          "down_hit": 48.8
+        },
+        "強いトレンド": {
+          "coverage": 35.0,
+          "calls": 15910,
+          "hit_rate": 50.7,
+          "always_up_same_days": 51.2,
+          "edge": -0.5,
+          "significant": false,
+          "up_calls": 11776,
+          "up_hit": 51.2,
+          "down_calls": 4134,
+          "down_hit": 49.0
+        },
+        "いつもの方式": {
+          "coverage": 96.2,
+          "calls": 43773,
+          "hit_rate": 49.4,
+          "always_up_same_days": 51.2,
+          "edge": -1.8,
+          "significant": false,
+          "up_calls": 24194,
+          "up_hit": 50.5,
+          "down_calls": 19579,
+          "down_hit": 48.0
+        }
+      }
+    },
+    "1m": {
+      "label": "1ヶ月後",
+      "always_up_all_days": 55.7,
+      "strategies": {
+        "全一致": {
+          "coverage": 35.2,
+          "calls": 15995,
+          "hit_rate": 51.4,
+          "always_up_same_days": 55.1,
+          "edge": -3.7,
+          "significant": false,
+          "up_calls": 11486,
+          "up_hit": 54.5,
+          "down_calls": 4509,
+          "down_hit": 43.4
+        },
+        "長期＋短期": {
+          "coverage": 44.7,
+          "calls": 20331,
+          "hit_rate": 51.5,
+          "always_up_same_days": 55.2,
+          "edge": -3.7,
+          "significant": false,
+          "up_calls": 14146,
+          "up_hit": 54.8,
+          "down_calls": 6185,
+          "down_hit": 43.8
+        },
+        "強いトレンド": {
+          "coverage": 34.9,
+          "calls": 15868,
+          "hit_rate": 52.5,
+          "always_up_same_days": 57.8,
+          "edge": -5.3,
+          "significant": false,
+          "up_calls": 11654,
+          "up_hit": 57.0,
+          "down_calls": 4214,
+          "down_hit": 40.0
+        },
+        "いつもの方式": {
+          "coverage": 81.2,
+          "calls": 36941,
+          "hit_rate": 50.9,
+          "always_up_same_days": 55.7,
+          "edge": -4.9,
+          "significant": false,
+          "up_calls": 22461,
+          "up_hit": 55.4,
+          "down_calls": 14480,
+          "down_hit": 43.8
+        }
+      }
+    },
+    "3m": {
+      "label": "3ヶ月後",
+      "always_up_all_days": 60.1,
+      "strategies": {
+        "全一致": {
+          "coverage": 35.8,
+          "calls": 16272,
+          "hit_rate": 52.8,
+          "always_up_same_days": 58.8,
+          "edge": -6.0,
+          "significant": false,
+          "up_calls": 11794,
+          "up_hit": 58.0,
+          "down_calls": 4478,
+          "down_hit": 39.1
+        },
+        "長期＋短期": {
+          "coverage": 45.2,
+          "calls": 20577,
+          "hit_rate": 53.5,
+          "always_up_same_days": 58.8,
+          "edge": -5.4,
+          "significant": false,
+          "up_calls": 14533,
+          "up_hit": 58.7,
+          "down_calls": 6044,
+          "down_hit": 40.9
+        },
+        "強いトレンド": {
+          "coverage": 35.0,
+          "calls": 15940,
+          "hit_rate": 53.0,
+          "always_up_same_days": 59.3,
+          "edge": -6.3,
+          "significant": false,
+          "up_calls": 11709,
+          "up_hit": 58.4,
+          "down_calls": 4231,
+          "down_hit": 38.1
+        },
+        "いつもの方式": {
+          "coverage": 86.7,
+          "calls": 39470,
+          "hit_rate": 51.4,
+          "always_up_same_days": 59.7,
+          "edge": -8.3,
+          "significant": false,
+          "up_calls": 25545,
+          "up_hit": 58.6,
+          "down_calls": 13925,
+          "down_hit": 38.3
+        }
+      }
+    }
+  },
+  "updated_at": "2026-10-23 19:09"
+}
