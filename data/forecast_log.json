@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "name": "日経平均",
+    "data_date": "2026-10-23",
+    "base": 62693.2,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "S&P500",
+    "data_date": "2026-10-22",
+    "base": 7663.43,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "NASDAQ総合",
+    "data_date": "2026-10-22",
+    "base": 26008.9,
+    "direction": "下落",
+    "result": null
+  }
+]
