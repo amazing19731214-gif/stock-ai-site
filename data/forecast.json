@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-23 18:42",
+  "updated_at": "2026-10-23 18:44",
   "items": [
     {
       "name": "ドル/円",
       "ticker": "JPY=X",
       "data_date": "2026-10-23",
-      "price": 156.55,
-      "change_pct": -1.0,
+      "price": 156.56,
+      "change_pct": -0.99,
       "horizons": [
         {
           "key": "1d",
@@ -14,8 +14,8 @@
           "direction": "下落",
           "strength": "強め",
           "score": -3,
-          "range_low": 155.71,
-          "range_high": 157.39,
+          "range_low": 155.72,
+          "range_high": 157.4,
           "backtest": {
             "days": 464,
             "hit_rate": 48.7,
@@ -43,8 +43,8 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 152.7,
-          "range_high": 160.39,
+          "range_low": 152.71,
+          "range_high": 160.4,
           "backtest": {
             "days": 424,
             "hit_rate": 50.0,
@@ -72,8 +72,8 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 149.88,
-          "range_high": 163.21,
+          "range_low": 149.9,
+          "range_high": 163.22,
           "backtest": {
             "days": 403,
             "hit_rate": 42.7,
@@ -226,7 +226,7 @@
         158.52,
         158.27,
         158.13,
-        156.55
+        156.56
       ],
       "live": {
         "days": 0,
