@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-23 17:44",
+  "updated_at": "2026-10-23 17:53",
   "items": [
     {
       "name": "ドル/円",
       "ticker": "JPY=X",
       "data_date": "2026-10-23",
-      "price": 156.84,
-      "change_pct": -0.82,
+      "price": 156.8,
+      "change_pct": -0.84,
       "horizons": [
         {
           "key": "1d",
@@ -14,8 +14,8 @@
           "direction": "どちらとも言えない",
           "strength": "",
           "score": 0,
-          "range_low": 156.01,
-          "range_high": 157.67,
+          "range_low": 155.97,
+          "range_high": 157.64,
           "backtest": {
             "days": 705,
             "hit_rate": 51.3,
@@ -24,7 +24,7 @@
           "reasons": [
             "5日平均が25日平均より上",
             "現在値が25日平均より下",
-            "RSI 41（中立圏）",
+            "RSI 40（中立圏）",
             "直近5日の値動き -0.8%"
           ]
         },
@@ -34,8 +34,8 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 153.02,
-          "range_high": 160.66,
+          "range_low": 152.98,
+          "range_high": 160.63,
           "backtest": {
             "days": 631,
             "hit_rate": 50.6,
@@ -45,7 +45,7 @@
             "現在値が25日平均より下",
             "25日平均が75日平均より下",
             "25日平均の向きが上向き",
-            "直近3ヶ月の値動き -4.2%"
+            "直近3ヶ月の値動き -4.3%"
           ]
         },
         {
@@ -54,8 +54,8 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 150.23,
-          "range_high": 163.45,
+          "range_low": 150.19,
+          "range_high": 163.42,
           "backtest": {
             "days": 632,
             "hit_rate": 42.1,
@@ -199,7 +199,7 @@
         158.52,
         158.27,
         158.13,
-        156.84
+        156.8
       ],
       "live": {
         "days": 0,

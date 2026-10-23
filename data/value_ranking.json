@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 17:44",
+  "updated_at": "2026-10-23 17:53",
   "markets": {
     "jp": {
       "count": 45,
@@ -50,10 +50,10 @@
           "name": "三菱UFJ FG",
           "sector": "金融",
           "price": 3295.0,
-          "per": 14.2,
+          "per": 13.9,
           "pbr": 1.63,
           "div_yield": 2.91,
-          "value_score": 70
+          "value_score": 71
         },
         {
           "code": "9432",
@@ -80,7 +80,7 @@
           "name": "リクルートHD",
           "sector": "通信",
           "price": 19060.0,
-          "per": 46.6,
+          "per": 45.8,
           "pbr": 14.95,
           "div_yield": 0.14,
           "value_score": 5
@@ -210,7 +210,7 @@
           "name": "第一三共",
           "sector": "ヘルスケア",
           "price": 2817.5,
-          "per": 21.4,
+          "per": 21.3,
           "pbr": 3.01,
           "div_yield": 3.55,
           "value_score": 44
@@ -220,10 +220,10 @@
           "name": "三井住友FG",
           "sector": "金融",
           "price": 3114.0,
-          "per": 14.2,
+          "per": 14.5,
           "pbr": 1.47,
           "div_yield": 2.89,
-          "value_score": 75
+          "value_score": 74
         },
         {
           "code": "8411",
@@ -243,7 +243,7 @@
           "per": 49.2,
           "pbr": 4.14,
           "div_yield": 1.12,
-          "value_score": 11
+          "value_score": 13
         },
         {
           "code": "6954",
@@ -270,7 +270,7 @@
           "name": "オリエンタルランド",
           "sector": "一般消費財",
           "price": 3281.0,
-          "per": 39.1,
+          "per": 39.6,
           "pbr": 4.77,
           "div_yield": 0.49,
           "value_score": 18
@@ -350,10 +350,10 @@
           "name": "東京海上HD",
           "sector": "金融",
           "price": 572.2,
-          "per": 48.3,
+          "per": 49.4,
           "pbr": 1.99,
           "div_yield": 22.72,
-          "value_score": 29
+          "value_score": 27
         },
         {
           "code": "3382",
@@ -413,7 +413,7 @@
           "per": 12.2,
           "pbr": 0.61,
           "div_yield": 3.67,
-          "value_score": 92
+          "value_score": 93
         },
         {
           "code": "7201",
@@ -430,10 +430,10 @@
           "name": "キヤノン",
           "sector": "テクノロジー",
           "price": 4891.0,
-          "per": 12.2,
+          "per": 12.4,
           "pbr": 1.19,
           "div_yield": 3.27,
-          "value_score": 88
+          "value_score": 87
         },
         {
           "code": "6752",
@@ -469,14 +469,14 @@
           "per": 39.9,
           "pbr": 47.31,
           "div_yield": 0.31,
-          "value_score": 14
+          "value_score": 13
         },
         {
           "code": "MSFT",
           "name": "マイクロソフト",
           "sector": "テクノロジー",
           "price": 521.08,
-          "per": 29.0,
+          "per": 29.7,
           "pbr": 8.75,
           "div_yield": 0.75,
           "value_score": 37
@@ -519,7 +519,7 @@
           "per": 22.1,
           "pbr": 7.56,
           "div_yield": 0.32,
-          "value_score": 53
+          "value_score": 55
         },
         {
           "code": "TSLA",
@@ -589,7 +589,7 @@
           "per": 22.9,
           "pbr": 2.83,
           "div_yield": 2.31,
-          "value_score": 65
+          "value_score": 67
         },
         {
           "code": "JNJ",
@@ -609,7 +609,7 @@
           "per": 42.6,
           "pbr": 9.79,
           "div_yield": 0.82,
-          "value_score": 24
+          "value_score": 23
         },
         {
           "code": "PG",
@@ -626,10 +626,10 @@
           "name": "ホーム・デポ",
           "sector": "一般消費財",
           "price": 327.73,
-          "per": 22.0,
+          "per": 22.9,
           "pbr": 19.68,
           "div_yield": 2.84,
-          "value_score": 37
+          "value_score": 35
         },
         {
           "code": "COST",
@@ -646,10 +646,10 @@
           "name": "ブロードコム",
           "sector": "テクノロジー",
           "price": 323.24,
-          "per": 43.2,
+          "per": 41.3,
           "pbr": 15.48,
           "div_yield": 0.8,
-          "value_score": 18
+          "value_score": 19
         },
         {
           "code": "ORCL",
@@ -716,7 +716,7 @@
           "name": "AMD",
           "sector": "テクノロジー",
           "price": 507.93,
-          "per": 129.6,
+          "per": 141.1,
           "pbr": 12.33,
           "div_yield": null,
           "value_score": 13
@@ -736,10 +736,10 @@
           "name": "セールスフォース",
           "sector": "テクノロジー",
           "price": 250.29,
-          "per": 22.1,
+          "per": 22.9,
           "pbr": 5.37,
           "div_yield": 0.7,
-          "value_score": 61
+          "value_score": 60
         },
         {
           "code": "CSCO",
@@ -786,7 +786,7 @@
           "name": "ナイキ",
           "sector": "一般消費財",
           "price": 38.32,
-          "per": 18.4,
+          "per": 18.1,
           "pbr": 3.73,
           "div_yield": 4.28,
           "value_score": 77
@@ -796,17 +796,17 @@
           "name": "ファイザー",
           "sector": "ヘルスケア",
           "price": 30.42,
-          "per": 40.0,
+          "per": 39.5,
           "pbr": 2.04,
           "div_yield": 5.65,
-          "value_score": 55
+          "value_score": 56
         },
         {
           "code": "MRK",
           "name": "メルク",
           "sector": "ヘルスケア",
           "price": 147.24,
-          "per": 118.7,
+          "per": 116.9,
           "pbr": 8.67,
           "div_yield": 2.31,
           "value_score": 22
