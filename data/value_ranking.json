@@ -1,0 +1,887 @@
+{
+  "updated_at": "サンプル表示（初回の自動更新前）",
+  "markets": {
+    "jp": {
+      "count": 45,
+      "scored": 21,
+      "items": [
+        {
+          "code": "7203",
+          "name": "トヨタ自動車",
+          "sector": "ヘルスケア",
+          "price": 1448.0,
+          "per": 10.5,
+          "pbr": 3.48,
+          "div_yield": 0.42,
+          "value_score": 59
+        },
+        {
+          "code": "6758",
+          "name": "ソニーグループ",
+          "sector": "ヘルスケア",
+          "price": 1949.0,
+          "per": 9.5,
+          "pbr": 1.56,
+          "div_yield": 0.18,
+          "value_score": 84
+        },
+        {
+          "code": "9984",
+          "name": "ソフトバンクグループ",
+          "sector": "一般消費財",
+          "price": 8919.0,
+          "per": 21.9,
+          "pbr": 1.09,
+          "div_yield": 0.51,
+          "value_score": 70
+        },
+        {
+          "code": "6861",
+          "name": "キーエンス",
+          "sector": "ヘルスケア",
+          "price": 1929.0,
+          "per": 29.1,
+          "pbr": 3.78,
+          "div_yield": 1.97,
+          "value_score": 29
+        },
+        {
+          "code": "8306",
+          "name": "三菱UFJ FG",
+          "sector": "ヘルスケア",
+          "price": 906.0,
+          "per": null,
+          "pbr": 4.46,
+          "div_yield": 0.7,
+          "value_score": null
+        },
+        {
+          "code": "9432",
+          "name": "NTT",
+          "sector": "テクノロジー",
+          "price": 7249.0,
+          "per": 15.2,
+          "pbr": 0.61,
+          "div_yield": 0.03,
+          "value_score": 86
+        },
+        {
+          "code": "9433",
+          "name": "KDDI",
+          "sector": "資本財",
+          "price": 6509.0,
+          "per": 7.9,
+          "pbr": 3.38,
+          "div_yield": 3.74,
+          "value_score": 69
+        },
+        {
+          "code": "6098",
+          "name": "リクルートHD",
+          "sector": "素材",
+          "price": 4134.0,
+          "per": null,
+          "pbr": 1.58,
+          "div_yield": 1.26,
+          "value_score": null
+        },
+        {
+          "code": "8035",
+          "name": "東京エレクトロン",
+          "sector": "素材",
+          "price": 6563.0,
+          "per": 36.1,
+          "pbr": 4.95,
+          "div_yield": 2.52,
+          "value_score": 5
+        },
+        {
+          "code": "4063",
+          "name": "信越化学工業",
+          "sector": "一般消費財",
+          "price": 6598.0,
+          "per": null,
+          "pbr": 3.47,
+          "div_yield": 4.41,
+          "value_score": null
+        },
+        {
+          "code": "9983",
+          "name": "ファーストリテイリング",
+          "sector": "一般消費財",
+          "price": 2593.0,
+          "per": null,
+          "pbr": 4.34,
+          "div_yield": 3.81,
+          "value_score": null
+        },
+        {
+          "code": "7974",
+          "name": "任天堂",
+          "sector": "金融",
+          "price": 5794.0,
+          "per": null,
+          "pbr": 1.33,
+          "div_yield": 4.46,
+          "value_score": null
+        },
+        {
+          "code": "6501",
+          "name": "日立製作所",
+          "sector": "-",
+          "price": null,
+          "per": null,
+          "pbr": null,
+          "div_yield": null,
+          "value_score": null
+        },
+        {
+          "code": "8058",
+          "name": "三菱商事",
+          "sector": "ヘルスケア",
+          "price": 4597.0,
+          "per": 26.2,
+          "pbr": 0.51,
+          "div_yield": 1.77,
+          "value_score": 70
+        },
+        {
+          "code": "8031",
+          "name": "三井物産",
+          "sector": "ヘルスケア",
+          "price": 820.0,
+          "per": null,
+          "pbr": 1.12,
+          "div_yield": 4.02,
+          "value_score": null
+        },
+        {
+          "code": "8001",
+          "name": "伊藤忠商事",
+          "sector": "素材",
+          "price": 5382.0,
+          "per": 17.9,
+          "pbr": 3.12,
+          "div_yield": 3.55,
+          "value_score": 53
+        },
+        {
+          "code": "4502",
+          "name": "武田薬品工業",
+          "sector": "素材",
+          "price": 4442.0,
+          "per": null,
+          "pbr": 4.81,
+          "div_yield": 0.11,
+          "value_score": null
+        },
+        {
+          "code": "6902",
+          "name": "デンソー",
+          "sector": "ヘルスケア",
+          "price": 7270.0,
+          "per": 38.0,
+          "pbr": 1.14,
+          "div_yield": 1.46,
+          "value_score": 43
+        },
+        {
+          "code": "7267",
+          "name": "本田技研工業",
+          "sector": "金融",
+          "price": 3495.0,
+          "per": 14.1,
+          "pbr": 1.49,
+          "div_yield": 3.37,
+          "value_score": 77
+        },
+        {
+          "code": "6367",
+          "name": "ダイキン工業",
+          "sector": "テクノロジー",
+          "price": 1734.0,
+          "per": 18.0,
+          "pbr": 4.91,
+          "div_yield": 0.72,
+          "value_score": 31
+        },
+        {
+          "code": "4568",
+          "name": "第一三共",
+          "sector": "テクノロジー",
+          "price": 2720.0,
+          "per": null,
+          "pbr": 2.05,
+          "div_yield": 2.49,
+          "value_score": null
+        },
+        {
+          "code": "8316",
+          "name": "三井住友FG",
+          "sector": "金融",
+          "price": 4036.0,
+          "per": null,
+          "pbr": 2.24,
+          "div_yield": 3.45,
+          "value_score": null
+        },
+        {
+          "code": "8411",
+          "name": "みずほFG",
+          "sector": "資本財",
+          "price": 4313.0,
+          "per": null,
+          "pbr": 4.7,
+          "div_yield": 3.22,
+          "value_score": null
+        },
+        {
+          "code": "6981",
+          "name": "村田製作所",
+          "sector": "金融",
+          "price": 8273.0,
+          "per": null,
+          "pbr": 3.12,
+          "div_yield": 3.29,
+          "value_score": null
+        },
+        {
+          "code": "6954",
+          "name": "ファナック",
+          "sector": "資本財",
+          "price": 6362.0,
+          "per": null,
+          "pbr": 3.62,
+          "div_yield": 3.22,
+          "value_score": null
+        },
+        {
+          "code": "7741",
+          "name": "HOYA",
+          "sector": "素材",
+          "price": 2938.0,
+          "per": 10.1,
+          "pbr": 3.92,
+          "div_yield": 2.87,
+          "value_score": 58
+        },
+        {
+          "code": "4661",
+          "name": "オリエンタルランド",
+          "sector": "ヘルスケア",
+          "price": 4723.0,
+          "per": null,
+          "pbr": 2.52,
+          "div_yield": 2.38,
+          "value_score": null
+        },
+        {
+          "code": "2914",
+          "name": "日本たばこ産業",
+          "sector": "一般消費財",
+          "price": 6722.0,
+          "per": null,
+          "pbr": 4.28,
+          "div_yield": 2.34,
+          "value_score": null
+        },
+        {
+          "code": "9434",
+          "name": "ソフトバンク",
+          "sector": "素材",
+          "price": 5704.0,
+          "per": 37.9,
+          "pbr": 4.49,
+          "div_yield": 0.61,
+          "value_score": 9
+        },
+        {
+          "code": "6594",
+          "name": "ニデック",
+          "sector": "一般消費財",
+          "price": 8736.0,
+          "per": null,
+          "pbr": 1.99,
+          "div_yield": 3.69,
+          "value_score": null
+        },
+        {
+          "code": "6273",
+          "name": "SMC",
+          "sector": "資本財",
+          "price": 5052.0,
+          "per": 31.4,
+          "pbr": 4.87,
+          "div_yield": 3.81,
+          "value_score": 15
+        },
+        {
+          "code": "4519",
+          "name": "中外製薬",
+          "sector": "素材",
+          "price": 6524.0,
+          "per": null,
+          "pbr": 2.89,
+          "div_yield": 2.16,
+          "value_score": null
+        },
+        {
+          "code": "7011",
+          "name": "三菱重工業",
+          "sector": "一般消費財",
+          "price": 4492.0,
+          "per": null,
+          "pbr": 4.73,
+          "div_yield": 0.32,
+          "value_score": null
+        },
+        {
+          "code": "6857",
+          "name": "アドバンテスト",
+          "sector": "素材",
+          "price": 5490.0,
+          "per": 27.5,
+          "pbr": 1.22,
+          "div_yield": 3.13,
+          "value_score": 58
+        },
+        {
+          "code": "8766",
+          "name": "東京海上HD",
+          "sector": "ヘルスケア",
+          "price": 8119.0,
+          "per": null,
+          "pbr": 1.44,
+          "div_yield": 3.09,
+          "value_score": null
+        },
+        {
+          "code": "3382",
+          "name": "セブン&アイHD",
+          "sector": "テクノロジー",
+          "price": 2715.0,
+          "per": null,
+          "pbr": 1.21,
+          "div_yield": 2.15,
+          "value_score": null
+        },
+        {
+          "code": "2802",
+          "name": "味の素",
+          "sector": "金融",
+          "price": 7306.0,
+          "per": 21.8,
+          "pbr": 1.57,
+          "div_yield": 0.84,
+          "value_score": 62
+        },
+        {
+          "code": "9020",
+          "name": "JR東日本",
+          "sector": "一般消費財",
+          "price": 7481.0,
+          "per": null,
+          "pbr": 0.64,
+          "div_yield": 2.41,
+          "value_score": null
+        },
+        {
+          "code": "9022",
+          "name": "JR東海",
+          "sector": "素材",
+          "price": 2321.0,
+          "per": 22.9,
+          "pbr": 2.08,
+          "div_yield": 3.51,
+          "value_score": 50
+        },
+        {
+          "code": "8801",
+          "name": "三井不動産",
+          "sector": "ヘルスケア",
+          "price": 1746.0,
+          "per": 35.8,
+          "pbr": 2.86,
+          "div_yield": 2.16,
+          "value_score": 31
+        },
+        {
+          "code": "5401",
+          "name": "日本製鉄",
+          "sector": "金融",
+          "price": 4845.0,
+          "per": 32.0,
+          "pbr": 1.88,
+          "div_yield": 2.08,
+          "value_score": 41
+        },
+        {
+          "code": "7201",
+          "name": "日産自動車",
+          "sector": "テクノロジー",
+          "price": 4469.0,
+          "per": 17.4,
+          "pbr": 2.66,
+          "div_yield": 0.37,
+          "value_score": 59
+        },
+        {
+          "code": "7751",
+          "name": "キヤノン",
+          "sector": "ヘルスケア",
+          "price": 3905.0,
+          "per": null,
+          "pbr": 0.78,
+          "div_yield": 2.01,
+          "value_score": null
+        },
+        {
+          "code": "6752",
+          "name": "パナソニックHD",
+          "sector": "金融",
+          "price": 4829.0,
+          "per": null,
+          "pbr": 4.08,
+          "div_yield": 0.96,
+          "value_score": null
+        },
+        {
+          "code": "4452",
+          "name": "花王",
+          "sector": "ヘルスケア",
+          "price": 6289.0,
+          "per": null,
+          "pbr": 1.57,
+          "div_yield": 0.37,
+          "value_score": null
+        }
+      ]
+    },
+    "us": {
+      "count": 42,
+      "scored": 24,
+      "items": [
+        {
+          "code": "AAPL",
+          "name": "アップル",
+          "sector": "ヘルスケア",
+          "price": 2575.0,
+          "per": 25.6,
+          "pbr": 3.67,
+          "div_yield": 0.13,
+          "value_score": 44
+        },
+        {
+          "code": "MSFT",
+          "name": "マイクロソフト",
+          "sector": "テクノロジー",
+          "price": 4492.0,
+          "per": 17.5,
+          "pbr": 1.8,
+          "div_yield": 3.58,
+          "value_score": 75
+        },
+        {
+          "code": "NVDA",
+          "name": "エヌビディア",
+          "sector": "一般消費財",
+          "price": 1081.0,
+          "per": null,
+          "pbr": 1.79,
+          "div_yield": 0.61,
+          "value_score": null
+        },
+        {
+          "code": "AMZN",
+          "name": "アマゾン",
+          "sector": "テクノロジー",
+          "price": 8470.0,
+          "per": 31.4,
+          "pbr": 4.45,
+          "div_yield": 1.86,
+          "value_score": 23
+        },
+        {
+          "code": "GOOGL",
+          "name": "アルファベット",
+          "sector": "金融",
+          "price": 1273.0,
+          "per": null,
+          "pbr": 1.8,
+          "div_yield": 2.16,
+          "value_score": null
+        },
+        {
+          "code": "META",
+          "name": "メタ",
+          "sector": "資本財",
+          "price": 5914.0,
+          "per": null,
+          "pbr": 2.12,
+          "div_yield": 2.02,
+          "value_score": null
+        },
+        {
+          "code": "TSLA",
+          "name": "テスラ",
+          "sector": "ヘルスケア",
+          "price": 1746.0,
+          "per": 33.7,
+          "pbr": 0.51,
+          "div_yield": 1.3,
+          "value_score": 61
+        },
+        {
+          "code": "BRK-B",
+          "name": "バークシャー・ハサウェイ",
+          "sector": "金融",
+          "price": 2724.0,
+          "per": null,
+          "pbr": 3.07,
+          "div_yield": 0.3,
+          "value_score": null
+        },
+        {
+          "code": "JPM",
+          "name": "JPモルガン",
+          "sector": "資本財",
+          "price": 8045.0,
+          "per": null,
+          "pbr": 4.81,
+          "div_yield": 0.77,
+          "value_score": null
+        },
+        {
+          "code": "V",
+          "name": "ビザ",
+          "sector": "資本財",
+          "price": 1950.0,
+          "per": 22.5,
+          "pbr": 1.49,
+          "div_yield": 1.99,
+          "value_score": 74
+        },
+        {
+          "code": "MA",
+          "name": "マスターカード",
+          "sector": "ヘルスケア",
+          "price": 4628.0,
+          "per": null,
+          "pbr": 2.38,
+          "div_yield": 1.26,
+          "value_score": null
+        },
+        {
+          "code": "UNH",
+          "name": "ユナイテッドヘルス",
+          "sector": "ヘルスケア",
+          "price": 3152.0,
+          "per": null,
+          "pbr": 1.01,
+          "div_yield": 3.55,
+          "value_score": null
+        },
+        {
+          "code": "XOM",
+          "name": "エクソンモービル",
+          "sector": "金融",
+          "price": 6629.0,
+          "per": null,
+          "pbr": 2.93,
+          "div_yield": 1.04,
+          "value_score": null
+        },
+        {
+          "code": "JNJ",
+          "name": "ジョンソン・エンド・ジョンソン",
+          "sector": "ヘルスケア",
+          "price": 3411.0,
+          "per": 6.7,
+          "pbr": 4.72,
+          "div_yield": 4.38,
+          "value_score": 54
+        },
+        {
+          "code": "WMT",
+          "name": "ウォルマート",
+          "sector": "金融",
+          "price": 3599.0,
+          "per": null,
+          "pbr": 4.2,
+          "div_yield": 4.18,
+          "value_score": null
+        },
+        {
+          "code": "PG",
+          "name": "P&G",
+          "sector": "一般消費財",
+          "price": 8803.0,
+          "per": null,
+          "pbr": 1.96,
+          "div_yield": 4.41,
+          "value_score": null
+        },
+        {
+          "code": "HD",
+          "name": "ホーム・デポ",
+          "sector": "資本財",
+          "price": 4446.0,
+          "per": null,
+          "pbr": 3.75,
+          "div_yield": 1.75,
+          "value_score": null
+        },
+        {
+          "code": "COST",
+          "name": "コストコ",
+          "sector": "資本財",
+          "price": 5941.0,
+          "per": 12.1,
+          "pbr": 2.26,
+          "div_yield": 0.22,
+          "value_score": 73
+        },
+        {
+          "code": "AVGO",
+          "name": "ブロードコム",
+          "sector": "金融",
+          "price": 5705.0,
+          "per": null,
+          "pbr": 4.97,
+          "div_yield": 1.11,
+          "value_score": null
+        },
+        {
+          "code": "ORCL",
+          "name": "オラクル",
+          "sector": "-",
+          "price": null,
+          "per": null,
+          "pbr": null,
+          "div_yield": null,
+          "value_score": null
+        },
+        {
+          "code": "LLY",
+          "name": "イーライリリー",
+          "sector": "金融",
+          "price": 2579.0,
+          "per": 12.4,
+          "pbr": 2.91,
+          "div_yield": 0.56,
+          "value_score": 68
+        },
+        {
+          "code": "KO",
+          "name": "コカ・コーラ",
+          "sector": "資本財",
+          "price": 8150.0,
+          "per": 34.8,
+          "pbr": 1.92,
+          "div_yield": 0.19,
+          "value_score": 42
+        },
+        {
+          "code": "PEP",
+          "name": "ペプシコ",
+          "sector": "ヘルスケア",
+          "price": 5555.0,
+          "per": 8.1,
+          "pbr": 1.5,
+          "div_yield": 4.46,
+          "value_score": 90
+        },
+        {
+          "code": "BAC",
+          "name": "バンク・オブ・アメリカ",
+          "sector": "テクノロジー",
+          "price": 4001.0,
+          "per": 16.0,
+          "pbr": 3.63,
+          "div_yield": 1.51,
+          "value_score": 58
+        },
+        {
+          "code": "NFLX",
+          "name": "ネットフリックス",
+          "sector": "一般消費財",
+          "price": 1801.0,
+          "per": null,
+          "pbr": 1.91,
+          "div_yield": 0.68,
+          "value_score": null
+        },
+        {
+          "code": "AMD",
+          "name": "AMD",
+          "sector": "テクノロジー",
+          "price": 3413.0,
+          "per": 36.4,
+          "pbr": 4.45,
+          "div_yield": 4.39,
+          "value_score": 15
+        },
+        {
+          "code": "ADBE",
+          "name": "アドビ",
+          "sector": "素材",
+          "price": 3931.0,
+          "per": null,
+          "pbr": 1.62,
+          "div_yield": 0.41,
+          "value_score": null
+        },
+        {
+          "code": "CRM",
+          "name": "セールスフォース",
+          "sector": "資本財",
+          "price": 7571.0,
+          "per": 21.7,
+          "pbr": 4.57,
+          "div_yield": 1.18,
+          "value_score": 39
+        },
+        {
+          "code": "CSCO",
+          "name": "シスコシステムズ",
+          "sector": "資本財",
+          "price": 6959.0,
+          "per": 38.2,
+          "pbr": 4.73,
+          "div_yield": 1.23,
+          "value_score": 7
+        },
+        {
+          "code": "INTC",
+          "name": "インテル",
+          "sector": "金融",
+          "price": 4779.0,
+          "per": 19.6,
+          "pbr": 1.01,
+          "div_yield": 2.65,
+          "value_score": 82
+        },
+        {
+          "code": "DIS",
+          "name": "ウォルト・ディズニー",
+          "sector": "ヘルスケア",
+          "price": 7260.0,
+          "per": 39.8,
+          "pbr": 3.88,
+          "div_yield": 4.31,
+          "value_score": 12
+        },
+        {
+          "code": "MCD",
+          "name": "マクドナルド",
+          "sector": "素材",
+          "price": 7267.0,
+          "per": 25.5,
+          "pbr": 4.59,
+          "div_yield": 0.15,
+          "value_score": 33
+        },
+        {
+          "code": "NKE",
+          "name": "ナイキ",
+          "sector": "テクノロジー",
+          "price": 4868.0,
+          "per": 32.1,
+          "pbr": 4.38,
+          "div_yield": 2.87,
+          "value_score": 23
+        },
+        {
+          "code": "PFE",
+          "name": "ファイザー",
+          "sector": "一般消費財",
+          "price": 6465.0,
+          "per": 39.4,
+          "pbr": 1.37,
+          "div_yield": 0.53,
+          "value_score": 47
+        },
+        {
+          "code": "MRK",
+          "name": "メルク",
+          "sector": "資本財",
+          "price": 5516.0,
+          "per": 28.2,
+          "pbr": 1.81,
+          "div_yield": 2.61,
+          "value_score": 56
+        },
+        {
+          "code": "ABBV",
+          "name": "アッヴィ",
+          "sector": "テクノロジー",
+          "price": 7772.0,
+          "per": 27.2,
+          "pbr": 1.97,
+          "div_yield": 1.51,
+          "value_score": 53
+        },
+        {
+          "code": "CVX",
+          "name": "シェブロン",
+          "sector": "テクノロジー",
+          "price": 933.0,
+          "per": 27.0,
+          "pbr": 2.2,
+          "div_yield": 0.13,
+          "value_score": 53
+        },
+        {
+          "code": "T",
+          "name": "AT&T",
+          "sector": "一般消費財",
+          "price": 1831.0,
+          "per": 31.1,
+          "pbr": 3.16,
+          "div_yield": 3.41,
+          "value_score": 39
+        },
+        {
+          "code": "VZ",
+          "name": "ベライゾン",
+          "sector": "ヘルスケア",
+          "price": 4793.0,
+          "per": null,
+          "pbr": 3.86,
+          "div_yield": 1.51,
+          "value_score": null
+        },
+        {
+          "code": "QCOM",
+          "name": "クアルコム",
+          "sector": "一般消費財",
+          "price": 7261.0,
+          "per": null,
+          "pbr": 3.5,
+          "div_yield": 3.04,
+          "value_score": null
+        },
+        {
+          "code": "IBM",
+          "name": "IBM",
+          "sector": "金融",
+          "price": 2604.0,
+          "per": null,
+          "pbr": 3.76,
+          "div_yield": 2.1,
+          "value_score": null
+        },
+        {
+          "code": "BA",
+          "name": "ボーイング",
+          "sector": "資本財",
+          "price": 7899.0,
+          "per": 13.5,
+          "pbr": 0.64,
+          "div_yield": 1.87,
+          "value_score": 90
+        }
+      ]
+    }
+  }
+}

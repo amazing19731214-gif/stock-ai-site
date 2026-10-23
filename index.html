@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI相場診断</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #ffffff; --text: #1d1d1b; --sub: #6b6a64;
+    --line: #e4e2da; --up: #1a7f4b; --down: #c0392b; --flat: #8a7a2e;
+    --accent: #1d1d1b; --accent-text: #ffffff; --soft: #efede6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161614; --card: #212120; --text: #ecebe6; --sub: #9c9a92;
+      --line: #33322f; --up: #4cc38a; --down: #ef6b5b; --flat: #d4bd5a;
+      --accent: #ecebe6; --accent-text: #161614; --soft: #2a2a28;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.6;
+  }
+  header { max-width: 760px; margin: 0 auto; padding: 24px 16px 0; }
+  h1 { font-size: 1.5rem; margin: 0 0 12px; }
+  nav {
+    position: sticky; top: 0; z-index: 5; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .tabs {
+    max-width: 760px; margin: 0 auto; padding: 8px 16px; display: flex; gap: 6px;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a {
+    flex: none; text-decoration: none; color: var(--sub); font-weight: 600;
+    font-size: .9rem; padding: 6px 14px; border-radius: 999px;
+  }
+  .tabs a.active { background: var(--accent); color: var(--accent-text); }
+  main { max-width: 760px; margin: 0 auto; padding: 16px 16px 48px; }
+  section { display: none; }
+  section.active { display: block; }
+  h2 { font-size: 1.15rem; margin: 4px 0 2px; }
+  h3 { font-size: .95rem; margin: 20px 0 8px; }
+  .updated { color: var(--sub); font-size: .82rem; margin-bottom: 14px; }
+  .notice {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 12px 14px; font-size: .8rem; color: var(--sub); margin-bottom: 16px;
+  }
+  .grid { display: grid; gap: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px;
+  }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .name { font-weight: 700; font-size: 1.05rem; }
+  .num { font-variant-numeric: tabular-nums; }
+  .chg { font-size: .85rem; margin-left: 6px; }
+  .badge {
+    display: inline-block; font-weight: 700; font-size: .9rem;
+    padding: 2px 10px; border-radius: 999px; margin: 8px 0;
+    border: 1.5px solid currentColor;
+  }
+  .big { font-size: 1.6rem; font-weight: 800; margin: 6px 0 2px; }
+  .up { color: var(--up); } .down { color: var(--down); } .flat { color: var(--flat); }
+  svg.spark { width: 100%; height: 56px; display: block; margin: 4px 0 8px; }
+  ul.reasons { margin: 0; padding-left: 1.2em; font-size: .88rem; color: var(--sub); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+  .stat { background: var(--soft); border-radius: 8px; padding: 8px 10px; }
+  .stat .k { font-size: .75rem; color: var(--sub); }
+  .stat .v { font-weight: 700; }
+  .small { font-size: .78rem; color: var(--sub); }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  th, td { padding: 8px 4px; border-bottom: 1px solid var(--line); text-align: left; }
+  th { font-size: .75rem; color: var(--sub); font-weight: 600; }
+  td.r, th.r { text-align: right; white-space: nowrap; }
+  .rank { color: var(--sub); width: 1.8em; }
+  .err { color: var(--down); font-size: .88rem; }
+  .empty { color: var(--sub); font-size: .9rem; }
+  /* 掲示板 */
+  form { display: grid; gap: 8px; }
+  input, textarea, button { font: inherit; }
+  input, textarea {
+    width: 100%; padding: 10px 12px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--text);
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  button {
+    background: var(--accent); color: var(--accent-text); border: 0;
+    border-radius: 8px; padding: 10px 18px; font-weight: 700; cursor: pointer;
+  }
+  button:disabled { opacity: .5; cursor: default; }
+  .post { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .post:last-child { border-bottom: 0; }
+  .post .meta { font-size: .78rem; color: var(--sub); }
+  .post .body { white-space: pre-wrap; word-break: break-word; margin-top: 2px; }
+  footer { margin-top: 28px; font-size: .78rem; color: var(--sub); }
+  .seg { display: flex; gap: 6px; margin-bottom: 12px; }
+  .seg button {
+    flex: 1; padding: 8px 0; font-size: .85rem; border-radius: 8px;
+    background: var(--card); color: var(--sub); border: 1px solid var(--line);
+  }
+  .seg button.on { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+  .sector { display: block; font-size: .72rem; color: var(--sub); }
+  .score { font-weight: 800; }
+  .hz { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 6px 0 4px; }
+  .hz > div { background: var(--soft); border-radius: 8px; padding: 8px 4px; text-align: center; }
+  .hz .k { font-size: .75rem; color: var(--sub); }
+  .hz .d { font-weight: 800; font-size: 1.02rem; }
+  .hz .s { font-size: .72rem; color: var(--sub); line-height: 1.4; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; font-size: .85rem; color: var(--sub); font-weight: 600; }
+  .hd { border-top: 1px solid var(--line); padding: 10px 0 2px; margin-top: 8px; }
+  .hd-t { display: flex; justify-content: space-between; font-size: .92rem; }
+  .hd .reasons { margin-top: 4px; }
+  .seg + .seg { margin-top: -4px; }
+</style>
+</head>
+<body>
+<header><h1>AI相場診断</h1></header>
+<nav>
+  <div class="tabs">
+    <a href="#forecast" data-tab="forecast">予想</a>
+    <a href="#ranking" data-tab="ranking">値上がり</a>
+    <a href="#value" data-tab="value">割安株</a>
+    <a href="#yutai" data-tab="yutai">優待</a>
+    <a href="#diagnosis" data-tab="diagnosis">AI診断</a>
+    <a href="#board" data-tab="board">掲示板</a>
+  </div>
+</nav>
+
+<main>
+  <div class="notice">
+    趣味で作った実験的なサイトです。過去の値動きから機械的に計算しているだけで、
+    将来の値動きを保証するものではありません。投資判断はご自身の責任でお願いします。
+  </div>
+
+  <!-- 予想 -->
+  <section id="forecast">
+    <h2>チャート予想（明日・1ヶ月後・3ヶ月後）</h2>
+    <div class="updated" id="forecast-updated">読み込み中…</div>
+    <div class="grid" id="forecast-list"></div>
+    <footer>
+      <b>予想の考え方</b>：明日は短期の勢い（5日・25日平均、RSI）、1ヶ月後は中期のトレンド（25日・75日平均と3ヶ月の値動き）、
+      3ヶ月後は長期のトレンド（75日・200日平均と6ヶ月の値動き）から、上か下かを判定しています。<br>
+      <b>予想レンジ</b>は直近の値動きの大きさから計算した目安で、およそ3回に2回はこの範囲に収まる計算です。<br>
+      <b>過去3年の検証</b>は、同じルールで毎日予想していた場合の成績です。
+      「いつも上昇と予想」と大きな差がなければ、ルールに特別な力はないと考えてください。
+      株価は長期的に上がりやすいため、1ヶ月・3ヶ月の的中率は高めに見えやすい点にも注意してください。<br>
+      米国の指数は日本時間の朝に確定した前日の終値で計算しています。
+    </footer>
+  </section>
+
+  <!-- 値上がりランキング -->
+  <section id="ranking">
+    <h2>値上がり・値下がりランキング</h2>
+    <div class="updated" id="ranking-updated">読み込み中…</div>
+    <div class="seg" id="rank-market">
+      <button data-k="jp" class="on">日本株</button>
+      <button data-k="us">米国株</button>
+    </div>
+    <div class="seg" id="rank-period">
+      <button data-k="day" class="on">前日比</button>
+      <button data-k="ytd">年初来</button>
+      <button data-k="year">1年間</button>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">値上がり率 上位10</h3>
+      <div id="gainers"></div>
+      <h3>値下がり率 上位10</h3>
+      <div id="losers"></div>
+    </div>
+    <footer id="ranking-note"></footer>
+  </section>
+
+  <!-- 割安株 -->
+  <section id="value">
+    <h2>割安株ランキング</h2>
+    <div class="updated" id="value-updated">読み込み中…</div>
+    <div class="seg" id="value-market">
+      <button data-k="jp" class="on">日本株</button>
+      <button data-k="us">米国株</button>
+    </div>
+    <div class="seg" id="value-sort">
+      <button data-k="value_score" class="on">総合</button>
+      <button data-k="per">PER</button>
+      <button data-k="pbr">PBR</button>
+      <button data-k="div_yield">配当</button>
+    </div>
+    <div class="card"><div id="value-table"></div></div>
+    <footer>
+      <b>総合割安度</b>：同じ市場の対象銘柄の中でPERとPBRがどれだけ低いかを0〜100点にした平均点です。<br>
+      <b>PER</b>（株価収益率）は利益に対して株価が何倍か、<b>PBR</b>（株価純資産倍率）は
+      純資産に対して何倍かを表し、低いほど割安とされます。PBR 1倍割れは<span class="flat">黄色</span>で表示しています。<br>
+      ただし、業績悪化の見込みや業種の特徴で低くなっている場合も多く、
+      「低い＝お買い得」とは限りません。米国株は日本株よりPER・PBRが高く出やすいため、市場ごとに比べています。
+      赤字などでPERが計算できない銘柄は「-」になります。財務データは取得元の都合で古い・欠けている場合があります。
+    </footer>
+  </section>
+
+  <!-- 株主優待 -->
+  <section id="yutai">
+    <h2>株主優待ランキング</h2>
+    <div class="updated" id="yutai-updated">読み込み中…</div>
+    <div id="yutai-list"></div>
+    <footer>
+      優待利回り ＝ 優待の金額換算 ÷（現在の株価 × 必要株数）。
+      優待内容は管理人が手入力したもので、変更・廃止されている場合があります。
+      最新情報は各社の公式サイトでご確認ください。
+    </footer>
+  </section>
+
+  <!-- AI診断 -->
+  <section id="diagnosis">
+    <h2>AI診断（個別銘柄のチャート予想）</h2>
+    <div class="updated" id="diag-updated">読み込み中…</div>
+    <div class="seg" id="diag-market">
+      <button data-k="jp" class="on">日本株</button>
+      <button data-k="us">米国株</button>
+    </div>
+    <div class="grid" id="diag-list"></div>
+    <footer>
+      「予想」タブと同じルールで、明日・1ヶ月後・3ヶ月後が上か下かを判定しています。
+      各枠の下の数字は、同じルールで過去3年に毎日予想していた場合の的中率です。
+      グラフは直近約半年の値動きです。米国株の株価はドル表示です。
+    </footer>
+  </section>
+
+  <!-- 掲示板 -->
+  <section id="board">
+    <h2>みんなの掲示板</h2>
+    <div class="notice" style="margin-top:10px">
+      <b>利用ルール</b>：特定の銘柄が「必ず上がる・下がる」といった断定や煽り、
+      根拠のないうわさ、誹謗中傷、個人情報の書き込みは削除します。
+      書き込みは個人の感想で、投資の参考にするものではありません。
+    </div>
+    <div id="board-area"><p class="empty">読み込み中…</p></div>
+  </section>
+</main>
+
+<script>
+// ---- 共通 ----
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function signCls(v) { return v > 0 ? "up" : v < 0 ? "down" : "flat"; }
+function pct(v) { return (v > 0 ? "+" : "") + v.toFixed(2) + "%"; }
+function fmt(v) { return Number(v).toLocaleString(undefined, {maximumFractionDigits: 3}); }
+function spark(values, cls) {
+  if (!values || values.length < 2) return "";
+  const w = 300, h = 56, min = Math.min(...values), max = Math.max(...values);
+  const pts = values.map((v, i) => {
+    const x = (i / (values.length - 1)) * w;
+    const y = h - 4 - ((v - min) / (max - min || 1)) * (h - 8);
+    return x.toFixed(1) + "," + y.toFixed(1);
+  }).join(" ");
+  return `<svg class="spark ${cls}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polyline points="${pts}" fill="none" stroke="currentColor" stroke-width="2"
+      vector-effect="non-scaling-stroke"/></svg>`;
+}
+function load(file) {
+  return fetch("data/" + file + "?t=" + Date.now()).then(r => {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  });
+}
+function failed(id) {
+  document.getElementById(id).textContent = "データを読み込めませんでした";
+}
+
+// ---- タブ切り替え ----
+function showTab() {
+  const id = (location.hash || "#forecast").slice(1);
+  const valid = document.getElementById(id) && document.querySelector(`[data-tab="${id}"]`);
+  const tab = valid ? id : "forecast";
+  document.querySelectorAll("section").forEach(s => s.classList.toggle("active", s.id === tab));
+  document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("active", a.dataset.tab === tab));
+}
+window.addEventListener("hashchange", () => { showTab(); window.scrollTo(0, 0); });
+showTab();
+
+// ---- 切り替えボタン（共通） ----
+function seg(id, onChange) {
+  const btns = document.querySelectorAll(`#${id} button`);
+  btns.forEach(btn => btn.addEventListener("click", () => {
+    btns.forEach(b => b.classList.toggle("on", b === btn));
+    onChange(btn.dataset.k);
+  }));
+  return () => document.querySelector(`#${id} button.on`).dataset.k;
+}
+const MARKET_LABEL = { jp: "日本の主要大型株", us: "米国の主要大型株" };
+const money = (v, market) => v == null ? "-" : (market === "us" ? "$" : "") + fmt(v);
+
+// ---- 予想の表示部品 ----
+function dirCls(d) { return d === "上昇" ? "up" : d === "下落" ? "down" : "flat"; }
+function dirText(h) {
+  if (h.direction === "上昇") return "↗ 上昇";
+  if (h.direction === "下落") return "↘ 下落";
+  return h.direction === "データ不足" ? "データ不足" : "→ 横ばい";
+}
+function hzBoxes(horizons, compact) {
+  return `<div class="hz">` + horizons.map(h => `<div>
+      <div class="k">${esc(h.label)}</div>
+      <div class="d ${dirCls(h.direction)}">${dirText(h)}</div>
+      <div class="s">${h.strength ? esc(h.strength) : "&nbsp;"}</div>
+      ${compact ? `<div class="s">的中 ${h.backtest.hit_rate ?? "-"}%</div>` : ""}
+    </div>`).join("") + `</div>`;
+}
+
+// ---- 予想タブ ----
+load("forecast.json").then(data => {
+  document.getElementById("forecast-updated").textContent = "最終更新：" + data.updated_at;
+  document.getElementById("forecast-list").innerHTML = data.items.map(it => {
+    if (it.error) return `<div class="card"><div class="name">${esc(it.name)}</div>
+      <div class="err">データを取得できませんでした</div></div>`;
+    const lv = it.live;
+    const liveRate = lv.days ? Math.round(lv.hits / lv.days * 1000) / 10 + "%" : "記録中";
+    const recent = lv.recent.length ? `<div class="small" style="margin-top:6px">最近の結果：` +
+      lv.recent.map(e => `${esc(e.data_date.slice(5))} ${esc(e.direction)}→${e.result === "的中" ? "○" : "×"}`).join("　") +
+      `</div>` : "";
+    const main = it.horizons.find(h => h.key === "1m") || it.horizons[0];
+    const details = it.horizons.map(h => `
+      <div class="hd">
+        <div class="hd-t"><b>${esc(h.label)}</b>
+          <span class="${dirCls(h.direction)}">${dirText(h)}${h.strength ? `（${esc(h.strength)}）` : ""}</span></div>
+        <div class="small">予想レンジ <span class="num">${fmt(h.range_low)} 〜 ${fmt(h.range_high)}</span></div>
+        <div class="small">過去3年の検証：的中率 <b>${h.backtest.hit_rate ?? "-"}%</b>
+          （いつも上昇と予想：${h.backtest.always_up_rate ?? "-"}%）</div>
+        ${h.reasons ? `<ul class="reasons">${h.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
+      </div>`).join("");
+    return `<div class="card">
+      <div class="head"><span class="name">${esc(it.name)}</span>
+        <span class="num">${fmt(it.price)}<span class="chg ${signCls(it.change_pct)}">${pct(it.change_pct)}</span></span></div>
+      <div class="small">${esc(it.data_date)} 終値</div>
+      ${spark(it.history, dirCls(main.direction))}
+      ${hzBoxes(it.horizons, false)}
+      <details><summary>判断の理由と過去の成績</summary>${details}
+        <div class="hd"><b>明日予想のこのサイトでの実績</b>
+          <div class="small">${lv.days ? `${lv.hits}/${lv.days}回 的中（${liveRate}）` : "記録中（毎日の予想を記録して答え合わせしています）"}</div>
+          ${recent}</div>
+      </details>
+    </div>`;
+  }).join("");
+}).catch(() => failed("forecast-updated"));
+
+// ---- 値上がりランキング ----
+const RANK_PERIOD = {
+  day:  { col: "前日比", note: "前日の終値と比べた騰落率で並べています。" },
+  ytd:  { col: "年初来", note: "前年最後の取引日の終値と比べた騰落率で並べています。" },
+  year: { col: "1年間", note: "約1年前の終値と比べた騰落率で並べています。" },
+};
+function rankTable(rows, col, showRef, market) {
+  if (!rows.length) return `<p class="empty">データがありません</p>`;
+  return `<table><thead><tr><th></th><th>銘柄</th><th class="r">株価</th><th class="r">${col}</th></tr></thead><tbody>` +
+    rows.map((r, i) => `<tr><td class="rank">${i + 1}</td>
+      <td>${esc(r.name)} <span class="small">${esc(r.code)}</span></td>
+      <td class="r num">${money(r.price, market)}${showRef && r.ref_price != null
+        ? `<span class="sector">${money(r.ref_price, market)}から</span>` : ""}</td>
+      <td class="r num ${signCls(r.change_pct)}">${pct(r.change_pct)}</td></tr>`).join("") +
+    `</tbody></table>`;
+}
+let rankData = null;
+function renderRanking() {
+  if (!rankData) return;
+  const market = rankMarket(), key = rankPeriod();
+  const m = rankData.markets[market], p = m.periods[key], opt = RANK_PERIOD[key];
+  document.getElementById("ranking-updated").textContent =
+    `最終更新：${rankData.updated_at}（${m.data_date ?? "-"} 終値ベース）`;
+  document.getElementById("gainers").innerHTML = rankTable(p.gainers, opt.col, key !== "day", market);
+  document.getElementById("losers").innerHTML = rankTable(p.losers, opt.col, key !== "day", market);
+  document.getElementById("ranking-note").textContent =
+    `対象：${MARKET_LABEL[market]} ${p.count}銘柄。${opt.note}` +
+    (market === "us" ? "株価はドル表示です。" : "") + "株式分割などで大きくずれる場合があります。";
+}
+const rankMarket = seg("rank-market", renderRanking);
+const rankPeriod = seg("rank-period", renderRanking);
+load("ranking.json").then(data => { rankData = data; renderRanking(); })
+  .catch(() => failed("ranking-updated"));
+
+// ---- 割安株 ----
+let valueData = null;
+const VALUE_SORT = {
+  value_score: { desc: true }, per: { desc: false }, pbr: { desc: false }, div_yield: { desc: true },
+};
+function renderValue() {
+  if (!valueData) return;
+  const market = valueMarket(), key = valueSort(), opt = VALUE_SORT[key];
+  const m = valueData.markets[market];
+  document.getElementById("value-updated").textContent =
+    `最終更新：${valueData.updated_at}（${m.count}銘柄中、PER・PBRとも取得できた${m.scored}銘柄で比較）`;
+  const rows = m.items.filter(r => r[key] != null)
+    .sort((a, b) => opt.desc ? b[key] - a[key] : a[key] - b[key]).slice(0, 20);
+  const el = document.getElementById("value-table");
+  if (!rows.length) { el.innerHTML = `<p class="empty">データがありません</p>`; return; }
+  const f = (v, d) => v == null ? "-" : v.toFixed(d);
+  el.innerHTML = `<table><thead><tr><th></th><th>銘柄</th>
+    <th class="r">総合</th><th class="r">PER<br>(倍)</th><th class="r">PBR<br>(倍)</th><th class="r">配当<br>(%)</th></tr></thead><tbody>` +
+    rows.map((r, i) => `<tr><td class="rank">${i + 1}</td>
+      <td>${esc(r.name)}<span class="sector">${esc(r.code)}・${esc(r.sector)}</span></td>
+      <td class="r num score">${r.value_score ?? "-"}</td>
+      <td class="r num">${f(r.per, 1)}</td>
+      <td class="r num ${r.pbr != null && r.pbr < 1 ? "flat" : ""}">${f(r.pbr, 2)}</td>
+      <td class="r num">${f(r.div_yield, 2)}</td></tr>`).join("") +
+    `</tbody></table>`;
+}
+const valueMarket = seg("value-market", renderValue);
+const valueSort = seg("value-sort", renderValue);
+load("value_ranking.json").then(data => { valueData = data; renderValue(); })
+  .catch(() => failed("value-updated"));
+
+// ---- 株主優待 ----
+load("yutai_ranking.json").then(data => {
+  document.getElementById("yutai-updated").textContent = "最終更新：" + data.updated_at;
+  const el = document.getElementById("yutai-list");
+  if (!data.items.length) {
+    el.innerHTML = `<div class="card"><p class="empty" style="margin:0">まだ優待銘柄が登録されていません。</p></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="grid">` + data.items.map((r, i) => `<div class="card">
+      <div class="head"><span class="name">${i + 1}. ${esc(r.name)} <span class="small">${esc(r.code)}</span></span>
+        <span class="num" style="font-weight:700">${r.yield_pct != null ? r.yield_pct.toFixed(2) + "%" : "-"}</span></div>
+      <div style="margin:6px 0">${esc(r.content)}</div>
+      <div class="small">権利確定月：${esc(r.month)}　必要株数：${esc(r.shares)}株
+        　必要資金：${r.cost != null ? "約" + fmt(r.cost) + "円" : "-"}
+        　優待の目安：${fmt(r.value_yen)}円相当</div>
+    </div>`).join("") + `</div>`;
+}).catch(() => failed("yutai-updated"));
+
+// ---- AI診断 ----
+let diagData = null;
+function renderDiag() {
+  if (!diagData) return;
+  const market = diagMarket();
+  document.getElementById("diag-list").innerHTML = (diagData.markets[market] || []).map(it => {
+    if (it.error) return `<div class="card"><div class="name">${esc(it.name)}</div>
+      <div class="err">データを取得できませんでした</div></div>`;
+    const main = it.horizons.find(h => h.key === "1m") || it.horizons[0];
+    return `<div class="card">
+      <div class="head"><span class="name">${esc(it.name)} <span class="small">${esc(it.code)}</span></span>
+        <span class="num">${money(it.price, market)}<span class="chg ${signCls(it.change_pct)}">${pct(it.change_pct)}</span></span></div>
+      ${spark(it.history, dirCls(main.direction))}
+      ${hzBoxes(it.horizons, true)}
+    </div>`;
+  }).join("");
+}
+const diagMarket = seg("diag-market", renderDiag);
+load("predictions.json").then(data => {
+  diagData = data;
+  document.getElementById("diag-updated").textContent = "最終更新：" + data.updated_at;
+  renderDiag();
+}).catch(() => failed("diag-updated"));
+</script>
+
+<!-- 掲示板（Firebase） -->
+<script type="module">
+import { firebaseConfig } from "./firebase-config.js";
+
+const area = document.getElementById("board-area");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+if (!firebaseConfig) {
+  area.innerHTML = `<div class="card"><p class="empty" style="margin:0">掲示板は準備中です。</p></div>`;
+} else {
+  const V = "10.12.2";
+  const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
+  const { getAuth, signInAnonymously } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-auth.js`);
+  const fs = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore.js`);
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = fs.getFirestore(app);
+
+  area.innerHTML = `
+    <div class="card">
+      <form id="post-form">
+        <input id="post-name" maxlength="20" placeholder="名前（空欄なら「名無しさん」）">
+        <textarea id="post-text" maxlength="300" placeholder="書き込み内容（300文字まで）" required></textarea>
+        <div class="row"><span class="small" id="post-status"></span>
+          <button type="submit" id="post-btn">書き込む</button></div>
+      </form>
+    </div>
+    <div class="card" style="margin-top:14px"><div id="posts"><p class="empty">読み込み中…</p></div></div>`;
+
+  const COOLDOWN = 30 * 1000;
+  const getLast = () => { try { return Number(localStorage.getItem("lastPost") || 0); } catch { return 0; } };
+  const setLast = () => { try { localStorage.setItem("lastPost", String(Date.now())); } catch {} };
+  try { const n = localStorage.getItem("postName"); if (n) document.getElementById("post-name").value = n; } catch {}
+
+  const q = fs.query(fs.collection(db, "posts"), fs.orderBy("createdAt", "desc"), fs.limit(100));
+  fs.onSnapshot(q, snap => {
+    const el = document.getElementById("posts");
+    if (snap.empty) { el.innerHTML = `<p class="empty">まだ書き込みはありません。</p>`; return; }
+    el.innerHTML = snap.docs.map(d => {
+      const p = d.data();
+      const t = p.createdAt ? p.createdAt.toDate().toLocaleString("ja-JP",
+        {month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit"}) : "送信中…";
+      return `<div class="post"><div class="meta"><b>${esc(p.name)}</b>　${esc(t)}</div>
+        <div class="body">${esc(p.text)}</div></div>`;
+    }).join("");
+  }, () => {
+    document.getElementById("posts").innerHTML = `<p class="err">書き込みを読み込めませんでした</p>`;
+  });
+
+  document.getElementById("post-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const status = document.getElementById("post-status");
+    const btn = document.getElementById("post-btn");
+    const name = document.getElementById("post-name").value.trim().slice(0, 20) || "名無しさん";
+    const text = document.getElementById("post-text").value.trim().slice(0, 300);
+    if (!text) return;
+    const wait = getLast() + COOLDOWN - Date.now();
+    if (wait > 0) { status.textContent = `連続投稿はあと${Math.ceil(wait / 1000)}秒お待ちください`; return; }
+
+    btn.disabled = true; status.textContent = "送信中…";
+    try {
+      const cred = auth.currentUser ? { user: auth.currentUser } : await signInAnonymously(auth);
+      await fs.addDoc(fs.collection(db, "posts"), {
+        name, text, uid: cred.user.uid, createdAt: fs.serverTimestamp(),
+      });
+      document.getElementById("post-text").value = "";
+      try { localStorage.setItem("postName", name === "名無しさん" ? "" : name); } catch {}
+      setLast();
+      status.textContent = "書き込みました";
+    } catch (err) {
+      status.textContent = "書き込みに失敗しました";
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>
