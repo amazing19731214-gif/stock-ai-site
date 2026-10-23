@@ -19,5 +19,12 @@
     "base": 26008.9,
     "direction": "下落",
     "result": null
+  },
+  {
+    "name": "ドル/円",
+    "data_date": "2026-10-23",
+    "base": 156.55,
+    "direction": "下落",
+    "result": null
   }
 ]
