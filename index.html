@@ -117,6 +117,8 @@
   .hd-t { display: flex; justify-content: space-between; font-size: .92rem; }
   .hd .reasons { margin-top: 4px; }
   .seg + .seg { margin-top: -4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .tag { font-size: .72rem; color: var(--sub); background: var(--soft); border-radius: 999px; padding: 1px 8px; }
 </style>
 </head>
 <body>
@@ -124,6 +126,7 @@
 <nav>
   <div class="tabs">
     <a href="#forecast" data-tab="forecast">予想</a>
+    <a href="#watch" data-tab="watch">注目株</a>
     <a href="#ranking" data-tab="ranking">値上がり</a>
     <a href="#value" data-tab="value">割安株</a>
     <a href="#yutai" data-tab="yutai">優待</a>
@@ -151,6 +154,23 @@
       「いつも上昇と予想」と大きな差がなければ、ルールに特別な力はないと考えてください。
       株価は長期的に上がりやすいため、1ヶ月・3ヶ月の的中率は高めに見えやすい点にも注意してください。<br>
       米国の指数は日本時間の朝に確定した前日の終値で計算しています。
+    </footer>
+  </section>
+
+  <!-- 注目株 -->
+  <section id="watch">
+    <h2>注目株のチャート予想</h2>
+    <div class="updated" id="watch-updated">読み込み中…</div>
+    <h3 style="margin-top:4px">ウォッチリスト</h3>
+    <div class="grid" id="watch-list"></div>
+    <h3>出来高急増（いつもより売買が多い銘柄）</h3>
+    <div class="grid" id="surge-list"></div>
+    <footer>
+      <b>ウォッチリスト</b>は管理人が選んだ話題の銘柄です。
+      <b>出来高急増</b>は、値上がり・割安株ランキングの対象銘柄のうち、
+      その日の出来高が直近20日平均の2倍以上になった銘柄を自動で表示しています。<br>
+      話題の銘柄は値動きが激しく、チャートのルールが当てはまりにくい傾向があります。
+      上場して日が浅い銘柄は、過去の検証期間が短く、1ヶ月・3ヶ月の予想は「データ不足」になることがあります。
     </footer>
   </section>
 
@@ -346,6 +366,34 @@ load("forecast.json").then(data => {
     </div>`;
   }).join("");
 }).catch(() => failed("forecast-updated"));
+
+// ---- 注目株 ----
+function watchCard(it) {
+  if (it.error) return `<div class="card"><div class="name">${esc(it.name)} <span class="small">${esc(it.code)}</span></div>
+    <div class="err">${esc(it.error)}</div></div>`;
+  const main = it.horizons.find(h => h.key === "1m" && h.direction !== "データ不足") || it.horizons[0];
+  const tags = [
+    it.vol_ratio != null ? `出来高 ${it.vol_ratio}倍` : null,
+    it.change5_pct != null ? `5日 ${pct(it.change5_pct)}` : null,
+    it.listed_days < 260 ? `データ${it.listed_days}日分` : null,
+  ].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join("");
+  return `<div class="card">
+    <div class="head"><span class="name">${esc(it.name)} <span class="small">${esc(it.code)}</span></span>
+      <span class="num">${money(it.price, it.market)}<span class="chg ${signCls(it.change_pct)}">${pct(it.change_pct)}</span></span></div>
+    <div class="tags">${tags}</div>
+    ${spark(it.history, dirCls(main.direction))}
+    ${hzBoxes(it.horizons, true)}
+  </div>`;
+}
+load("watch.json").then(data => {
+  document.getElementById("watch-updated").textContent = "最終更新：" + data.updated_at;
+  document.getElementById("watch-list").innerHTML = data.watchlist.length
+    ? data.watchlist.map(watchCard).join("")
+    : `<div class="card"><p class="empty" style="margin:0">まだ登録されていません。</p></div>`;
+  document.getElementById("surge-list").innerHTML = data.surge.length
+    ? data.surge.map(watchCard).join("")
+    : `<div class="card"><p class="empty" style="margin:0">今日は出来高が急増した銘柄はありません。</p></div>`;
+}).catch(() => failed("watch-updated"));
 
 // ---- 値上がりランキング ----
 const RANK_PERIOD = {

@@ -446,6 +446,68 @@ def build_value():
         print(f"[割安] {m}: {d['count']}銘柄（PER・PBRとも取得 {d['scored']}）")
 
 
+# ---- 注目株（ウォッチリスト＋出来高急増） -------------------------------
+
+def get_ohlcv(tickers, period):
+    if isinstance(tickers, str):
+        tickers = [tickers]
+    df = yf.download(tickers, period=period, interval="1d",
+                     progress=False, auto_adjust=True, threads=True)
+    close, vol = df["Close"], df["Volume"]
+    if isinstance(close, pd.Series):
+        close, vol = close.to_frame(tickers[0]), vol.to_frame(tickers[0])
+    return close, vol
+
+
+def watch_item(name, ticker, c: pd.Series, v: pd.Series, reason):
+    price = float(c.iloc[-1])
+    v20 = float(v.iloc[-21:-1].mean()) if len(v) > 21 else None
+    vol_ratio = round(float(v.iloc[-1]) / v20, 1) if v20 else None
+    return {
+        "name": name, "ticker": ticker, "code": code_of(ticker), "reason": reason,
+        "market": "jp" if ticker.endswith(".T") else "us",
+        "price": rnd(price),
+        "change_pct": round((price / float(c.iloc[-2]) - 1) * 100, 2),
+        "change5_pct": round((price / float(c.iloc[-6]) - 1) * 100, 2) if len(c) > 6 else None,
+        "vol_ratio": vol_ratio,
+        "listed_days": int(len(c)),
+        "horizons": compute_horizons(c, with_reasons=False),
+        "history": [rnd(x) for x in c.tail(130)],
+    }
+
+
+def build_watch():
+    """data/watchlist.json の銘柄と、出来高が急に増えた銘柄の予想"""
+    watch = load_json("watchlist.json", [])
+    watch_tickers = [w["ticker"] for w in watch]
+    universe = {**JP_STOCKS, **US_STOCKS}
+    names = {**universe, **{w["ticker"]: w["name"] for w in watch}}
+    tickers = list(dict.fromkeys(watch_tickers + list(universe)))
+
+    close, vol = get_ohlcv(tickers, "5y")
+    items, surges = [], []
+    for t in tickers:
+        if t not in close:
+            continue
+        c, v = close[t].dropna(), vol[t].reindex(close[t].dropna().index).fillna(0)
+        if len(c) < 30:
+            if t in watch_tickers:
+                items.append({"name": names[t], "ticker": t, "code": code_of(t),
+                              "error": "上場してからの日数が少なく予想できません"})
+            continue
+        if t in watch_tickers:
+            items.append(watch_item(names[t], t, c, v, "ウォッチリスト"))
+        else:
+            v20 = float(v.iloc[-21:-1].mean())
+            if v20 > 0 and float(v.iloc[-1]) / v20 >= 2:
+                surges.append((float(v.iloc[-1]) / v20, t, c, v))
+
+    surges.sort(key=lambda x: x[0], reverse=True)
+    auto = [watch_item(names[t], t, c, v, "出来高急増") for _, t, c, v in surges[:8]]
+    save_json("watch.json", {"updated_at": now_jst(), "watchlist": items, "surge": auto})
+    print(f"[注目] ウォッチ {len(items)}銘柄 / 出来高急増 {len(auto)}銘柄")
+
+
 # ---- 株主優待ランキング -------------------------------------------------
 
 def build_yutai():
@@ -472,7 +534,7 @@ def build_yutai():
 
 if __name__ == "__main__":
     # 1つ失敗しても他は作れるように、個別に実行する
-    for step in (build_forecast, build_diagnosis, build_ranking, build_value, build_yutai):
+    for step in (build_forecast, build_diagnosis, build_watch, build_ranking, build_value, build_yutai):
         try:
             step()
         except Exception as e:
