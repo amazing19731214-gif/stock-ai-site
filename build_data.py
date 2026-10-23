@@ -645,7 +645,7 @@ def build_financials():
     vr = load_json("value_ranking.json", {}).get("markets", {}).get("us", {}).get("items", [])
     sectors = {r["code"]: r["sector"] for r in vr if r.get("sector") not in (None, "-")}
     try:
-        items = financials.build(US_STOCKS, sectors)
+        items, source = financials.build(US_STOCKS, sectors)
     except Exception as e:
         # 失敗しても前回の結果は残し、原因を記録する
         prev = load_json("financials.json", None)
@@ -660,7 +660,8 @@ def build_financials():
                                          "user_agent": financials._working_ua,
                                          "probe": financials.PROBE_LOG[:20]})
     ok = sum(1 for i in items if "error" not in i)
-    save_json("financials.json", {"updated_at": now_jst(), "count": len(items), "ok": ok, "items": items})
+    save_json("financials.json", {"updated_at": now_jst(), "source": source,
+                                  "count": len(items), "ok": ok, "items": items})
     print(f"[決算] {ok}/{len(items)}社")
 
 

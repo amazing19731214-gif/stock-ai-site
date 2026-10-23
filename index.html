@@ -261,7 +261,7 @@
     </div>
     <div class="grid" id="fin-list"></div>
     <footer>
-      <b>データ</b>：米国証券取引委員会（SEC）に提出された年次決算（10-K）の数字です。金額は米ドルです。<br>
+      <b>データ</b>：各社の年次決算の数字です（データ元はページ上部に表示）。金額は米ドルです。<br>
       <b>解説</b>：数字から決まったルールで自動作成した文章です。人やAIが内容を確認したものではありません。
       会計方針の変更や特別な損益は反映していないため、正確な内容は各社の決算資料でご確認ください。<br>
       <b>財務スコア</b>は、成長性・収益性・現金を稼ぐ力・財務の安全性をそれぞれ25点満点で評価し、100点満点に換算した目安です。
@@ -643,7 +643,7 @@ document.getElementById("fin-search").addEventListener("input", renderFin);
 load("financials.json").then(data => {
   finData = data;
   document.getElementById("fin-updated").textContent =
-    `最終更新：${data.updated_at}（${data.count}社中${data.ok}社の決算を表示）`;
+    `最終更新：${data.updated_at}（${data.count}社中${data.ok}社を表示・データ元：${data.source || "SEC"}）`;
   renderFin();
 }).catch(() => {
   document.getElementById("fin-updated").textContent = "準備中です（次回の自動更新で表示されます）";

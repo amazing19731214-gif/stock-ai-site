@@ -5,6 +5,7 @@
     https://www.sec.gov/files/company_tickers.json      … ティッカー → CIK番号
     https://data.sec.gov/api/xbrl/companyfacts/CIK##########.json … 決算の数字
 - 年次決算（10-K）の過去5年分を使う
+- SECに接続できない場合は、Yahoo Finance（yfinance）の年次決算（過去4年程度）を使う
 - 解説は数字から決まったルールで作る（AIの文章生成は使っていない）
 """
 import json
@@ -313,29 +314,104 @@ def analyze(years, sector=""):
     }
 
 
+# ---- 予備のデータ元：Yahoo Finance（yfinance） ---------------------------
+
+YF_ROWS = {
+    "revenue": ("income_stmt", ["Total Revenue", "Operating Revenue"]),
+    "operating_income": ("income_stmt", ["Operating Income"]),
+    "net_income": ("income_stmt", ["Net Income", "Net Income Common Stockholders"]),
+    "eps": ("income_stmt", ["Diluted EPS", "Basic EPS"]),
+    "op_cf": ("cashflow", ["Operating Cash Flow"]),
+    "capex": ("cashflow", ["Capital Expenditure"]),
+    "buyback": ("cashflow", ["Repurchase Of Capital Stock", "Common Stock Payments"]),
+    "dividends": ("cashflow", ["Cash Dividends Paid", "Common Stock Dividend Paid"]),
+    "assets": ("balance_sheet", ["Total Assets"]),
+    "equity": ("balance_sheet", ["Stockholders Equity", "Common Stock Equity"]),
+    "cash": ("balance_sheet", ["Cash And Cash Equivalents"]),
+    "debt": ("balance_sheet", ["Long Term Debt", "Total Debt"]),
+}
+POSITIVE = {"capex", "buyback", "dividends"}  # Yahooでは支出がマイナスで入っているので絶対値にする
+
+
+def build_table_yahoo(ticker):
+    import math
+    import yfinance as yf
+    t = yf.Ticker(ticker)
+    sheets = {"income_stmt": t.income_stmt, "cashflow": t.cashflow, "balance_sheet": t.balance_sheet}
+    inc = sheets["income_stmt"]
+    if inc is None or inc.empty:
+        return None, ""
+    cols = sorted(inc.columns)[-YEARS:]
+    years = []
+    for col in cols:
+        end = col.strftime("%Y-%m-%d")
+        row = {"end": end, "fy": f"{end[:4]}年{int(end[5:7])}月期"}
+        for key, (sheet, names) in YF_ROWS.items():
+            df, val = sheets[sheet], None
+            if df is not None and not df.empty:
+                # 貸借対照表などは期末日が数日ずれることがあるので、近い列を探す
+                near = [c for c in df.columns if abs((c - col).days) <= 10]
+                for name in names:
+                    if near and name in df.index:
+                        v = df.loc[name, near[0]]
+                        if v is not None and not (isinstance(v, float) and math.isnan(v)):
+                            val = float(v)
+                            break
+            if val is not None and key in POSITIVE:
+                val = abs(val)
+            row[key] = round(val, 2) if key == "eps" and val is not None else val
+        row["fcf"] = row["op_cf"] - (row["capex"] or 0) if row["op_cf"] is not None else None
+        years.append(row)
+    # 売上がない年（データ欠け）は外す
+    years = [y for y in years if y["revenue"] is not None or y["net_income"] is not None]
+    try:
+        en = t.info.get("longName", "") if hasattr(t, "info") else ""
+    except Exception:
+        en = ""
+    return (years if len(years) >= 2 else None), en
+
+
+def probe_sec_data():
+    """data.sec.gov（決算データの窓口）に直接つながるか確認する（アップル：CIK 320193）"""
+    try:
+        _get_json("https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json")
+        return True
+    except Exception as e:
+        PROBE_LOG.append(f"data.sec.gov probe: {e}")
+        return False
+
+
 def build(stocks: dict, sectors: dict, log=print):
-    """stocks: {ティッカー: 日本語名}, sectors: {ティッカー: 業種}"""
-    cik_map = load_cik_map()
+    """stocks: {ティッカー: 日本語名}, sectors: {ティッカー: 業種}
+    戻り値: (各社のデータ, データ元の名前)"""
+    try:
+        cik_map = load_cik_map()
+        source = "SEC"
+    except Exception as e:
+        log(f"[決算] SECに接続できないため、Yahoo Financeのデータを使います（{e}）")
+        probe_sec_data()
+        cik_map, source = None, "Yahoo Finance"
+
     out = []
     for ticker, name in stocks.items():
-        cik = cik_map.get(ticker.upper()) or cik_map.get(ticker.upper().replace("-", "."))
-        if not cik:
-            log(f"[決算] NG {name}: CIK番号が見つかりません")
-            out.append({"ticker": ticker, "name": name, "error": "決算データが見つかりません"})
-            continue
+        sector = sectors.get(ticker, "")
         try:
-            facts = _get_json(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json")
-            years = build_table(facts)
+            if source == "SEC":
+                cik = cik_map.get(ticker.upper()) or cik_map.get(ticker.upper().replace("-", "."))
+                if not cik:
+                    raise ValueError("CIK番号が見つかりません")
+                facts = _get_json(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json")
+                years, en = build_table(facts), facts.get("entityName", "")
+                time.sleep(0.2)  # SECのアクセス制限（毎秒10回まで）より十分ゆっくり
+            else:
+                years, en = build_table_yahoo(ticker)
             if not years:
                 raise ValueError("年次決算が足りません")
-            sector = sectors.get(ticker, "")
-            item = {"ticker": ticker, "name": name, "en_name": facts.get("entityName", ""),
-                    "sector": sector, "years": years}
+            item = {"ticker": ticker, "name": name, "en_name": en, "sector": sector, "years": years}
             item.update(analyze(years, sector))
             out.append(item)
             log(f"[決算] OK {name}: {years[-1]['fy']} スコア{item['score']}")
         except Exception as e:
             log(f"[決算] NG {name}: {e}")
             out.append({"ticker": ticker, "name": name, "error": "決算データを読み込めませんでした"})
-        time.sleep(0.2)  # SECのアクセス制限（毎秒10回まで）より十分ゆっくり
-    return out
+    return out, source
