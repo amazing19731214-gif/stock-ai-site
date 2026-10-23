@@ -168,7 +168,8 @@ def usd(v):
 def analyze(years, sector=""):
     last, prev, first = years[-1], years[-2], years[0]
     n = len(years) - 1
-    is_fin = sector == "金融"
+    # 銀行・保険など：営業利益を公表しない金融機関（カード会社などは一般企業として扱う）
+    is_fin = sector == "金融" and last["operating_income"] is None
     points = {}
     notes = {"growth": [], "profit": [], "cash": [], "safety": [], "return": []}
 
@@ -200,15 +201,20 @@ def analyze(years, sector=""):
     opm_prev = _ratio(prev["operating_income"], prev["revenue"])
     npm = _ratio(last["net_income"], last["revenue"])
     if opm is not None:
-        level = ("非常に高い" if opm >= 25 else "高い" if opm >= 15 else
-                 "標準的な" if opm >= 5 else "低い" if opm >= 0 else "赤字の")
-        notes["profit"].append(f"本業のもうけを示す営業利益率は{opm:.1f}%で、{level}水準です。")
+        if abs(opm) < 0.5:
+            notes["profit"].append("本業のもうけを示す営業利益は、ほぼゼロ（収支トントン）でした。")
+        elif opm < 0:
+            notes["profit"].append(f"本業のもうけを示す営業損益は赤字で、売上に対して{opm:.1f}%です。")
+        else:
+            level = ("非常に高い" if opm >= 25 else "高い" if opm >= 15 else
+                     "標準的な" if opm >= 5 else "低い")
+            notes["profit"].append(f"本業のもうけを示す営業利益率は{opm:.1f}%で、{level}水準です。")
         if opm_prev is not None and abs(opm - opm_prev) >= 2:
             notes["profit"].append(f"前年（{opm_prev:.1f}%）から{'改善' if opm > opm_prev else '悪化'}しました。")
     if last["net_income"] is not None:
         ni_g = _pct(last["net_income"], prev["net_income"])
         if last["net_income"] < 0:
-            notes["profit"].append(f"最終損益は{usd(last['net_income'])}の赤字です。")
+            notes["profit"].append(f"最終損益は{usd(abs(last["net_income"]))}の赤字です。")
         elif ni_g is not None:
             notes["profit"].append(f"純利益は{usd(last['net_income'])}で、前年比{ni_g:+.1f}%です。")
         else:
