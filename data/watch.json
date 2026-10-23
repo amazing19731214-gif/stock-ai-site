@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23 17:53",
+  "updated_at": "2026-10-23 18:05",
   "watchlist": [
     {
       "name": "キオクシアHD",
@@ -22,9 +22,18 @@
           "range_low": 11911.9,
           "range_high": 13598.1,
           "backtest": {
-            "days": 406,
-            "hit_rate": 53.0,
-            "always_up_rate": 52.7
+            "days": 92,
+            "hit_rate": 48.9,
+            "always_up_rate": 53.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "弱め",
+            "prob_up": 53.0,
+            "backtest": {
+              "days": 88,
+              "hit_rate": 46.6
+            }
           }
         },
         {
@@ -36,9 +45,18 @@
           "range_low": 8891.49,
           "range_high": 16618.5,
           "backtest": {
-            "days": 278,
-            "hit_rate": 61.5,
-            "always_up_rate": 71.1
+            "days": 31,
+            "hit_rate": 19.4,
+            "always_up_rate": 38.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 92.3,
+            "backtest": {
+              "days": 57,
+              "hit_rate": 47.4
+            }
           }
         },
         {
@@ -53,6 +71,15 @@
             "days": 186,
             "hit_rate": 75.8,
             "always_up_rate": 75.8
+          },
+          "ml": {
+            "direction": "データ不足",
+            "strength": "",
+            "prob_up": null,
+            "backtest": {
+              "days": 0,
+              "hit_rate": null
+            }
           }
         }
       ],
@@ -212,9 +239,18 @@
           "range_low": 163.53,
           "range_high": 167.65,
           "backtest": {
-            "days": 714,
-            "hit_rate": 47.3,
-            "always_up_rate": 52.9
+            "days": 477,
+            "hit_rate": 47.8,
+            "always_up_rate": 52.8
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "弱め",
+            "prob_up": 43.2,
+            "backtest": {
+              "days": 380,
+              "hit_rate": 52.9
+            }
           }
         },
         {
@@ -226,9 +262,18 @@
           "range_low": 156.14,
           "range_high": 175.04,
           "backtest": {
-            "days": 580,
-            "hit_rate": 40.0,
-            "always_up_rate": 52.0
+            "days": 370,
+            "hit_rate": 33.2,
+            "always_up_rate": 42.0
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "強め",
+            "prob_up": 9.7,
+            "backtest": {
+              "days": 466,
+              "hit_rate": 50.0
+            }
           }
         },
         {
@@ -240,9 +285,18 @@
           "range_low": 149.22,
           "range_high": 181.96,
           "backtest": {
-            "days": 628,
-            "hit_rate": 55.7,
-            "always_up_rate": 52.3
+            "days": 415,
+            "hit_rate": 49.6,
+            "always_up_rate": 36.4
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "強め",
+            "prob_up": 2.4,
+            "backtest": {
+              "days": 479,
+              "hit_rate": 42.6
+            }
           }
         }
       ],
@@ -400,9 +454,18 @@
           "range_low": 247.37,
           "range_high": 256.85,
           "backtest": {
-            "days": 705,
-            "hit_rate": 51.2,
-            "always_up_rate": 56.0
+            "days": 466,
+            "hit_rate": 48.9,
+            "always_up_rate": 54.0
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "弱め",
+            "prob_up": 45.2,
+            "backtest": {
+              "days": 373,
+              "hit_rate": 56.8
+            }
           }
         },
         {
@@ -414,9 +477,18 @@
           "range_low": 230.39,
           "range_high": 273.83,
           "backtest": {
-            "days": 570,
-            "hit_rate": 47.2,
-            "always_up_rate": 59.9
+            "days": 374,
+            "hit_rate": 38.0,
+            "always_up_rate": 49.4
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "強め",
+            "prob_up": 10.3,
+            "backtest": {
+              "days": 483,
+              "hit_rate": 59.4
+            }
           }
         },
         {
@@ -428,9 +500,18 @@
           "range_low": 214.49,
           "range_high": 289.73,
           "backtest": {
-            "days": 660,
-            "hit_rate": 61.4,
-            "always_up_rate": 66.5
+            "days": 439,
+            "hit_rate": 54.4,
+            "always_up_rate": 60.8
+          },
+          "ml": {
+            "direction": "下落",
+            "strength": "強め",
+            "prob_up": 31.1,
+            "backtest": {
+              "days": 478,
+              "hit_rate": 55.9
+            }
           }
         }
       ],
@@ -588,9 +669,18 @@
           "range_low": 628.94,
           "range_high": 668.76,
           "backtest": {
-            "days": 736,
-            "hit_rate": 48.5,
-            "always_up_rate": 52.5
+            "days": 489,
+            "hit_rate": 48.7,
+            "always_up_rate": 51.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "弱め",
+            "prob_up": 53.7,
+            "backtest": {
+              "days": 270,
+              "hit_rate": 51.9
+            }
           }
         },
         {
@@ -602,9 +692,18 @@
           "range_low": 557.6,
           "range_high": 740.1,
           "backtest": {
-            "days": 617,
-            "hit_rate": 49.4,
-            "always_up_rate": 59.9
+            "days": 405,
+            "hit_rate": 41.2,
+            "always_up_rate": 51.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 75.7,
+            "backtest": {
+              "days": 429,
+              "hit_rate": 49.0
+            }
           }
         },
         {
@@ -616,9 +715,18 @@
           "range_low": 490.8,
           "range_high": 806.9,
           "backtest": {
-            "days": 720,
-            "hit_rate": 66.4,
-            "always_up_rate": 65.5
+            "days": 471,
+            "hit_rate": 56.3,
+            "always_up_rate": 55.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 70.1,
+            "backtest": {
+              "days": 496,
+              "hit_rate": 55.8
+            }
           }
         }
       ],
@@ -776,9 +884,18 @@
           "range_low": 143.93,
           "range_high": 150.55,
           "backtest": {
-            "days": 725,
-            "hit_rate": 47.7,
-            "always_up_rate": 50.9
+            "days": 490,
+            "hit_rate": 47.3,
+            "always_up_rate": 50.6
+          },
+          "ml": {
+            "direction": "どちらとも言えない",
+            "strength": "",
+            "prob_up": 49.1,
+            "backtest": {
+              "days": 360,
+              "hit_rate": 48.6
+            }
           }
         },
         {
@@ -790,9 +907,18 @@
           "range_low": 132.07,
           "range_high": 162.41,
           "backtest": {
-            "days": 652,
-            "hit_rate": 62.0,
-            "always_up_rate": 56.5
+            "days": 442,
+            "hit_rate": 66.5,
+            "always_up_rate": 57.8
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 64.9,
+            "backtest": {
+              "days": 450,
+              "hit_rate": 56.4
+            }
           }
         },
         {
@@ -804,9 +930,18 @@
           "range_low": 120.96,
           "range_high": 173.52,
           "backtest": {
-            "days": 699,
-            "hit_rate": 61.9,
-            "always_up_rate": 58.0
+            "days": 471,
+            "hit_rate": 76.6,
+            "always_up_rate": 60.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 90.7,
+            "backtest": {
+              "days": 461,
+              "hit_rate": 46.4
+            }
           }
         }
       ],
@@ -964,9 +1099,18 @@
           "range_low": 4054.51,
           "range_high": 4219.49,
           "backtest": {
-            "days": 734,
-            "hit_rate": 45.6,
-            "always_up_rate": 48.1
+            "days": 487,
+            "hit_rate": 47.0,
+            "always_up_rate": 46.2
+          },
+          "ml": {
+            "direction": "どちらとも言えない",
+            "strength": "",
+            "prob_up": 48.8,
+            "backtest": {
+              "days": 335,
+              "hit_rate": 49.0
+            }
           }
         },
         {
@@ -978,9 +1122,18 @@
           "range_low": 3758.99,
           "range_high": 4515.01,
           "backtest": {
-            "days": 616,
-            "hit_rate": 49.7,
-            "always_up_rate": 58.3
+            "days": 422,
+            "hit_rate": 52.6,
+            "always_up_rate": 58.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 65.7,
+            "backtest": {
+              "days": 463,
+              "hit_rate": 49.2
+            }
           }
         },
         {
@@ -992,9 +1145,18 @@
           "range_low": 3482.27,
           "range_high": 4791.73,
           "backtest": {
-            "days": 645,
-            "hit_rate": 52.1,
-            "always_up_rate": 68.4
+            "days": 463,
+            "hit_rate": 55.9,
+            "always_up_rate": 70.0
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 73.7,
+            "backtest": {
+              "days": 485,
+              "hit_rate": 59.8
+            }
           }
         }
       ],

@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-23 17:53",
+  "updated_at": "2026-10-23 18:05",
   "items": [
     {
       "name": "ドル/円",
       "ticker": "JPY=X",
       "data_date": "2026-10-23",
-      "price": 156.8,
-      "change_pct": -0.84,
+      "price": 156.78,
+      "change_pct": -0.86,
       "horizons": [
         {
           "key": "1d",
@@ -14,18 +14,27 @@
           "direction": "どちらとも言えない",
           "strength": "",
           "score": 0,
-          "range_low": 155.97,
-          "range_high": 157.64,
+          "range_low": 155.94,
+          "range_high": 157.61,
           "backtest": {
-            "days": 705,
-            "hit_rate": 51.3,
-            "always_up_rate": 55.9
+            "days": 464,
+            "hit_rate": 48.7,
+            "always_up_rate": 54.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 60.2,
+            "backtest": {
+              "days": 390,
+              "hit_rate": 51.3
+            }
           },
           "reasons": [
             "5日平均が25日平均より上",
             "現在値が25日平均より下",
             "RSI 40（中立圏）",
-            "直近5日の値動き -0.8%"
+            "直近5日の値動き -0.9%"
           ]
         },
         {
@@ -34,12 +43,21 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 152.98,
-          "range_high": 160.63,
+          "range_low": 152.96,
+          "range_high": 160.6,
           "backtest": {
-            "days": 631,
-            "hit_rate": 50.6,
-            "always_up_rate": 58.7
+            "days": 424,
+            "hit_rate": 50.0,
+            "always_up_rate": 56.0
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 70.6,
+            "backtest": {
+              "days": 486,
+              "hit_rate": 50.8
+            }
           },
           "reasons": [
             "現在値が25日平均より下",
@@ -54,12 +72,21 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 150.19,
-          "range_high": 163.42,
+          "range_low": 150.16,
+          "range_high": 163.4,
           "backtest": {
-            "days": 632,
-            "hit_rate": 42.1,
-            "always_up_rate": 61.9
+            "days": 403,
+            "hit_rate": 42.7,
+            "always_up_rate": 66.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 83.0,
+            "backtest": {
+              "days": 476,
+              "hit_rate": 61.1
+            }
           },
           "reasons": [
             "現在値が75日平均より下",
@@ -199,7 +226,7 @@
         158.52,
         158.27,
         158.13,
-        156.8
+        156.78
       ],
       "live": {
         "days": 0,
@@ -223,9 +250,18 @@
           "range_low": 61632.6,
           "range_high": 63753.7,
           "backtest": {
-            "days": 734,
-            "hit_rate": 47.0,
-            "always_up_rate": 52.9
+            "days": 489,
+            "hit_rate": 47.9,
+            "always_up_rate": 53.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "弱め",
+            "prob_up": 55.6,
+            "backtest": {
+              "days": 375,
+              "hit_rate": 53.6
+            }
           },
           "reasons": [
             "5日平均が25日平均より下",
@@ -243,9 +279,18 @@
           "range_low": 57833.0,
           "range_high": 67553.3,
           "backtest": {
-            "days": 572,
-            "hit_rate": 58.0,
-            "always_up_rate": 66.4
+            "days": 397,
+            "hit_rate": 62.7,
+            "always_up_rate": 69.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 75.8,
+            "backtest": {
+              "days": 445,
+              "hit_rate": 46.1
+            }
           },
           "reasons": [
             "現在値が25日平均より下",
@@ -263,9 +308,18 @@
           "range_low": 54275.1,
           "range_high": 71111.2,
           "backtest": {
-            "days": 676,
-            "hit_rate": 56.4,
-            "always_up_rate": 70.4
+            "days": 443,
+            "hit_rate": 54.9,
+            "always_up_rate": 74.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 75.1,
+            "backtest": {
+              "days": 482,
+              "hit_rate": 31.7
+            }
           },
           "reasons": [
             "現在値が75日平均より下",
@@ -429,9 +483,18 @@
           "range_low": 7610.81,
           "range_high": 7716.05,
           "backtest": {
-            "days": 728,
-            "hit_rate": 51.8,
-            "always_up_rate": 56.5
+            "days": 480,
+            "hit_rate": 50.2,
+            "always_up_rate": 55.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "弱め",
+            "prob_up": 54.0,
+            "backtest": {
+              "days": 389,
+              "hit_rate": 51.7
+            }
           },
           "reasons": [
             "5日平均が25日平均より下",
@@ -449,9 +512,18 @@
           "range_low": 7422.3,
           "range_high": 7904.56,
           "backtest": {
-            "days": 668,
-            "hit_rate": 66.3,
-            "always_up_rate": 73.7
+            "days": 448,
+            "hit_rate": 62.7,
+            "always_up_rate": 68.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 70.3,
+            "backtest": {
+              "days": 478,
+              "hit_rate": 60.7
+            }
           },
           "reasons": [
             "現在値が25日平均より下",
@@ -469,9 +541,18 @@
           "range_low": 7245.78,
           "range_high": 8081.08,
           "backtest": {
-            "days": 720,
-            "hit_rate": 75.0,
-            "always_up_rate": 85.7
+            "days": 488,
+            "hit_rate": 66.2,
+            "always_up_rate": 81.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 85.5,
+            "backtest": {
+              "days": 481,
+              "hit_rate": 73.2
+            }
           },
           "reasons": [
             "現在値が75日平均より上",
@@ -635,9 +716,18 @@
           "range_low": 25727.5,
           "range_high": 26290.2,
           "backtest": {
-            "days": 720,
-            "hit_rate": 53.9,
-            "always_up_rate": 57.3
+            "days": 475,
+            "hit_rate": 53.1,
+            "always_up_rate": 55.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "弱め",
+            "prob_up": 54.7,
+            "backtest": {
+              "days": 411,
+              "hit_rate": 50.1
+            }
           },
           "reasons": [
             "5日平均が25日平均より下",
@@ -655,9 +745,18 @@
           "range_low": 24719.6,
           "range_high": 27298.2,
           "backtest": {
-            "days": 644,
-            "hit_rate": 63.7,
-            "always_up_rate": 71.6
+            "days": 437,
+            "hit_rate": 62.9,
+            "always_up_rate": 67.2
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 65.0,
+            "backtest": {
+              "days": 472,
+              "hit_rate": 62.9
+            }
           },
           "reasons": [
             "現在値が25日平均より下",
@@ -675,9 +774,18 @@
           "range_low": 23775.7,
           "range_high": 28242.0,
           "backtest": {
-            "days": 692,
-            "hit_rate": 69.1,
-            "always_up_rate": 80.0
+            "days": 461,
+            "hit_rate": 60.1,
+            "always_up_rate": 76.0
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 78.1,
+            "backtest": {
+              "days": 488,
+              "hit_rate": 57.6
+            }
           },
           "reasons": [
             "現在値が75日平均より下",
