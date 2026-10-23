@@ -119,6 +119,11 @@
   .seg + .seg { margin-top: -4px; }
   .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
   .tag { font-size: .72rem; color: var(--sub); background: var(--soft); border-radius: 999px; padding: 1px 8px; }
+  .hz .r2 { display: flex; justify-content: center; align-items: baseline; gap: 4px; line-height: 1.5; }
+  .hz .lb { font-size: .66rem; color: var(--sub); }
+  .hz .d2 { font-weight: 800; font-size: .9rem; }
+  td.win { font-weight: 800; }
+  .hz .hit { font-size: .68rem; color: var(--sub); line-height: 1.45; margin-top: 3px; border-top: 1px solid var(--line); padding-top: 3px; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -130,14 +135,14 @@
     <a href="#ranking" data-tab="ranking">値上がり</a>
     <a href="#value" data-tab="value">割安株</a>
     <a href="#yutai" data-tab="yutai">優待</a>
-    <a href="#diagnosis" data-tab="diagnosis">AI診断</a>
+    <a href="#diagnosis" data-tab="diagnosis">個別</a>
     <a href="#board" data-tab="board">掲示板</a>
   </div>
 </nav>
 
 <main>
   <div class="notice">
-    趣味で作った実験的なサイトです。過去の値動きから機械的に計算しているだけで、
+    趣味で作った実験的なサイトです。予想は過去の値動きだけから計算しており（ニュースや決算は見ていません）、
     将来の値動きを保証するものではありません。投資判断はご自身の責任でお願いします。
   </div>
 
@@ -145,13 +150,18 @@
   <section id="forecast">
     <h2>チャート予想（明日・1ヶ月後・3ヶ月後）</h2>
     <div class="updated" id="forecast-updated">読み込み中…</div>
+    <div class="card" id="battle" style="margin-bottom:14px"></div>
     <div class="grid" id="forecast-list"></div>
     <footer>
-      <b>予想の考え方</b>：明日は短期の勢い（5日・25日平均、RSI）、1ヶ月後は中期のトレンド（25日・75日平均と3ヶ月の値動き）、
-      3ヶ月後は長期のトレンド（75日・200日平均と6ヶ月の値動き）から、上か下かを判定しています。<br>
+      このサイトでは2つの方式で予想しています。<br>
+      <b>ルール</b>：チャートの決まったルールで点数をつける方式です。明日は短期の勢い（5日・25日平均、RSI）、
+      1ヶ月後は中期のトレンド（25日・75日平均と3ヶ月の値動き）、3ヶ月後は長期のトレンド（75日・200日平均と6ヶ月の値動き）を見ています。<br>
+      <b>AI</b>：機械学習（ロジスティック回帰）の方式です。過去の騰落率、移動平均からの離れ具合、RSI、値動きの大きさと、
+      「その後に上がったか」の関係を学習して、上昇確率を出しています。上昇確率が47〜53%のときは「横ばい」と表示します。<br>
       <b>予想レンジ</b>は直近の値動きの大きさから計算した目安で、およそ3回に2回はこの範囲に収まる計算です。<br>
-      <b>過去3年の検証</b>は、同じルールで毎日予想していた場合の成績です。
-      「いつも上昇と予想」と大きな差がなければ、ルールに特別な力はないと考えてください。
+      <b>過去2年の検証</b>は、同じ方式で毎日予想していた場合の成績です。AIは、その日までに分かっていたデータだけで学習したモデルで検証しています
+      （未来のデータは使っていません）。ルールとAIは同じ期間で比べています。
+      「いつも上昇と予想」と大きな差がなければ、その方式に特別な力はないと考えてください。
       株価は長期的に上がりやすいため、1ヶ月・3ヶ月の的中率は高めに見えやすい点にも注意してください。<br>
       米国の指数は日本時間の朝に確定した前日の終値で計算しています。
     </footer>
@@ -235,7 +245,7 @@
 
   <!-- AI診断 -->
   <section id="diagnosis">
-    <h2>AI診断（個別銘柄のチャート予想）</h2>
+    <h2>個別銘柄のチャート予想</h2>
     <div class="updated" id="diag-updated">読み込み中…</div>
     <div class="seg" id="diag-market">
       <button data-k="jp" class="on">日本株</button>
@@ -243,8 +253,9 @@
     </div>
     <div class="grid" id="diag-list"></div>
     <footer>
-      「予想」タブと同じルールで、明日・1ヶ月後・3ヶ月後が上か下かを判定しています。
-      各枠の下の数字は、同じルールで過去3年に毎日予想していた場合の的中率です。
+      「予想」タブと同じく、ルールとAI（機械学習）の2つの方式で、明日・1ヶ月後・3ヶ月後が上か下かを判定しています。
+      各枠の下の数字は、それぞれの方式で過去2年に毎日予想していた場合の的中率です。
+      検証できた日数が少ない銘柄の的中率は、偶然の影響が大きいので参考程度にしてください。
       グラフは直近約半年の値動きです。米国株の株価はドル表示です。
     </footer>
   </section>
@@ -322,18 +333,54 @@ function dirText(h) {
   if (h.direction === "下落") return "↘ 下落";
   return h.direction === "データ不足" ? "データ不足" : "→ 横ばい";
 }
+function shortDir(d) {
+  return d === "上昇" ? "↗上昇" : d === "下落" ? "↘下落" : d === "データ不足" ? "-" : "→横ばい";
+}
+const rate = bt => bt && bt.hit_rate != null ? bt.hit_rate + "%" : "-";
 function hzBoxes(horizons, compact) {
-  return `<div class="hz">` + horizons.map(h => `<div>
+  return `<div class="hz">` + horizons.map(h => {
+    const ml = h.ml || {};
+    return `<div>
       <div class="k">${esc(h.label)}</div>
-      <div class="d ${dirCls(h.direction)}">${dirText(h)}</div>
-      <div class="s">${h.strength ? esc(h.strength) : "&nbsp;"}</div>
-      ${compact ? `<div class="s">的中 ${h.backtest.hit_rate ?? "-"}%</div>` : ""}
-    </div>`).join("") + `</div>`;
+      <div class="r2"><span class="lb">ルール</span><span class="d2 ${dirCls(h.direction)}">${shortDir(h.direction)}</span></div>
+      <div class="r2"><span class="lb">AI</span><span class="d2 ${dirCls(ml.direction)}">${shortDir(ml.direction)}</span></div>
+      <div class="s">${ml.prob_up != null ? `上昇確率 ${ml.prob_up}%` : "&nbsp;"}</div>
+      ${compact ? `<div class="hit">的中率<br>ルール ${rate(h.backtest)}<br>AI ${rate(ml.backtest)}</div>` : ""}
+    </div>`;
+  }).join("") + `</div>`;
+}
+
+// ルール対AIの成績まとめ
+function battle(itemLists) {
+  const items = itemLists.flat().filter(it => it && !it.error);
+  const rows = [["1d", "明日"], ["1m", "1ヶ月後"], ["3m", "3ヶ月後"]].map(([key, label]) => {
+    const vals = { rule: [], ml: [], up: [] };
+    items.forEach(it => {
+      const h = it.horizons.find(x => x.key === key);
+      if (!h || h.backtest.hit_rate == null || !h.ml || h.ml.backtest.hit_rate == null) return;
+      vals.rule.push(h.backtest.hit_rate); vals.ml.push(h.ml.backtest.hit_rate);
+      if (h.backtest.always_up_rate != null) vals.up.push(h.backtest.always_up_rate);
+    });
+    const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+    const r = avg(vals.rule), m = avg(vals.ml), u = avg(vals.up);
+    const f = v => v == null ? "-" : v.toFixed(1) + "%";
+    const best = Math.max(r ?? -1, m ?? -1, u ?? -1);
+    const cell = v => `<td class="r num${v != null && v === best ? " win" : ""}">${f(v)}</td>`;
+    return `<tr><td>${label}</td>${cell(r)}${cell(m)}${cell(u)}</tr>`;
+  }).join("");
+  return `<h3 style="margin-top:0">ルール vs AI 的中率くらべ</h3>
+    <table><thead><tr><th>期間</th><th class="r">ルール</th><th class="r">AI</th><th class="r">いつも上昇</th></tr></thead>
+    <tbody>${rows}</tbody></table>
+    <div class="small" style="margin-top:6px">このページと「個別」タブの全銘柄について、過去2年の的中率を平均したものです。
+    いちばん高いものを太字にしています。「いつも上昇」を上回れなければ、予想に意味はないということです。</div>`;
 }
 
 // ---- 予想タブ ----
-load("forecast.json").then(data => {
+const withDetail = (d, st) => `${dirText({direction: d})}${st ? `（${esc(st)}）` : ""}`;
+Promise.all([load("forecast.json"), load("predictions.json").catch(() => null)]).then(([data, diag]) => {
   document.getElementById("forecast-updated").textContent = "最終更新：" + data.updated_at;
+  document.getElementById("battle").innerHTML =
+    battle([data.items, ...(diag ? Object.values(diag.markets) : [])]);
   document.getElementById("forecast-list").innerHTML = data.items.map(it => {
     if (it.error) return `<div class="card"><div class="name">${esc(it.name)}</div>
       <div class="err">データを取得できませんでした</div></div>`;
@@ -343,15 +390,22 @@ load("forecast.json").then(data => {
       lv.recent.map(e => `${esc(e.data_date.slice(5))} ${esc(e.direction)}→${e.result === "的中" ? "○" : "×"}`).join("　") +
       `</div>` : "";
     const main = it.horizons.find(h => h.key === "1m") || it.horizons[0];
-    const details = it.horizons.map(h => `
+    const details = it.horizons.map(h => {
+      const ml = h.ml || { backtest: {} };
+      return `
       <div class="hd">
         <div class="hd-t"><b>${esc(h.label)}</b>
-          <span class="${dirCls(h.direction)}">${dirText(h)}${h.strength ? `（${esc(h.strength)}）` : ""}</span></div>
-        <div class="small">予想レンジ <span class="num">${fmt(h.range_low)} 〜 ${fmt(h.range_high)}</span></div>
-        <div class="small">過去3年の検証：的中率 <b>${h.backtest.hit_rate ?? "-"}%</b>
-          （いつも上昇と予想：${h.backtest.always_up_rate ?? "-"}%）</div>
-        ${h.reasons ? `<ul class="reasons">${h.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
-      </div>`).join("");
+          <span class="small">予想レンジ <span class="num">${fmt(h.range_low)} 〜 ${fmt(h.range_high)}</span></span></div>
+        <div class="small">ルール：<b class="${dirCls(h.direction)}">${withDetail(h.direction, h.strength)}</b>
+          　過去2年の的中率 <b>${rate(h.backtest)}</b>（${h.backtest.days}日）</div>
+        <div class="small">AI：<b class="${dirCls(ml.direction)}">${withDetail(ml.direction, ml.strength)}</b>
+          ${ml.prob_up != null ? `上昇確率 ${ml.prob_up}%` : ""}
+          　過去2年の的中率 <b>${rate(ml.backtest)}</b>（${ml.backtest.days ?? 0}日）</div>
+        <div class="small">いつも上昇と予想した場合：${h.backtest.always_up_rate ?? "-"}%</div>
+        ${h.reasons ? `<div class="small" style="margin-top:4px">ルールの判断材料</div>
+          <ul class="reasons">${h.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : ""}
+      </div>`;
+    }).join("");
     return `<div class="card">
       <div class="head"><span class="name">${esc(it.name)}</span>
         <span class="num">${fmt(it.price)}<span class="chg ${signCls(it.change_pct)}">${pct(it.change_pct)}</span></span></div>
@@ -359,7 +413,7 @@ load("forecast.json").then(data => {
       ${spark(it.history, dirCls(main.direction))}
       ${hzBoxes(it.horizons, false)}
       <details><summary>判断の理由と過去の成績</summary>${details}
-        <div class="hd"><b>明日予想のこのサイトでの実績</b>
+        <div class="hd"><b>明日予想（ルール）のこのサイトでの実績</b>
           <div class="small">${lv.days ? `${lv.hits}/${lv.days}回 的中（${liveRate}）` : "記録中（毎日の予想を記録して答え合わせしています）"}</div>
           ${recent}</div>
       </details>

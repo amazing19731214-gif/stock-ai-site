@@ -187,10 +187,12 @@ def horizon_reasons(key, close: pd.Series):
     ]
 
 
-def backtest(score: pd.Series, close: pd.Series, days: int, window: int = 750):
-    """同じルールで過去に毎日予想していたら、何%当たったか"""
+def backtest(score: pd.Series, close: pd.Series, days: int, dates=None, window: int = 500):
+    """同じルールで過去に毎日予想していたら、何%当たったか
+    dates を渡すと、その日付だけで検証する（AIと同じ期間で比べるため）"""
     future = close.shift(-days) / close - 1
-    df = pd.DataFrame({"s": score, "f": future}).dropna().tail(window)
+    df = pd.DataFrame({"s": score, "f": future}).dropna()
+    df = df.loc[df.index.intersection(dates)] if dates is not None else df.tail(window)
     if not len(df):
         return {"days": 0, "hit_rate": None, "always_up_rate": None}
     called = df[df.s != 0]
@@ -211,8 +213,103 @@ def direction_of(score):
     return ("上昇" if score > 0 else "下落"), strength
 
 
+# ---- AI予想（機械学習：ロジスティック回帰） ------------------------------
+#
+# 過去の値動きから作った特徴（いくつかの期間の騰落率、移動平均からの乖離、
+# RSI、値動きの大きさ）と、「その後◯日で上がったか」の関係を学習し、
+# 上がる確率を出す。
+#
+# 検証は「ウォークフォワード」方式：ある日の予想には、その日までに答えが
+# 分かっていたデータだけで学習したモデルを使う（未来の情報を使わない）。
+# モデルは21営業日ごとに作り直す。
+
+ML_TEST_DAYS = 500   # 検証する日数（約2年）
+ML_RETRAIN = 21      # 学習し直す間隔（約1ヶ月）
+ML_MIN_TRAIN = 150   # 学習に最低限必要な日数
+ML_MARGIN = 0.03     # 上昇確率が47〜53%のときは「どちらとも言えない」
+
+
+def ml_features(close: pd.Series) -> pd.DataFrame:
+    f = pd.DataFrame(index=close.index)
+    for n in (1, 5, 21, 63, 126):
+        f[f"ret{n}"] = close / close.shift(n) - 1          # n日間の騰落率
+    for n in (5, 25, 75, 200):
+        f[f"ma{n}"] = close / close.rolling(n).mean() - 1  # 移動平均からの乖離
+    ret = close.pct_change()
+    f["rsi"] = rsi_series(close) / 100 - 0.5
+    f["vol20"] = ret.rolling(20).std()                      # 最近の値動きの大きさ
+    f["vol_change"] = ret.rolling(20).std() / ret.rolling(120).std()
+    return f
+
+
+def _new_model():
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    return make_pipeline(StandardScaler(), LogisticRegression(C=0.3, max_iter=1000))
+
+
+def _fit_predict(X_train, y_train, X_test):
+    if y_train.nunique() < 2:  # 学習データが全部「上」など
+        return np.full(len(X_test), float(y_train.iloc[0]))
+    m = _new_model()
+    m.fit(X_train, y_train)
+    return m.predict_proba(X_test)[:, 1]
+
+
+def ml_call(p):
+    if p is None:
+        return "データ不足", ""
+    if abs(p - 0.5) < ML_MARGIN:
+        return "どちらとも言えない", ""
+    return ("上昇" if p > 0.5 else "下落"), ("強め" if abs(p - 0.5) >= 0.1 else "弱め")
+
+
+def ml_horizon(feats: pd.DataFrame, close: pd.Series, days: int):
+    future = close.shift(-days) / close - 1
+    valid = feats.notna().all(axis=1)
+    X, fut = feats[valid], future[valid]
+    labeled = fut.notna().values
+    y = (fut > 0).astype(int)
+    n = len(X)
+    lab_pos = np.where(labeled)[0]
+    test_pos = lab_pos[lab_pos >= ML_MIN_TRAIN + days][-ML_TEST_DAYS:]
+    if len(test_pos) < 40:
+        return None
+
+    # ウォークフォワード検証
+    probs = pd.Series(np.nan, index=X.index)
+    for i in range(0, len(test_pos), ML_RETRAIN):
+        block = test_pos[i:i + ML_RETRAIN]
+        train = np.arange(0, block[0] - days + 1)  # この時点で答えが分かっている行だけ
+        probs.iloc[block] = _fit_predict(X.iloc[train], y.iloc[train], X.iloc[block])
+    t = probs.dropna()
+    up = t > 0.5 + ML_MARGIN
+    down = t < 0.5 - ML_MARGIN
+    called = up | down
+    actual_up = fut.loc[t.index] > 0
+    hits = (up & actual_up) | (down & ~actual_up)
+
+    # 今日の予想：答えが分かっている全データで学習
+    p_now = None
+    if X.index[-1] == close.index[-1]:
+        train = lab_pos
+        p_now = float(_fit_predict(X.iloc[train], y.iloc[train], X.iloc[[n - 1]])[0])
+    direction, strength = ml_call(p_now)
+    return {
+        "direction": direction, "strength": strength,
+        "prob_up": round(p_now * 100, 1) if p_now is not None else None,
+        "backtest": {
+            "days": int(called.sum()),
+            "hit_rate": round(float(hits[called].mean()) * 100, 1) if called.any() else None,
+        },
+        "_test_dates": t.index,
+    }
+
+
 def compute_horizons(close: pd.Series, with_reasons=True):
     scores = horizon_scores(close)
+    feats = ml_features(close)
     price = float(close.iloc[-1])
     sigma = float(close.pct_change().tail(60).std())
     out = []
@@ -221,11 +318,19 @@ def compute_horizons(close: pd.Series, with_reasons=True):
         now = float(s.iloc[-1]) if pd.notna(s.iloc[-1]) else None
         direction, strength = direction_of(now)
         width = sigma * np.sqrt(days)  # 値動きの大きさ × √期間
+        try:
+            ml = ml_horizon(feats, close, days)
+        except Exception as e:
+            print(f"  AI予想エラー({label}): {e}")
+            ml = None
+        dates = ml.pop("_test_dates") if ml else None
         h = {
             "key": key, "label": label, "direction": direction, "strength": strength,
             "score": int(now) if now is not None else None,
             "range_low": rnd(price * (1 - width)), "range_high": rnd(price * (1 + width)),
-            "backtest": backtest(s, close, days),
+            "backtest": backtest(s, close, days, dates=dates),
+            "ml": ml or {"direction": "データ不足", "strength": "", "prob_up": None,
+                         "backtest": {"days": 0, "hit_rate": None}},
         }
         if with_reasons and now is not None:
             h["reasons"] = horizon_reasons(key, close)
