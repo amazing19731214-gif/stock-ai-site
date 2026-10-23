@@ -1,0 +1,32 @@
+name: 検証（トレンド一致方式）
+
+on:
+  workflow_dispatch: # 手動で実行するときだけ動く
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: ライブラリをインストール
+        run: pip install -r requirements.txt
+
+      - name: 検証を実行
+        run: python experiment_trend.py
+
+      - name: 結果を保存
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add experiments/
+          git diff --staged --quiet || git commit -m "検証結果を更新"
+          git pull --rebase
+          git push
