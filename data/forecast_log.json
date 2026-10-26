@@ -11,19 +11,43 @@
     "data_date": "2026-10-22",
     "base": 7663.43,
     "direction": "下落",
-    "result": null
+    "result": "的中",
+    "actual": 7623.68
   },
   {
     "name": "NASDAQ総合",
     "data_date": "2026-10-22",
     "base": 26008.9,
     "direction": "下落",
-    "result": null
+    "result": "的中",
+    "actual": 25955.3
   },
   {
     "name": "ドル/円",
     "data_date": "2026-10-23",
     "base": 156.55,
+    "direction": "下落",
+    "result": "はずれ",
+    "actual": 157.55
+  },
+  {
+    "name": "ドル/円",
+    "data_date": "2026-10-26",
+    "base": 157.55,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "S&P500",
+    "data_date": "2026-10-26",
+    "base": 7700.74,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "NASDAQ総合",
+    "data_date": "2026-10-26",
+    "base": 26301.9,
     "direction": "下落",
     "result": null
   }
