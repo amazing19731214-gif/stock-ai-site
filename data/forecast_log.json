@@ -4,7 +4,8 @@
     "data_date": "2026-10-23",
     "base": 62693.2,
     "direction": "下落",
-    "result": null
+    "result": "的中",
+    "actual": 62189.6
   },
   {
     "name": "S&P500",
@@ -35,19 +36,50 @@
     "data_date": "2026-10-26",
     "base": 157.55,
     "direction": "下落",
-    "result": null
+    "result": "はずれ",
+    "actual": 157.86
   },
   {
     "name": "S&P500",
     "data_date": "2026-10-26",
     "base": 7700.74,
     "direction": "下落",
-    "result": null
+    "result": "的中",
+    "actual": 7682.22
   },
   {
     "name": "NASDAQ総合",
     "data_date": "2026-10-26",
     "base": 26301.9,
+    "direction": "下落",
+    "result": "的中",
+    "actual": 26231.8
+  },
+  {
+    "name": "ドル/円",
+    "data_date": "2026-10-27",
+    "base": 157.86,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "日経平均",
+    "data_date": "2026-10-27",
+    "base": 63268.4,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "S&P500",
+    "data_date": "2026-10-27",
+    "base": 7682.22,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "NASDAQ総合",
+    "data_date": "2026-10-27",
+    "base": 26231.8,
     "direction": "下落",
     "result": null
   }
