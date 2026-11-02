@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-30 23:58",
+  "updated_at": "2026-11-03 03:05",
   "items": [
     {
       "name": "ドル/円",
       "ticker": "JPY=X",
-      "data_date": "2026-10-30",
-      "price": 157.29,
-      "change_pct": -0.34,
+      "data_date": "2026-11-02",
+      "price": 157.79,
+      "change_pct": -0.01,
       "horizons": [
         {
           "key": "1d",
@@ -14,11 +14,11 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 156.51,
-          "range_high": 158.07,
+          "range_low": 157.01,
+          "range_high": 158.57,
           "backtest": {
             "days": 463,
-            "hit_rate": 48.6,
+            "hit_rate": 48.8,
             "always_up_rate": 54.6
           },
           "ml": {
@@ -27,43 +27,43 @@
             "prob_up": 58.8,
             "backtest": {
               "days": 385,
-              "hit_rate": 49.6
+              "hit_rate": 50.1
             }
           },
           "reasons": [
             "5日平均が25日平均より下",
             "現在値が25日平均より下",
             "RSI 43（中立圏）",
-            "直近5日の値動き +0.5%"
+            "直近5日の値動き +0.6%"
           ]
         },
         {
           "key": "1m",
           "label": "1ヶ月後",
           "direction": "下落",
-          "strength": "強め",
-          "score": -4,
-          "range_low": 153.7,
-          "range_high": 160.88,
+          "strength": "弱め",
+          "score": -2,
+          "range_low": 154.22,
+          "range_high": 161.37,
           "backtest": {
-            "days": 429,
-            "hit_rate": 49.9,
+            "days": 430,
+            "hit_rate": 49.8,
             "always_up_rate": 55.6
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 64.9,
+            "prob_up": 66.3,
             "backtest": {
-              "days": 480,
-              "hit_rate": 50.4
+              "days": 481,
+              "hit_rate": 50.5
             }
           },
           "reasons": [
             "現在値が25日平均より下",
             "25日平均が75日平均より下",
             "25日平均の向きが下向き",
-            "直近3ヶ月の値動き -0.2%"
+            "直近3ヶ月の値動き +0.1%"
           ]
         },
         {
@@ -72,32 +72,31 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 151.07,
-          "range_high": 163.51,
+          "range_low": 151.6,
+          "range_high": 163.99,
           "backtest": {
             "days": 403,
-            "hit_rate": 42.9,
-            "always_up_rate": 65.6
+            "hit_rate": 43.4,
+            "always_up_rate": 65.8
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 80.0,
+            "prob_up": 80.4,
             "backtest": {
-              "days": 479,
-              "hit_rate": 59.9
+              "days": 478,
+              "hit_rate": 60.3
             }
           },
           "reasons": [
             "現在値が75日平均より下",
             "75日平均が200日平均より下",
             "75日平均の向きが下向き",
-            "直近6ヶ月の値動き +0.5%"
+            "直近6ヶ月の値動き +0.6%"
           ]
         }
       ],
       "history": [
-        156.85,
         157.19,
         157.68,
         156.51,
@@ -226,12 +225,21 @@
         157.53,
         157.99,
         157.83,
-        157.29
+        157.8,
+        157.79
       ],
       "live": {
-        "days": 4,
+        "days": 5,
         "hits": 1,
         "recent": [
+          {
+            "name": "ドル/円",
+            "data_date": "2026-10-30",
+            "base": 157.29,
+            "direction": "下落",
+            "result": "はずれ",
+            "actual": 157.79
+          },
           {
             "name": "ドル/円",
             "data_date": "2026-10-29",
@@ -290,10 +298,10 @@
           "ml": {
             "direction": "上昇",
             "strength": "弱め",
-            "prob_up": 57.7,
+            "prob_up": 57.8,
             "backtest": {
               "days": 369,
-              "hit_rate": 52.0
+              "hit_rate": 52.3
             }
           },
           "reasons": [
@@ -319,10 +327,10 @@
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 70.7,
+            "prob_up": 70.6,
             "backtest": {
-              "days": 455,
-              "hit_rate": 47.9
+              "days": 457,
+              "hit_rate": 48.4
             }
           },
           "reasons": [
@@ -348,10 +356,10 @@
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 62.8,
+            "prob_up": 62.6,
             "backtest": {
-              "days": 478,
-              "hit_rate": 31.4
+              "days": 481,
+              "hit_rate": 31.6
             }
           },
           "reasons": [
@@ -528,9 +536,9 @@
     {
       "name": "S&P500",
       "ticker": "^GSPC",
-      "data_date": "2026-10-30",
-      "price": 7619.56,
-      "change_pct": -1.31,
+      "data_date": "2026-11-02",
+      "price": 7610.67,
+      "change_pct": 0.4,
       "horizons": [
         {
           "key": "1d",
@@ -538,8 +546,8 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 7572.54,
-          "range_high": 7666.58,
+          "range_low": 7562.32,
+          "range_high": 7659.02,
           "backtest": {
             "days": 479,
             "hit_rate": 50.1,
@@ -548,46 +556,46 @@
           "ml": {
             "direction": "上昇",
             "strength": "弱め",
-            "prob_up": 54.5,
+            "prob_up": 54.8,
             "backtest": {
-              "days": 393,
-              "hit_rate": 51.9
+              "days": 404,
+              "hit_rate": 52.0
             }
           },
           "reasons": [
             "5日平均が25日平均より下",
             "現在値が25日平均より下",
-            "RSI 36（中立圏）",
-            "直近5日の値動き -0.1%"
+            "RSI 37（中立圏）",
+            "直近5日の値動き -0.9%"
           ]
         },
         {
           "key": "1m",
           "label": "1ヶ月後",
-          "direction": "どちらとも言えない",
-          "strength": "",
-          "score": 0,
-          "range_low": 7404.1,
-          "range_high": 7835.02,
+          "direction": "下落",
+          "strength": "弱め",
+          "score": -2,
+          "range_low": 7389.12,
+          "range_high": 7832.22,
           "backtest": {
             "days": 448,
-            "hit_rate": 62.3,
-            "always_up_rate": 68.2
+            "hit_rate": 62.1,
+            "always_up_rate": 68.0
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 68.7,
+            "prob_up": 64.5,
             "backtest": {
-              "days": 465,
-              "hit_rate": 62.4
+              "days": 466,
+              "hit_rate": 62.2
             }
           },
           "reasons": [
             "現在値が25日平均より下",
             "25日平均が75日平均より上",
             "25日平均の向きが下向き",
-            "直近3ヶ月の値動き +0.3%"
+            "直近3ヶ月の値動き -1.6%"
           ]
         },
         {
@@ -596,32 +604,31 @@
           "direction": "上昇",
           "strength": "弱め",
           "score": 2,
-          "range_low": 7246.37,
-          "range_high": 7992.75,
+          "range_low": 7226.93,
+          "range_high": 7994.41,
           "backtest": {
             "days": 488,
-            "hit_rate": 66.2,
-            "always_up_rate": 81.2
+            "hit_rate": 65.8,
+            "always_up_rate": 80.8
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 84.9,
+            "prob_up": 83.0,
             "backtest": {
-              "days": 476,
-              "hit_rate": 75.2
+              "days": 474,
+              "hit_rate": 75.5
             }
           },
           "reasons": [
             "現在値が75日平均より下",
             "75日平均が200日平均より上",
             "75日平均の向きが上向き",
-            "直近6ヶ月の値動き +5.4%"
+            "直近6ヶ月の値動き +5.7%"
           ]
         }
       ],
       "history": [
-        7138.8,
         7135.95,
         7209.01,
         7230.12,
@@ -750,12 +757,21 @@
         7722.6,
         7743.98,
         7720.39,
-        7619.56
+        7580.07,
+        7610.67
       ],
       "live": {
-        "days": 4,
-        "hits": 3,
+        "days": 5,
+        "hits": 4,
         "recent": [
+          {
+            "name": "S&P500",
+            "data_date": "2026-10-30",
+            "base": 7619.56,
+            "direction": "下落",
+            "result": "的中",
+            "actual": 7610.67
+          },
           {
             "name": "S&P500",
             "data_date": "2026-10-29",
@@ -794,18 +810,18 @@
     {
       "name": "NASDAQ総合",
       "ticker": "^IXIC",
-      "data_date": "2026-10-30",
-      "price": 25620.4,
-      "change_pct": -2.16,
+      "data_date": "2026-11-02",
+      "price": 25540.1,
+      "change_pct": 0.41,
       "horizons": [
         {
           "key": "1d",
           "label": "明日",
           "direction": "下落",
-          "strength": "弱め",
-          "score": -2,
-          "range_low": 25367.0,
-          "range_high": 25873.8,
+          "strength": "強め",
+          "score": -3,
+          "range_low": 25283.6,
+          "range_high": 25796.6,
           "backtest": {
             "days": 475,
             "hit_rate": 52.8,
@@ -814,17 +830,17 @@
           "ml": {
             "direction": "上昇",
             "strength": "弱め",
-            "prob_up": 53.9,
+            "prob_up": 56.4,
             "backtest": {
-              "days": 404,
-              "hit_rate": 51.0
+              "days": 409,
+              "hit_rate": 50.9
             }
           },
           "reasons": [
             "5日平均が25日平均より下",
             "現在値が25日平均より下",
-            "RSI 30（売られすぎ気味）",
-            "直近5日の値動き -1.3%"
+            "RSI 30（中立圏）",
+            "直近5日の値動き -2.4%"
           ]
         },
         {
@@ -833,27 +849,27 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 24459.2,
-          "range_high": 26781.6,
+          "range_low": 24364.5,
+          "range_high": 26715.7,
           "backtest": {
             "days": 439,
-            "hit_rate": 61.7,
-            "always_up_rate": 66.0
+            "hit_rate": 61.5,
+            "always_up_rate": 65.8
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 65.2,
+            "prob_up": 65.4,
             "backtest": {
-              "days": 481,
-              "hit_rate": 62.0
+              "days": 480,
+              "hit_rate": 61.9
             }
           },
           "reasons": [
             "現在値が25日平均より下",
             "25日平均が75日平均より上",
             "25日平均の向きが下向き",
-            "直近3ヶ月の値動き -1.1%"
+            "直近3ヶ月の値動き -3.9%"
           ]
         },
         {
@@ -862,32 +878,31 @@
           "direction": "上昇",
           "strength": "弱め",
           "score": 2,
-          "range_low": 23609.1,
-          "range_high": 27631.6,
+          "range_low": 23504.0,
+          "range_high": 27576.3,
           "backtest": {
             "days": 461,
-            "hit_rate": 59.9,
-            "always_up_rate": 75.8
+            "hit_rate": 59.7,
+            "always_up_rate": 75.6
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 79.5,
+            "prob_up": 80.9,
             "backtest": {
-              "days": 495,
-              "hit_rate": 57.2
+              "days": 494,
+              "hit_rate": 57.1
             }
           },
           "reasons": [
             "現在値が75日平均より下",
             "75日平均が200日平均より上",
             "75日平均の向きが上向き",
-            "直近6ヶ月の値動き +2.0%"
+            "直近6ヶ月の値動き +1.9%"
           ]
         }
       ],
       "history": [
-        24663.8,
         24673.2,
         24892.3,
         25114.4,
@@ -1016,12 +1031,21 @@
         26477.8,
         26549.8,
         26184.7,
-        25620.4
+        25437.0,
+        25540.1
       ],
       "live": {
-        "days": 5,
-        "hits": 4,
+        "days": 6,
+        "hits": 5,
         "recent": [
+          {
+            "name": "NASDAQ総合",
+            "data_date": "2026-10-30",
+            "base": 25620.4,
+            "direction": "下落",
+            "result": "的中",
+            "actual": 25540.1
+          },
           {
             "name": "NASDAQ総合",
             "data_date": "2026-10-29",

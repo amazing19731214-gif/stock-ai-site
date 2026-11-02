@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 23:58",
+  "updated_at": "2026-11-03 03:05",
   "watchlist": [
     {
       "name": "キオクシアHD",
@@ -228,7 +228,7 @@
       "change_pct": -7.72,
       "change5_pct": 1.32,
       "vol_ratio": 2.7,
-      "listed_days": 1221,
+      "listed_days": 1220,
       "horizons": [
         {
           "key": "1d",
@@ -248,8 +248,8 @@
             "strength": "強め",
             "prob_up": 60.9,
             "backtest": {
-              "days": 414,
-              "hit_rate": 47.3
+              "days": 415,
+              "hit_rate": 47.5
             }
           }
         },
@@ -271,8 +271,8 @@
             "strength": "弱め",
             "prob_up": 57.5,
             "backtest": {
-              "days": 460,
-              "hit_rate": 37.2
+              "days": 459,
+              "hit_rate": 37.3
             }
           }
         },
@@ -294,7 +294,7 @@
             "strength": "弱め",
             "prob_up": 54.2,
             "backtest": {
-              "days": 490,
+              "days": 491,
               "hit_rate": 9.6
             }
           }
@@ -443,7 +443,7 @@
       "change_pct": 8.45,
       "change5_pct": 4.79,
       "vol_ratio": 2.7,
-      "listed_days": 1221,
+      "listed_days": 1220,
       "horizons": [
         {
           "key": "1d",
@@ -461,10 +461,10 @@
           "ml": {
             "direction": "どちらとも言えない",
             "strength": "",
-            "prob_up": 48.2,
+            "prob_up": 48.4,
             "backtest": {
-              "days": 390,
-              "hit_rate": 47.4
+              "days": 387,
+              "hit_rate": 47.5
             }
           }
         },
@@ -484,10 +484,10 @@
           "ml": {
             "direction": "下落",
             "strength": "強め",
-            "prob_up": 32.4,
+            "prob_up": 32.6,
             "backtest": {
-              "days": 449,
-              "hit_rate": 56.3
+              "days": 450,
+              "hit_rate": 56.7
             }
           }
         },
@@ -507,10 +507,10 @@
           "ml": {
             "direction": "下落",
             "strength": "強め",
-            "prob_up": 9.4,
+            "prob_up": 9.5,
             "backtest": {
-              "days": 484,
-              "hit_rate": 51.4
+              "days": 482,
+              "hit_rate": 51.0
             }
           }
         }
@@ -658,7 +658,7 @@
       "change_pct": 2.15,
       "change5_pct": -0.48,
       "vol_ratio": 2.1,
-      "listed_days": 1221,
+      "listed_days": 1220,
       "horizons": [
         {
           "key": "1d",
@@ -679,7 +679,7 @@
             "prob_up": 56.3,
             "backtest": {
               "days": 306,
-              "hit_rate": 51.6
+              "hit_rate": 50.7
             }
           }
         },
@@ -701,8 +701,8 @@
             "strength": "",
             "prob_up": 50.4,
             "backtest": {
-              "days": 457,
-              "hit_rate": 54.0
+              "days": 456,
+              "hit_rate": 54.4
             }
           }
         },
@@ -722,7 +722,7 @@
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 61.2,
+            "prob_up": 61.3,
             "backtest": {
               "days": 466,
               "hit_rate": 34.1
