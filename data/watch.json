@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 01:01",
+  "updated_at": "2026-11-05 01:06",
   "watchlist": [
     {
       "name": "キオクシアHD",
@@ -228,7 +228,7 @@
       "change_pct": 5.41,
       "change5_pct": 4.44,
       "vol_ratio": 2.4,
-      "listed_days": 1221,
+      "listed_days": 1220,
       "horizons": [
         {
           "key": "1d",
@@ -249,7 +249,7 @@
             "prob_up": 58.5,
             "backtest": {
               "days": 398,
-              "hit_rate": 54.8
+              "hit_rate": 55.0
             }
           }
         },
@@ -269,7 +269,7 @@
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 83.4,
+            "prob_up": 83.5,
             "backtest": {
               "days": 451,
               "hit_rate": 60.5
@@ -292,10 +292,10 @@
           "ml": {
             "direction": "下落",
             "strength": "弱め",
-            "prob_up": 46.2,
+            "prob_up": 46.3,
             "backtest": {
               "days": 467,
-              "hit_rate": 43.9
+              "hit_rate": 43.7
             }
           }
         }
