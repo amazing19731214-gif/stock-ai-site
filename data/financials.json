@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05 01:07",
+  "updated_at": "2026-11-06 01:21",
   "source": "Yahoo Finance",
   "count": 42,
   "ok": 42,
@@ -4321,7 +4321,7 @@
           "revenue": 61160000000.0,
           "operating_income": 20091000000.0,
           "net_income": 4226000000.0,
-          "eps": 2.36,
+          "eps": 2.37,
           "op_cf": 19030000000.0,
           "capex": 1214000000.0,
           "buyback": 980000000.0,
