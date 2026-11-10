@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-10 03:36",
+  "updated_at": "2026-11-11 01:19",
   "markets": {
     "jp": [
       {
         "name": "トヨタ自動車",
         "ticker": "7203.T",
         "code": "7203",
-        "price": 3338.0,
-        "change_pct": -5.52,
+        "price": 3491.0,
+        "change_pct": 4.58,
         "horizons": [
           {
             "key": "1d",
@@ -15,20 +15,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 3,
-            "range_low": 3248.97,
-            "range_high": 3427.03,
+            "range_low": 3395.88,
+            "range_high": 3586.12,
             "backtest": {
               "days": 484,
-              "hit_rate": 48.3,
+              "hit_rate": 48.6,
               "always_up_rate": 50.2
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 51.2,
+              "direction": "下落",
+              "strength": "弱め",
+              "prob_up": 40.7,
               "backtest": {
-                "days": 297,
-                "hit_rate": 51.9
+                "days": 291,
+                "hit_rate": 50.5
               }
             }
           },
@@ -38,20 +38,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 2930.0,
-            "range_high": 3746.0,
+            "range_low": 3055.1,
+            "range_high": 3926.9,
             "backtest": {
-              "days": 402,
-              "hit_rate": 51.5,
+              "days": 401,
+              "hit_rate": 51.6,
               "always_up_rate": 56.0
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 48.4,
+              "direction": "下落",
+              "strength": "強め",
+              "prob_up": 36.4,
               "backtest": {
-                "days": 418,
-                "hit_rate": 43.5
+                "days": 424,
+                "hit_rate": 44.6
               }
             }
           },
@@ -61,26 +61,25 @@
             "direction": "上昇",
             "strength": "弱め",
             "score": 2,
-            "range_low": 2631.32,
-            "range_high": 4044.68,
+            "range_low": 2736.0,
+            "range_high": 4246.0,
             "backtest": {
-              "days": 409,
-              "hit_rate": 28.4,
-              "always_up_rate": 63.4
+              "days": 410,
+              "hit_rate": 28.3,
+              "always_up_rate": 63.6
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 67.6,
+              "prob_up": 69.2,
               "backtest": {
-                "days": 435,
-                "hit_rate": 37.2
+                "days": 439,
+                "hit_rate": 38.7
               }
             }
           }
         ],
         "history": [
-          3015.65,
           3015.65,
           3059.9,
           2972.39,
@@ -209,15 +208,16 @@
           3051.0,
           3028.0,
           3533.0,
-          3338.0
+          3338.0,
+          3491.0
         ]
       },
       {
         "name": "ソニーグループ",
         "ticker": "6758.T",
         "code": "6758",
-        "price": 4142.0,
-        "change_pct": -1.64,
+        "price": 4297.0,
+        "change_pct": 3.74,
         "horizons": [
           {
             "key": "1d",
@@ -225,20 +225,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 3,
-            "range_low": 4061.35,
-            "range_high": 4222.65,
+            "range_low": 4212.11,
+            "range_high": 4381.89,
             "backtest": {
               "days": 487,
-              "hit_rate": 46.8,
-              "always_up_rate": 46.0
+              "hit_rate": 47.0,
+              "always_up_rate": 46.2
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 47.9,
+              "direction": "下落",
+              "strength": "弱め",
+              "prob_up": 44.9,
               "backtest": {
-                "days": 341,
-                "hit_rate": 49.0
+                "days": 342,
+                "hit_rate": 49.1
               }
             }
           },
@@ -248,20 +248,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 3772.39,
-            "range_high": 4511.61,
+            "range_low": 3907.98,
+            "range_high": 4686.02,
             "backtest": {
               "days": 417,
               "hit_rate": 53.5,
               "always_up_rate": 58.6
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 48.5,
+              "direction": "下落",
+              "strength": "強め",
+              "prob_up": 38.5,
               "backtest": {
                 "days": 466,
-                "hit_rate": 52.1
+                "hit_rate": 52.6
               }
             }
           },
@@ -271,26 +271,25 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 3501.82,
-            "range_high": 4782.18,
+            "range_low": 3623.2,
+            "range_high": 4970.8,
             "backtest": {
               "days": 458,
-              "hit_rate": 56.8,
-              "always_up_rate": 71.2
+              "hit_rate": 57.0,
+              "always_up_rate": 71.4
             },
             "ml": {
               "direction": "上昇",
               "strength": "弱め",
-              "prob_up": 58.3,
+              "prob_up": 53.8,
               "backtest": {
-                "days": 490,
-                "hit_rate": 60.4
+                "days": 491,
+                "hit_rate": 60.7
               }
             }
           }
         ],
         "history": [
-          3192.74,
           3172.84,
           3218.62,
           3098.2,
@@ -419,15 +418,16 @@
           3966.0,
           3933.0,
           4211.0,
-          4142.0
+          4142.0,
+          4297.0
         ]
       },
       {
         "name": "三菱UFJ FG",
         "ticker": "8306.T",
         "code": "8306",
-        "price": 3224.0,
-        "change_pct": -6.52,
+        "price": 3366.0,
+        "change_pct": 4.4,
         "horizons": [
           {
             "key": "1d",
@@ -435,20 +435,20 @@
             "direction": "下落",
             "strength": "強め",
             "score": -3,
-            "range_low": 3158.95,
-            "range_high": 3289.05,
+            "range_low": 3295.29,
+            "range_high": 3436.71,
             "backtest": {
               "days": 474,
-              "hit_rate": 49.8,
+              "hit_rate": 49.6,
               "always_up_rate": 54.4
             },
             "ml": {
               "direction": "上昇",
-              "strength": "強め",
-              "prob_up": 64.1,
+              "strength": "弱め",
+              "prob_up": 56.1,
               "backtest": {
-                "days": 345,
-                "hit_rate": 53.3
+                "days": 337,
+                "hit_rate": 54.3
               }
             }
           },
@@ -458,20 +458,20 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 2925.9,
-            "range_high": 3522.1,
+            "range_low": 3041.96,
+            "range_high": 3690.04,
             "backtest": {
               "days": 436,
               "hit_rate": 64.4,
-              "always_up_rate": 76.6
+              "always_up_rate": 76.4
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 90.5,
+              "prob_up": 82.4,
               "backtest": {
-                "days": 472,
-                "hit_rate": 78.4
+                "days": 475,
+                "hit_rate": 78.1
               }
             }
           },
@@ -481,8 +481,8 @@
             "direction": "上昇",
             "strength": "弱め",
             "score": 2,
-            "range_low": 2707.67,
-            "range_high": 3740.33,
+            "range_low": 2804.75,
+            "range_high": 3927.25,
             "backtest": {
               "days": 463,
               "hit_rate": 79.3,
@@ -491,7 +491,7 @@
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 99.2,
+              "prob_up": 98.9,
               "backtest": {
                 "days": 492,
                 "hit_rate": 86.4
@@ -500,7 +500,6 @@
           }
         ],
         "history": [
-          2719.95,
           2752.04,
           2837.91,
           2780.66,
@@ -629,36 +628,37 @@
           3383.0,
           3360.0,
           3449.0,
-          3224.0
+          3224.0,
+          3366.0
         ]
       },
       {
         "name": "任天堂",
         "ticker": "7974.T",
         "code": "7974",
-        "price": 8178.0,
-        "change_pct": -7.91,
+        "price": 8606.0,
+        "change_pct": 5.23,
         "horizons": [
           {
             "key": "1d",
             "label": "明日",
-            "direction": "どちらとも言えない",
-            "strength": "",
-            "score": 0,
-            "range_low": 7971.43,
-            "range_high": 8384.57,
+            "direction": "上昇",
+            "strength": "強め",
+            "score": 3,
+            "range_low": 8388.7,
+            "range_high": 8823.3,
             "backtest": {
-              "days": 484,
-              "hit_rate": 50.8,
+              "days": 483,
+              "hit_rate": 50.7,
               "always_up_rate": 48.2
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 51.2,
+              "direction": "下落",
+              "strength": "弱め",
+              "prob_up": 43.1,
               "backtest": {
-                "days": 340,
-                "hit_rate": 50.9
+                "days": 338,
+                "hit_rate": 50.3
               }
             }
           },
@@ -666,22 +666,22 @@
             "key": "1m",
             "label": "1ヶ月後",
             "direction": "上昇",
-            "strength": "弱め",
-            "score": 2,
-            "range_low": 7231.36,
-            "range_high": 9124.64,
+            "strength": "強め",
+            "score": 4,
+            "range_low": 7610.18,
+            "range_high": 9601.82,
             "backtest": {
-              "days": 422,
-              "hit_rate": 54.7,
+              "days": 421,
+              "hit_rate": 54.9,
               "always_up_rate": 54.6
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 50.7,
+              "direction": "下落",
+              "strength": "弱め",
+              "prob_up": 45.9,
               "backtest": {
-                "days": 440,
-                "hit_rate": 35.2
+                "days": 444,
+                "hit_rate": 35.6
               }
             }
           },
@@ -691,17 +691,17 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 6538.37,
-            "range_high": 9817.63,
+            "range_low": 6881.2,
+            "range_high": 10330.8,
             "backtest": {
               "days": 441,
               "hit_rate": 54.0,
-              "always_up_rate": 56.8
+              "always_up_rate": 57.0
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 68.0,
+              "prob_up": 74.5,
               "backtest": {
                 "days": 491,
                 "hit_rate": 30.5
@@ -710,7 +710,6 @@
           }
         ],
         "history": [
-          7877.44,
           7818.01,
           7846.73,
           7613.96,
@@ -839,36 +838,37 @@
           8149.0,
           8353.0,
           8880.0,
-          8178.0
+          8178.0,
+          8606.0
         ]
       },
       {
         "name": "東京エレクトロン",
         "ticker": "8035.T",
         "code": "8035",
-        "price": 8263.0,
-        "change_pct": -5.6,
+        "price": 8492.0,
+        "change_pct": 2.77,
         "horizons": [
           {
             "key": "1d",
             "label": "明日",
             "direction": "下落",
-            "strength": "弱め",
-            "score": -2,
-            "range_low": 7972.56,
-            "range_high": 8553.44,
+            "strength": "強め",
+            "score": -3,
+            "range_low": 8191.75,
+            "range_high": 8792.25,
             "backtest": {
               "days": 475,
-              "hit_rate": 49.7,
-              "always_up_rate": 53.2
+              "hit_rate": 49.5,
+              "always_up_rate": 53.4
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 47.9,
+              "direction": "下落",
+              "strength": "強め",
+              "prob_up": 38.3,
               "backtest": {
-                "days": 333,
-                "hit_rate": 49.8
+                "days": 332,
+                "hit_rate": 50.6
               }
             }
           },
@@ -878,19 +878,19 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 6932.04,
-            "range_high": 9593.96,
+            "range_low": 7116.07,
+            "range_high": 9867.93,
             "backtest": {
-              "days": 410,
-              "hit_rate": 49.8,
-              "always_up_rate": 58.2
+              "days": 409,
+              "hit_rate": 49.9,
+              "always_up_rate": 58.0
             },
             "ml": {
               "direction": "下落",
               "strength": "強め",
-              "prob_up": 24.8,
+              "prob_up": 25.3,
               "backtest": {
-                "days": 445,
+                "days": 447,
                 "hit_rate": 46.5
               }
             }
@@ -901,8 +901,8 @@
             "direction": "下落",
             "strength": "弱め",
             "score": -2,
-            "range_low": 5957.71,
-            "range_high": 10568.3,
+            "range_low": 6108.82,
+            "range_high": 10875.2,
             "backtest": {
               "days": 410,
               "hit_rate": 63.9,
@@ -911,16 +911,15 @@
             "ml": {
               "direction": "下落",
               "strength": "強め",
-              "prob_up": 27.8,
+              "prob_up": 26.0,
               "backtest": {
-                "days": 477,
-                "hit_rate": 36.5
+                "days": 478,
+                "hit_rate": 36.2
               }
             }
           }
         ],
         "history": [
-          9102.43,
           9350.59,
           8963.46,
           8812.58,
@@ -1049,15 +1048,16 @@
           10005.0,
           9663.0,
           8753.0,
-          8263.0
+          8263.0,
+          8492.0
         ]
       },
       {
         "name": "ソフトバンクグループ",
         "ticker": "9984.T",
         "code": "9984",
-        "price": 3549.0,
-        "change_pct": -10.83,
+        "price": 3400.0,
+        "change_pct": -4.2,
         "horizons": [
           {
             "key": "1d",
@@ -1065,20 +1065,20 @@
             "direction": "下落",
             "strength": "弱め",
             "score": -2,
-            "range_low": 3376.81,
-            "range_high": 3721.19,
+            "range_low": 3234.5,
+            "range_high": 3565.5,
             "backtest": {
               "days": 476,
               "hit_rate": 50.6,
-              "always_up_rate": 51.2
+              "always_up_rate": 51.0
             },
             "ml": {
               "direction": "どちらとも言えない",
               "strength": "",
-              "prob_up": 51.9,
+              "prob_up": 50.2,
               "backtest": {
-                "days": 334,
-                "hit_rate": 47.9
+                "days": 342,
+                "hit_rate": 47.1
               }
             }
           },
@@ -1088,20 +1088,20 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 2759.92,
-            "range_high": 4338.08,
+            "range_low": 2641.6,
+            "range_high": 4158.4,
             "backtest": {
-              "days": 399,
-              "hit_rate": 52.4,
-              "always_up_rate": 56.8
+              "days": 400,
+              "hit_rate": 52.2,
+              "always_up_rate": 56.6
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 50.3,
+              "direction": "上昇",
+              "strength": "弱め",
+              "prob_up": 55.5,
               "backtest": {
                 "days": 476,
-                "hit_rate": 52.5
+                "hit_rate": 52.3
               }
             }
           },
@@ -1111,8 +1111,8 @@
             "direction": "下落",
             "strength": "弱め",
             "score": -2,
-            "range_low": 2182.27,
-            "range_high": 4915.73,
+            "range_low": 2086.41,
+            "range_high": 4713.59,
             "backtest": {
               "days": 392,
               "hit_rate": 26.5,
@@ -1121,16 +1121,15 @@
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 85.4,
+              "prob_up": 87.2,
               "backtest": {
-                "days": 483,
-                "hit_rate": 56.9
+                "days": 481,
+                "hit_rate": 56.3
               }
             }
           }
         ],
         "history": [
-          5957.75,
           5838.85,
           5263.36,
           5214.4,
@@ -1259,7 +1258,8 @@
           4410.0,
           4269.0,
           3980.0,
-          3549.0
+          3549.0,
+          3400.0
         ]
       }
     ],
@@ -1268,8 +1268,8 @@
         "name": "アップル",
         "ticker": "AAPL",
         "code": "AAPL",
-        "price": 349.23,
-        "change_pct": 2.01,
+        "price": 347.34,
+        "change_pct": -0.96,
         "horizons": [
           {
             "key": "1d",
@@ -1277,20 +1277,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 3,
-            "range_low": 344.28,
-            "range_high": 354.19,
+            "range_low": 342.35,
+            "range_high": 352.33,
             "backtest": {
               "days": 486,
-              "hit_rate": 49.6,
+              "hit_rate": 49.4,
               "always_up_rate": 53.6
             },
             "ml": {
-              "direction": "上昇",
+              "direction": "下落",
               "strength": "弱め",
-              "prob_up": 54.6,
+              "prob_up": 46.2,
               "backtest": {
-                "days": 296,
-                "hit_rate": 52.0
+                "days": 292,
+                "hit_rate": 52.4
               }
             }
           },
@@ -1300,20 +1300,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 326.54,
-            "range_high": 371.93,
+            "range_low": 324.49,
+            "range_high": 370.19,
             "backtest": {
               "days": 422,
-              "hit_rate": 54.3,
-              "always_up_rate": 62.0
+              "hit_rate": 54.5,
+              "always_up_rate": 62.2
             },
             "ml": {
               "direction": "上昇",
               "strength": "弱め",
-              "prob_up": 55.5,
+              "prob_up": 54.1,
               "backtest": {
-                "days": 409,
-                "hit_rate": 63.8
+                "days": 403,
+                "hit_rate": 63.5
               }
             }
           },
@@ -1323,26 +1323,25 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 309.93,
-            "range_high": 388.54,
+            "range_low": 307.76,
+            "range_high": 386.92,
             "backtest": {
               "days": 447,
               "hit_rate": 54.1,
               "always_up_rate": 71.0
             },
             "ml": {
-              "direction": "上昇",
-              "strength": "弱め",
-              "prob_up": 55.6,
+              "direction": "どちらとも言えない",
+              "strength": "",
+              "prob_up": 52.3,
               "backtest": {
-                "days": 453,
+                "days": 458,
                 "hit_rate": 65.1
               }
             }
           }
         ],
         "history": [
-          287.0,
           286.93,
           292.8,
           292.43,
@@ -1471,15 +1470,16 @@
           349.51,
           344.17,
           342.37,
-          349.23
+          350.69,
+          347.34
         ]
       },
       {
         "name": "エヌビディア",
         "ticker": "NVDA",
         "code": "NVDA",
-        "price": 176.24,
-        "change_pct": -5.57,
+        "price": 168.96,
+        "change_pct": -5.43,
         "horizons": [
           {
             "key": "1d",
@@ -1487,20 +1487,20 @@
             "direction": "下落",
             "strength": "弱め",
             "score": -2,
-            "range_low": 171.63,
-            "range_high": 180.86,
+            "range_low": 164.47,
+            "range_high": 173.45,
             "backtest": {
               "days": 486,
-              "hit_rate": 46.1,
+              "hit_rate": 46.3,
               "always_up_rate": 51.4
             },
             "ml": {
-              "direction": "どちらとも言えない",
-              "strength": "",
-              "prob_up": 52.4,
+              "direction": "上昇",
+              "strength": "弱め",
+              "prob_up": 54.6,
               "backtest": {
-                "days": 358,
-                "hit_rate": 50.0
+                "days": 365,
+                "hit_rate": 50.4
               }
             }
           },
@@ -1510,20 +1510,20 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 155.11,
-            "range_high": 197.38,
+            "range_low": 148.36,
+            "range_high": 189.56,
             "backtest": {
               "days": 403,
-              "hit_rate": 49.6,
-              "always_up_rate": 57.6
+              "hit_rate": 49.4,
+              "always_up_rate": 57.4
             },
             "ml": {
               "direction": "どちらとも言えない",
               "strength": "",
-              "prob_up": 48.0,
+              "prob_up": 47.8,
               "backtest": {
                 "days": 450,
-                "hit_rate": 56.9
+                "hit_rate": 56.7
               }
             }
           },
@@ -1533,26 +1533,25 @@
             "direction": "どちらとも言えない",
             "strength": "",
             "score": 0,
-            "range_low": 139.64,
-            "range_high": 212.85,
+            "range_low": 133.28,
+            "range_high": 204.64,
             "backtest": {
               "days": 456,
-              "hit_rate": 53.3,
-              "always_up_rate": 69.8
+              "hit_rate": 53.1,
+              "always_up_rate": 69.6
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 82.7,
+              "prob_up": 83.6,
               "backtest": {
                 "days": 500,
-                "hit_rate": 69.8
+                "hit_rate": 69.6
               }
             }
           }
         ],
         "history": [
-          207.36,
           211.02,
           214.71,
           218.94,
@@ -1681,15 +1680,16 @@
           200.13,
           181.6,
           186.64,
-          176.24
+          178.67,
+          168.96
         ]
       },
       {
         "name": "マイクロソフト",
         "ticker": "MSFT",
         "code": "MSFT",
-        "price": 543.27,
-        "change_pct": 2.39,
+        "price": 543.11,
+        "change_pct": -0.38,
         "horizons": [
           {
             "key": "1d",
@@ -1697,8 +1697,8 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 3,
-            "range_low": 533.89,
-            "range_high": 552.65,
+            "range_low": 533.96,
+            "range_high": 552.26,
             "backtest": {
               "days": 480,
               "hit_rate": 50.0,
@@ -1707,10 +1707,10 @@
             "ml": {
               "direction": "上昇",
               "strength": "弱め",
-              "prob_up": 57.1,
+              "prob_up": 53.1,
               "backtest": {
-                "days": 309,
-                "hit_rate": 45.6
+                "days": 302,
+                "hit_rate": 43.0
               }
             }
           },
@@ -1720,20 +1720,20 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 500.29,
-            "range_high": 586.25,
+            "range_low": 501.18,
+            "range_high": 585.04,
             "backtest": {
               "days": 437,
-              "hit_rate": 57.4,
+              "hit_rate": 57.7,
               "always_up_rate": 51.2
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 90.3,
+              "prob_up": 89.4,
               "backtest": {
-                "days": 431,
-                "hit_rate": 51.7
+                "days": 433,
+                "hit_rate": 52.4
               }
             }
           },
@@ -1743,8 +1743,8 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 4,
-            "range_low": 468.82,
-            "range_high": 617.72,
+            "range_low": 470.49,
+            "range_high": 615.73,
             "backtest": {
               "days": 430,
               "hit_rate": 36.0,
@@ -1755,14 +1755,13 @@
               "strength": "強め",
               "prob_up": 87.9,
               "backtest": {
-                "days": 479,
-                "hit_rate": 53.0
+                "days": 477,
+                "hit_rate": 53.7
               }
             }
           }
         ],
         "history": [
-          412.29,
           419.07,
           413.44,
           410.99,
@@ -1891,15 +1890,16 @@
           555.8,
           535.93,
           530.61,
-          543.27
+          545.18,
+          543.11
         ]
       },
       {
         "name": "アマゾン",
         "ticker": "AMZN",
         "code": "AMZN",
-        "price": 267.88,
-        "change_pct": 3.31,
+        "price": 269.17,
+        "change_pct": 0.84,
         "horizons": [
           {
             "key": "1d",
@@ -1907,31 +1907,31 @@
             "direction": "上昇",
             "strength": "強め",
             "score": 3,
-            "range_low": 262.47,
-            "range_high": 273.28,
+            "range_low": 263.76,
+            "range_high": 274.58,
             "backtest": {
               "days": 485,
-              "hit_rate": 46.4,
-              "always_up_rate": 50.8
+              "hit_rate": 46.6,
+              "always_up_rate": 51.0
             },
             "ml": {
               "direction": "どちらとも言えない",
               "strength": "",
-              "prob_up": 50.3,
+              "prob_up": 47.6,
               "backtest": {
-                "days": 335,
-                "hit_rate": 54.9
+                "days": 343,
+                "hit_rate": 53.9
               }
             }
           },
           {
             "key": "1m",
             "label": "1ヶ月後",
-            "direction": "どちらとも言えない",
-            "strength": "",
-            "score": 0,
-            "range_low": 243.09,
-            "range_high": 292.66,
+            "direction": "上昇",
+            "strength": "弱め",
+            "score": 2,
+            "range_low": 244.37,
+            "range_high": 293.97,
             "backtest": {
               "days": 391,
               "hit_rate": 39.6,
@@ -1942,8 +1942,8 @@
               "strength": "強め",
               "prob_up": 61.0,
               "backtest": {
-                "days": 494,
-                "hit_rate": 55.5
+                "days": 493,
+                "hit_rate": 55.4
               }
             }
           },
@@ -1951,28 +1951,27 @@
             "key": "3m",
             "label": "3ヶ月後",
             "direction": "上昇",
-            "strength": "弱め",
-            "score": 2,
-            "range_low": 224.95,
-            "range_high": 310.8,
+            "strength": "強め",
+            "score": 4,
+            "range_low": 226.21,
+            "range_high": 312.13,
             "backtest": {
               "days": 419,
-              "hit_rate": 41.5,
+              "hit_rate": 41.8,
               "always_up_rate": 64.0
             },
             "ml": {
               "direction": "上昇",
               "strength": "強め",
-              "prob_up": 62.2,
+              "prob_up": 62.4,
               "backtest": {
-                "days": 482,
-                "hit_rate": 63.9
+                "days": 481,
+                "hit_rate": 63.8
               }
             }
           }
         ],
         "history": [
-          274.99,
           271.17,
           272.68,
           268.99,
@@ -2101,15 +2100,16 @@
           266.03,
           260.21,
           259.3,
-          267.88
+          266.93,
+          269.17
         ]
       },
       {
         "name": "テスラ",
         "ticker": "TSLA",
         "code": "TSLA",
-        "price": 376.92,
-        "change_pct": 5.22,
+        "price": 376.75,
+        "change_pct": -0.34,
         "horizons": [
           {
             "key": "1d",
@@ -2117,20 +2117,20 @@
             "direction": "下落",
             "strength": "強め",
             "score": -3,
-            "range_low": 365.55,
-            "range_high": 388.29,
+            "range_low": 365.36,
+            "range_high": 388.14,
             "backtest": {
               "days": 481,
               "hit_rate": 47.8,
-              "always_up_rate": 50.2
+              "always_up_rate": 50.0
             },
             "ml": {
               "direction": "どちらとも言えない",
               "strength": "",
-              "prob_up": 47.6,
+              "prob_up": 49.6,
               "backtest": {
-                "days": 288,
-                "hit_rate": 50.0
+                "days": 295,
+                "hit_rate": 49.5
               }
             }
           },
@@ -2140,20 +2140,20 @@
             "direction": "上昇",
             "strength": "弱め",
             "score": 2,
-            "range_low": 324.79,
-            "range_high": 429.05,
+            "range_low": 324.53,
+            "range_high": 428.97,
             "backtest": {
-              "days": 379,
-              "hit_rate": 43.8,
-              "always_up_rate": 52.8
+              "days": 380,
+              "hit_rate": 43.7,
+              "always_up_rate": 52.6
             },
             "ml": {
               "direction": "下落",
               "strength": "弱め",
-              "prob_up": 43.5,
+              "prob_up": 43.7,
               "backtest": {
                 "days": 443,
-                "hit_rate": 52.1
+                "hit_rate": 52.8
               }
             }
           },
@@ -2163,26 +2163,25 @@
             "direction": "下落",
             "strength": "弱め",
             "score": -2,
-            "range_low": 286.64,
-            "range_high": 467.2,
+            "range_low": 286.31,
+            "range_high": 467.19,
             "backtest": {
               "days": 364,
-              "hit_rate": 47.8,
+              "hit_rate": 47.5,
               "always_up_rate": 56.4
             },
             "ml": {
               "direction": "下落",
               "strength": "弱め",
-              "prob_up": 46.5,
+              "prob_up": 45.3,
               "backtest": {
-                "days": 487,
-                "hit_rate": 69.4
+                "days": 486,
+                "hit_rate": 69.8
               }
             }
           }
         ],
         "history": [
-          398.73,
           411.79,
           428.35,
           445.0,
@@ -2311,15 +2310,16 @@
           385.19,
           343.69,
           358.22,
-          376.92
+          378.05,
+          376.75
         ]
       },
       {
         "name": "アルファベット",
         "ticker": "GOOGL",
         "code": "GOOGL",
-        "price": 289.74,
-        "change_pct": 1.74,
+        "price": 288.01,
+        "change_pct": -0.05,
         "horizons": [
           {
             "key": "1d",
@@ -2327,20 +2327,20 @@
             "direction": "どちらとも言えない",
             "strength": "",
             "score": 0,
-            "range_low": 283.44,
-            "range_high": 296.04,
+            "range_low": 281.77,
+            "range_high": 294.25,
             "backtest": {
-              "days": 478,
-              "hit_rate": 50.6,
-              "always_up_rate": 51.6
+              "days": 477,
+              "hit_rate": 50.5,
+              "always_up_rate": 51.4
             },
             "ml": {
-              "direction": "上昇",
-              "strength": "弱め",
-              "prob_up": 54.8,
+              "direction": "どちらとも言えない",
+              "strength": "",
+              "prob_up": 50.2,
               "backtest": {
-                "days": 370,
-                "hit_rate": 52.2
+                "days": 372,
+                "hit_rate": 51.6
               }
             }
           },
@@ -2350,19 +2350,19 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 260.89,
-            "range_high": 318.59,
+            "range_low": 259.43,
+            "range_high": 316.59,
             "backtest": {
               "days": 418,
               "hit_rate": 56.9,
-              "always_up_rate": 60.2
+              "always_up_rate": 60.0
             },
             "ml": {
               "direction": "下落",
               "strength": "強め",
-              "prob_up": 37.2,
+              "prob_up": 37.9,
               "backtest": {
-                "days": 454,
+                "days": 448,
                 "hit_rate": 50.7
               }
             }
@@ -2373,26 +2373,25 @@
             "direction": "下落",
             "strength": "強め",
             "score": -4,
-            "range_low": 239.76,
-            "range_high": 339.72,
+            "range_low": 238.51,
+            "range_high": 337.51,
             "backtest": {
               "days": 403,
-              "hit_rate": 46.7,
-              "always_up_rate": 67.6
+              "hit_rate": 46.4,
+              "always_up_rate": 67.4
             },
             "ml": {
               "direction": "下落",
               "strength": "強め",
-              "prob_up": 36.8,
+              "prob_up": 38.3,
               "backtest": {
-                "days": 454,
-                "hit_rate": 59.9
+                "days": 455,
+                "hit_rate": 60.2
               }
             }
           }
         ],
         "history": [
-          397.55,
           397.5,
           400.3,
           388.16,
@@ -2521,7 +2520,8 @@
           288.93,
           282.57,
           284.78,
-          289.74
+          288.15,
+          288.01
         ]
       }
     ]
