@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 01:19",
+  "updated_at": "2026-11-12 00:59",
   "watchlist": [
     {
       "name": "キオクシアHD",
@@ -7,32 +7,32 @@
       "code": "285A",
       "reason": "ウォッチリスト",
       "market": "jp",
-      "price": 8302.0,
-      "change_pct": -2.46,
-      "change5_pct": -38.37,
-      "vol_ratio": 1.7,
-      "listed_days": 458,
+      "price": 9068.0,
+      "change_pct": 9.23,
+      "change5_pct": -20.07,
+      "vol_ratio": 1.5,
+      "listed_days": 459,
       "horizons": [
         {
           "key": "1d",
           "label": "明日",
           "direction": "下落",
-          "strength": "弱め",
-          "score": -2,
-          "range_low": 7787.51,
-          "range_high": 8816.49,
+          "strength": "強め",
+          "score": -3,
+          "range_low": 8493.92,
+          "range_high": 9642.08,
           "backtest": {
-            "days": 102,
-            "hit_rate": 51.0,
-            "always_up_rate": 51.4
+            "days": 103,
+            "hit_rate": 50.5,
+            "always_up_rate": 51.9
           },
           "ml": {
             "direction": "上昇",
             "strength": "弱め",
-            "prob_up": 55.6,
+            "prob_up": 54.6,
             "backtest": {
-              "days": 98,
-              "hit_rate": 44.9
+              "days": 99,
+              "hit_rate": 45.5
             }
           }
         },
@@ -42,20 +42,20 @@
           "direction": "下落",
           "strength": "強め",
           "score": -4,
-          "range_low": 5944.31,
-          "range_high": 10659.7,
+          "range_low": 6437.23,
+          "range_high": 11698.8,
           "backtest": {
-            "days": 37,
-            "hit_rate": 32.4,
-            "always_up_rate": 32.8
+            "days": 38,
+            "hit_rate": 34.2,
+            "always_up_rate": 32.4
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 61.3,
+            "prob_up": 64.5,
             "backtest": {
-              "days": 67,
-              "hit_rate": 40.3
+              "days": 68,
+              "hit_rate": 39.7
             }
           }
         },
@@ -65,12 +65,12 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 4218.37,
-          "range_high": 12385.6,
+          "range_low": 4511.38,
+          "range_high": 13624.6,
           "backtest": {
-            "days": 196,
-            "hit_rate": 71.9,
-            "always_up_rate": 71.9
+            "days": 197,
+            "hit_rate": 71.6,
+            "always_up_rate": 71.6
           },
           "ml": {
             "direction": "データ不足",
@@ -84,7 +84,6 @@
         }
       ],
       "history": [
-        11803.4,
         12086.2,
         12498.9,
         12116.2,
@@ -213,7 +212,8 @@
         10735.0,
         9324.0,
         8511.0,
-        8302.0
+        8302.0,
+        9068.0
       ]
     }
   ],
@@ -224,10 +224,10 @@
       "code": "2914",
       "reason": "出来高急増",
       "market": "jp",
-      "price": 5269.0,
-      "change_pct": -15.95,
-      "change5_pct": -27.29,
-      "vol_ratio": 2.2,
+      "price": 5500.0,
+      "change_pct": 4.38,
+      "change5_pct": -25.31,
+      "vol_ratio": 13.1,
       "listed_days": 1220,
       "horizons": [
         {
@@ -236,20 +236,20 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 5084.08,
-          "range_high": 5453.92,
+          "range_low": 5303.97,
+          "range_high": 5696.03,
           "backtest": {
             "days": 473,
             "hit_rate": 49.0,
-            "always_up_rate": 51.6
+            "always_up_rate": 51.8
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 79.1,
+            "prob_up": 72.2,
             "backtest": {
-              "days": 245,
-              "hit_rate": 46.5
+              "days": 269,
+              "hit_rate": 47.2
             }
           }
         },
@@ -259,20 +259,20 @@
           "direction": "下落",
           "strength": "弱め",
           "score": -2,
-          "range_low": 4421.58,
-          "range_high": 6116.42,
+          "range_low": 4601.68,
+          "range_high": 6398.32,
           "backtest": {
             "days": 390,
             "hit_rate": 59.7,
-            "always_up_rate": 61.2
+            "always_up_rate": 61.0
           },
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 99.5,
+            "prob_up": 96.5,
             "backtest": {
-              "days": 462,
-              "hit_rate": 63.6
+              "days": 461,
+              "hit_rate": 62.7
             }
           }
         },
@@ -282,8 +282,8 @@
           "direction": "どちらとも言えない",
           "strength": "",
           "score": 0,
-          "range_low": 3801.23,
-          "range_high": 6736.77,
+          "range_low": 3944.06,
+          "range_high": 7055.94,
           "backtest": {
             "days": 431,
             "hit_rate": 75.2,
@@ -292,16 +292,15 @@
           "ml": {
             "direction": "上昇",
             "strength": "強め",
-            "prob_up": 91.7,
+            "prob_up": 98.0,
             "backtest": {
               "days": 494,
-              "hit_rate": 71.1
+              "hit_rate": 71.3
             }
           }
         }
       ],
       "history": [
-        5651.52,
         5649.56,
         5733.64,
         5754.17,
@@ -430,7 +429,223 @@
         7383.0,
         7769.0,
         6269.0,
-        5269.0
+        5269.0,
+        5500.0
+      ]
+    },
+    {
+      "name": "味の素",
+      "ticker": "2802.T",
+      "code": "2802",
+      "reason": "出来高急増",
+      "market": "jp",
+      "price": 4345.0,
+      "change_pct": -1.92,
+      "change5_pct": -15.27,
+      "vol_ratio": 2.9,
+      "listed_days": 1220,
+      "horizons": [
+        {
+          "key": "1d",
+          "label": "明日",
+          "direction": "下落",
+          "strength": "弱め",
+          "score": -2,
+          "range_low": 4236.87,
+          "range_high": 4453.13,
+          "backtest": {
+            "days": 478,
+            "hit_rate": 48.7,
+            "always_up_rate": 51.4
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 68.9,
+            "backtest": {
+              "days": 350,
+              "hit_rate": 52.3
+            }
+          }
+        },
+        {
+          "key": "1m",
+          "label": "1ヶ月後",
+          "direction": "下落",
+          "strength": "強め",
+          "score": -4,
+          "range_low": 3849.47,
+          "range_high": 4840.53,
+          "backtest": {
+            "days": 419,
+            "hit_rate": 56.8,
+            "always_up_rate": 62.8
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 87.1,
+            "backtest": {
+              "days": 462,
+              "hit_rate": 53.7
+            }
+          }
+        },
+        {
+          "key": "3m",
+          "label": "3ヶ月後",
+          "direction": "下落",
+          "strength": "弱め",
+          "score": -2,
+          "range_low": 3486.71,
+          "range_high": 5203.29,
+          "backtest": {
+            "days": 416,
+            "hit_rate": 45.2,
+            "always_up_rate": 66.6
+          },
+          "ml": {
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 98.4,
+            "backtest": {
+              "days": 454,
+              "hit_rate": 58.6
+            }
+          }
+        }
+      ],
+      "history": [
+        4742.24,
+        5063.56,
+        4856.64,
+        4932.25,
+        5003.88,
+        5470.44,
+        5410.75,
+        5454.52,
+        5513.22,
+        5241.63,
+        5166.03,
+        5151.11,
+        5041.68,
+        5149.12,
+        5272.47,
+        5446.56,
+        5316.24,
+        5261.53,
+        5115.29,
+        5125.24,
+        5352.06,
+        5234.67,
+        5199.85,
+        5091.42,
+        4916.33,
+        4781.04,
+        4732.29,
+        4704.44,
+        5057.59,
+        5131.21,
+        5033.72,
+        5119.27,
+        5312.27,
+        5756.94,
+        5759.93,
+        6128.01,
+        5622.65,
+        5451.54,
+        5712.18,
+        5691.29,
+        5785.79,
+        5842.5,
+        6142.93,
+        6010.62,
+        6134.97,
+        6059.36,
+        5800.72,
+        5672.39,
+        5691.29,
+        5701.23,
+        5585.84,
+        5626.62,
+        5576.88,
+        5333.16,
+        5167.02,
+        5224.72,
+        5225.72,
+        5075.5,
+        5069.53,
+        5042.67,
+        4862.61,
+        4821.83,
+        4813.87,
+        4939.21,
+        4870.57,
+        4927.28,
+        5305.3,
+        5169.01,
+        5169.01,
+        5244.62,
+        5427.66,
+        5606.73,
+        5537.09,
+        5691.29,
+        5506.25,
+        5252.58,
+        5321.22,
+        5367.97,
+        5342.11,
+        5468.45,
+        5387.87,
+        5412.74,
+        5402.79,
+        5373.94,
+        5308.29,
+        5197.86,
+        5153.1,
+        5147.13,
+        5191.89,
+        5041.68,
+        5057.59,
+        5008.85,
+        4948.17,
+        4894.45,
+        4844.71,
+        4862.61,
+        4927.28,
+        4878.53,
+        4972.04,
+        5024.77,
+        4980.0,
+        4978.0,
+        5111.0,
+        5260.0,
+        5212.0,
+        5321.0,
+        5372.0,
+        5346.0,
+        5293.0,
+        5399.0,
+        5291.0,
+        5440.0,
+        5237.0,
+        5280.0,
+        5263.0,
+        5230.0,
+        5278.0,
+        5046.0,
+        5064.0,
+        5013.0,
+        5110.0,
+        5129.0,
+        5138.0,
+        5118.0,
+        5128.0,
+        4945.0,
+        4872.0,
+        4268.0,
+        4430.0,
+        4345.0
       ]
     }
   ]
