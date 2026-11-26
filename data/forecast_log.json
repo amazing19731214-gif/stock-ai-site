@@ -684,14 +684,16 @@
     "data_date": "2026-11-25",
     "base": 159.03,
     "direction": "上昇",
-    "result": null
+    "result": "的中",
+    "actual": 159.29
   },
   {
     "name": "日経平均",
     "data_date": "2026-11-24",
     "base": 58644.6,
     "direction": "下落",
-    "result": null
+    "result": "的中",
+    "actual": 57011.6
   },
   {
     "name": "S&P500",
@@ -704,6 +706,20 @@
     "name": "NASDAQ総合",
     "data_date": "2026-11-25",
     "base": 23362.9,
+    "direction": "下落",
+    "result": null
+  },
+  {
+    "name": "ドル/円",
+    "data_date": "2026-11-26",
+    "base": 159.29,
+    "direction": "上昇",
+    "result": null
+  },
+  {
+    "name": "日経平均",
+    "data_date": "2026-11-25",
+    "base": 57011.6,
     "direction": "下落",
     "result": null
   }
