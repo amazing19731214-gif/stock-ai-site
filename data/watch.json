@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27 03:18",
+  "updated_at": "2026-11-28 03:00",
   "watchlist": [
     {
       "name": "キオクシアHD",
@@ -7,32 +7,32 @@
       "code": "285A",
       "reason": "ウォッチリスト",
       "market": "jp",
-      "price": 6895.0,
-      "change_pct": -14.18,
-      "change5_pct": -13.44,
+      "price": 7762.0,
+      "change_pct": 12.57,
+      "change5_pct": -3.28,
       "vol_ratio": 0.9,
-      "listed_days": 469,
+      "listed_days": 470,
       "horizons": [
         {
           "key": "1d",
           "label": "明日",
           "direction": "下落",
-          "strength": "弱め",
-          "score": -2,
-          "range_low": 6464.43,
-          "range_high": 7325.57,
+          "strength": "強め",
+          "score": -3,
+          "range_low": 7257.93,
+          "range_high": 8266.07,
           "backtest": {
-            "days": 113,
-            "hit_rate": 51.3,
-            "always_up_rate": 50.8
+            "days": 114,
+            "hit_rate": 50.9,
+            "always_up_rate": 51.3
           },
           "ml": {
             "direction": "どちらとも言えない",
             "strength": "",
-            "prob_up": 51.9,
+            "prob_up": 51.4,
             "backtest": {
-              "days": 106,
-              "hit_rate": 46.2
+              "days": 107,
+              "hit_rate": 46.7
             }
           }
         },
@@ -42,20 +42,20 @@
           "direction": "下落",
           "strength": "強め",
           "score": -4,
-          "range_low": 4921.89,
-          "range_high": 8868.11,
+          "range_low": 5452.07,
+          "range_high": 10071.9,
           "backtest": {
-            "days": 48,
-            "hit_rate": 47.9,
-            "always_up_rate": 28.2
+            "days": 49,
+            "hit_rate": 49.0,
+            "always_up_rate": 27.8
           },
           "ml": {
-            "direction": "どちらとも言えない",
-            "strength": "",
-            "prob_up": 48.1,
+            "direction": "上昇",
+            "strength": "強め",
+            "prob_up": 62.0,
             "backtest": {
-              "days": 78,
-              "hit_rate": 34.6
+              "days": 79,
+              "hit_rate": 34.2
             }
           }
         },
@@ -65,12 +65,12 @@
           "direction": "下落",
           "strength": "強め",
           "score": -4,
-          "range_low": 3477.47,
-          "range_high": 10312.5,
+          "range_low": 3761.09,
+          "range_high": 11762.9,
           "backtest": {
-            "days": 207,
-            "hit_rate": 68.1,
-            "always_up_rate": 68.1
+            "days": 208,
+            "hit_rate": 67.8,
+            "always_up_rate": 67.8
           },
           "ml": {
             "direction": "データ不足",
@@ -84,7 +84,6 @@
         }
       ],
       "history": [
-        17121.1,
         16562.0,
         17067.8,
         18415.5,
@@ -213,7 +212,8 @@
         8271.0,
         7307.0,
         8034.0,
-        6895.0
+        6895.0,
+        7762.0
       ]
     }
   ],

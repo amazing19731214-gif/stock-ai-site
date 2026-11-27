@@ -1,133 +1,133 @@
 {
-  "updated_at": "2026-11-27 03:18",
+  "updated_at": "2026-11-28 03:00",
   "markets": {
     "jp": {
-      "data_date": "2026-11-25",
+      "data_date": "2026-11-26",
       "periods": {
         "day": {
           "count": 45,
           "gainers": [
             {
-              "code": "4519",
-              "name": "中外製薬",
-              "price": 7501.0,
-              "change_pct": 6.02
-            },
-            {
-              "code": "4568",
-              "name": "第一三共",
-              "price": 2895.5,
-              "change_pct": 5.79
-            },
-            {
-              "code": "2914",
-              "name": "日本たばこ産業",
-              "price": 5629.0,
-              "change_pct": 5.21
-            },
-            {
-              "code": "3382",
-              "name": "セブン&アイHD",
-              "price": 2217.0,
-              "change_pct": 4.97
-            },
-            {
-              "code": "6758",
-              "name": "ソニーグループ",
-              "price": 4513.0,
-              "change_pct": 4.42
-            },
-            {
-              "code": "4502",
-              "name": "武田薬品工業",
-              "price": 7365.0,
-              "change_pct": 4.32
-            },
-            {
-              "code": "9020",
-              "name": "JR東日本",
-              "price": 4154.0,
-              "change_pct": 4.14
-            },
-            {
-              "code": "4661",
-              "name": "オリエンタルランド",
-              "price": 3966.0,
-              "change_pct": 3.82
-            },
-            {
-              "code": "7974",
-              "name": "任天堂",
-              "price": 8983.0,
-              "change_pct": 3.78
-            },
-            {
-              "code": "8801",
-              "name": "三井不動産",
-              "price": 1584.0,
-              "change_pct": 3.56
-            }
-          ],
-          "losers": [
-            {
               "code": "9984",
               "name": "ソフトバンクグループ",
-              "price": 2696.5,
-              "change_pct": -14.83
-            },
-            {
-              "code": "6981",
-              "name": "村田製作所",
-              "price": 4633.0,
-              "change_pct": -14.2
+              "price": 2894.0,
+              "change_pct": 7.32
             },
             {
               "code": "6857",
               "name": "アドバンテスト",
-              "price": 23745.0,
-              "change_pct": -12.94
+              "price": 24830.0,
+              "change_pct": 4.57
             },
             {
-              "code": "8035",
-              "name": "東京エレクトロン",
-              "price": 7825.0,
-              "change_pct": -12.53
+              "code": "6981",
+              "name": "村田製作所",
+              "price": 4823.0,
+              "change_pct": 4.1
             },
             {
               "code": "6752",
               "name": "パナソニックHD",
-              "price": 2724.5,
-              "change_pct": -7.53
+              "price": 2767.5,
+              "change_pct": 1.58
             },
             {
-              "code": "7011",
-              "name": "三菱重工業",
-              "price": 2628.0,
-              "change_pct": -6.63
+              "code": "6098",
+              "name": "リクルートHD",
+              "price": 17245.0,
+              "change_pct": 1.32
             },
             {
-              "code": "6273",
-              "name": "SMC",
-              "price": 56360.0,
-              "change_pct": -5.91
+              "code": "7974",
+              "name": "任天堂",
+              "price": 9082.0,
+              "change_pct": 1.1
+            },
+            {
+              "code": "6501",
+              "name": "日立製作所",
+              "price": 5012.0,
+              "change_pct": 1.07
+            },
+            {
+              "code": "9432",
+              "name": "NTT",
+              "price": 169.3,
+              "change_pct": 0.77
+            },
+            {
+              "code": "7751",
+              "name": "キヤノン",
+              "price": 4989.0,
+              "change_pct": 0.6
+            },
+            {
+              "code": "8035",
+              "name": "東京エレクトロン",
+              "price": 7871.0,
+              "change_pct": 0.59
+            }
+          ],
+          "losers": [
+            {
+              "code": "4661",
+              "name": "オリエンタルランド",
+              "price": 3872.0,
+              "change_pct": -2.37
+            },
+            {
+              "code": "6861",
+              "name": "キーエンス",
+              "price": 14310.0,
+              "change_pct": -2.35
+            },
+            {
+              "code": "6367",
+              "name": "ダイキン工業",
+              "price": 23860.0,
+              "change_pct": -2.17
+            },
+            {
+              "code": "2914",
+              "name": "日本たばこ産業",
+              "price": 5527.0,
+              "change_pct": -1.81
+            },
+            {
+              "code": "7741",
+              "name": "HOYA",
+              "price": 23445.0,
+              "change_pct": -1.7
+            },
+            {
+              "code": "4519",
+              "name": "中外製薬",
+              "price": 7381.0,
+              "change_pct": -1.6
+            },
+            {
+              "code": "4502",
+              "name": "武田薬品工業",
+              "price": 7250.0,
+              "change_pct": -1.56
+            },
+            {
+              "code": "8801",
+              "name": "三井不動産",
+              "price": 1559.5,
+              "change_pct": -1.55
+            },
+            {
+              "code": "9020",
+              "name": "JR東日本",
+              "price": 4093.0,
+              "change_pct": -1.47
             },
             {
               "code": "6594",
               "name": "ニデック",
-              "price": 1587.0,
-              "change_pct": -5.82
-            },
-            {
-              "code": "7201",
-              "name": "日産自動車",
-              "price": 256.0,
-              "change_pct": -4.97
-            },
-            {
-              "code": "6954",
-              "name": "ファナック",
-              "price": 5110.0,
-              "change_pct": -4.38
+              "price": 1564.0,
+              "change_pct": -1.45
             }
           ]
         },
@@ -137,162 +137,162 @@
             {
               "code": "6098",
               "name": "リクルートHD",
-              "price": 17020.0,
-              "change_pct": 92.9,
+              "price": 17245.0,
+              "change_pct": 95.45,
               "ref_price": 8823.06,
               "ref_date": "2025-12-30"
             },
             {
               "code": "8766",
               "name": "東京海上HD",
-              "price": 597.6,
-              "change_pct": 58.85,
+              "price": 591.1,
+              "change_pct": 57.13,
               "ref_price": 376.19,
               "ref_date": "2025-12-30"
             },
             {
               "code": "4502",
               "name": "武田薬品工業",
-              "price": 7365.0,
-              "change_pct": 57.69,
+              "price": 7250.0,
+              "change_pct": 55.23,
               "ref_price": 4670.47,
               "ref_date": "2025-12-30"
             },
             {
               "code": "9983",
               "name": "ファーストリテイリング",
-              "price": 86170.0,
-              "change_pct": 53.19,
+              "price": 85500.0,
+              "change_pct": 52.0,
               "ref_price": 56251.0,
               "ref_date": "2025-12-30"
             },
             {
               "code": "6981",
               "name": "村田製作所",
-              "price": 4633.0,
-              "change_pct": 44.71,
+              "price": 4823.0,
+              "change_pct": 50.64,
               "ref_price": 3201.6,
               "ref_date": "2025-12-30"
             },
             {
               "code": "8058",
               "name": "三菱商事",
-              "price": 5037.0,
-              "change_pct": 43.67,
+              "price": 5050.0,
+              "change_pct": 44.04,
               "ref_price": 3506.06,
-              "ref_date": "2025-12-30"
-            },
-            {
-              "code": "4661",
-              "name": "オリエンタルランド",
-              "price": 3966.0,
-              "change_pct": 37.66,
-              "ref_price": 2880.99,
               "ref_date": "2025-12-30"
             },
             {
               "code": "6752",
               "name": "パナソニックHD",
-              "price": 2724.5,
-              "change_pct": 36.48,
+              "price": 2767.5,
+              "change_pct": 38.64,
               "ref_price": 1996.19,
+              "ref_date": "2025-12-30"
+            },
+            {
+              "code": "4661",
+              "name": "オリエンタルランド",
+              "price": 3872.0,
+              "change_pct": 34.4,
+              "ref_price": 2880.99,
               "ref_date": "2025-12-30"
             },
             {
               "code": "8411",
               "name": "みずほFG",
-              "price": 7425.0,
-              "change_pct": 33.28,
+              "price": 7375.0,
+              "change_pct": 32.38,
               "ref_price": 5571.17,
               "ref_date": "2025-12-30"
             },
             {
               "code": "4452",
               "name": "花王",
-              "price": 4118.0,
-              "change_pct": 33.13,
+              "price": 4081.0,
+              "change_pct": 31.94,
               "ref_price": 3093.19,
               "ref_date": "2025-12-30"
             }
           ],
           "losers": [
             {
-              "code": "9984",
-              "name": "ソフトバンクグループ",
-              "price": 2696.5,
-              "change_pct": -38.58,
-              "ref_price": 4390.0,
+              "code": "7201",
+              "name": "日産自動車",
+              "price": 255.3,
+              "change_pct": -34.56,
+              "ref_price": 390.1,
               "ref_date": "2025-12-30"
             },
             {
-              "code": "7201",
-              "name": "日産自動車",
-              "price": 256.0,
-              "change_pct": -34.38,
-              "ref_price": 390.1,
+              "code": "9984",
+              "name": "ソフトバンクグループ",
+              "price": 2894.0,
+              "change_pct": -34.08,
+              "ref_price": 4390.0,
               "ref_date": "2025-12-30"
             },
             {
               "code": "7011",
               "name": "三菱重工業",
-              "price": 2628.0,
-              "change_pct": -31.12,
+              "price": 2622.0,
+              "change_pct": -31.28,
               "ref_price": 3815.3,
               "ref_date": "2025-12-30"
             },
             {
               "code": "6594",
               "name": "ニデック",
-              "price": 1587.0,
-              "change_pct": -25.56,
+              "price": 1564.0,
+              "change_pct": -26.64,
               "ref_price": 2132.0,
               "ref_date": "2025-12-30"
             },
             {
               "code": "6954",
               "name": "ファナック",
-              "price": 5110.0,
-              "change_pct": -14.14,
+              "price": 5094.0,
+              "change_pct": -14.4,
               "ref_price": 5951.24,
               "ref_date": "2025-12-30"
             },
             {
               "code": "7974",
               "name": "任天堂",
-              "price": 8983.0,
-              "change_pct": -12.73,
+              "price": 9082.0,
+              "change_pct": -11.76,
               "ref_price": 10292.8,
               "ref_date": "2025-12-30"
             },
             {
               "code": "4568",
               "name": "第一三共",
-              "price": 2895.5,
-              "change_pct": -10.77,
+              "price": 2875.0,
+              "change_pct": -11.4,
               "ref_price": 3245.07,
               "ref_date": "2025-12-30"
             },
             {
               "code": "8801",
               "name": "三井不動産",
-              "price": 1584.0,
-              "change_pct": -8.96,
+              "price": 1559.5,
+              "change_pct": -10.36,
               "ref_price": 1739.8,
               "ref_date": "2025-12-30"
             },
             {
               "code": "4519",
               "name": "中外製薬",
-              "price": 7501.0,
-              "change_pct": -8.19,
+              "price": 7381.0,
+              "change_pct": -9.66,
               "ref_price": 8169.82,
               "ref_date": "2025-12-30"
             },
             {
               "code": "6902",
               "name": "デンソー",
-              "price": 1952.0,
-              "change_pct": -6.09,
+              "price": 1932.0,
+              "change_pct": -7.05,
               "ref_price": 2078.48,
               "ref_date": "2025-12-30"
             }
@@ -304,296 +304,296 @@
             {
               "code": "6098",
               "name": "リクルートHD",
-              "price": 17020.0,
-              "change_pct": 120.32,
-              "ref_price": 7725.04,
-              "ref_date": "2025-11-25"
+              "price": 17245.0,
+              "change_pct": 115.18,
+              "ref_price": 8014.25,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "4502",
               "name": "武田薬品工業",
-              "price": 7365.0,
-              "change_pct": 71.03,
-              "ref_price": 4306.3,
-              "ref_date": "2025-11-25"
+              "price": 7250.0,
+              "change_pct": 65.5,
+              "ref_price": 4380.68,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "8766",
               "name": "東京海上HD",
-              "price": 597.6,
-              "change_pct": 69.36,
-              "ref_price": 352.85,
-              "ref_date": "2025-11-25"
-            },
-            {
-              "code": "6752",
-              "name": "パナソニックHD",
-              "price": 2724.5,
-              "change_pct": 57.37,
-              "ref_price": 1731.32,
-              "ref_date": "2025-11-25"
-            },
-            {
-              "code": "9983",
-              "name": "ファーストリテイリング",
-              "price": 86170.0,
-              "change_pct": 55.79,
-              "ref_price": 55312.5,
-              "ref_date": "2025-11-25"
+              "price": 591.1,
+              "change_pct": 64.57,
+              "ref_price": 359.19,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "6981",
               "name": "村田製作所",
-              "price": 4633.0,
-              "change_pct": 53.71,
-              "ref_price": 3014.2,
-              "ref_date": "2025-11-25"
+              "price": 4823.0,
+              "change_pct": 54.3,
+              "ref_price": 3125.66,
+              "ref_date": "2025-11-26"
             },
             {
-              "code": "8411",
-              "name": "みずほFG",
-              "price": 7425.0,
-              "change_pct": 44.4,
-              "ref_price": 5142.1,
-              "ref_date": "2025-11-25"
+              "code": "6752",
+              "name": "パナソニックHD",
+              "price": 2767.5,
+              "change_pct": 52.46,
+              "ref_price": 1815.17,
+              "ref_date": "2025-11-26"
+            },
+            {
+              "code": "9983",
+              "name": "ファーストリテイリング",
+              "price": 85500.0,
+              "change_pct": 51.86,
+              "ref_price": 56300.4,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "8058",
               "name": "三菱商事",
-              "price": 5037.0,
-              "change_pct": 41.61,
-              "ref_price": 3556.91,
-              "ref_date": "2025-11-25"
+              "price": 5050.0,
+              "change_pct": 40.2,
+              "ref_price": 3601.88,
+              "ref_date": "2025-11-26"
             },
             {
-              "code": "8316",
-              "name": "三井住友FG",
-              "price": 2991.0,
-              "change_pct": 38.25,
-              "ref_price": 2163.54,
-              "ref_date": "2025-11-25"
+              "code": "8411",
+              "name": "みずほFG",
+              "price": 7375.0,
+              "change_pct": 37.79,
+              "ref_price": 5352.24,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "6861",
               "name": "キーエンス",
-              "price": 14655.0,
-              "change_pct": 36.78,
-              "ref_price": 10714.0,
-              "ref_date": "2025-11-25"
+              "price": 14310.0,
+              "change_pct": 34.81,
+              "ref_price": 10614.9,
+              "ref_date": "2025-11-26"
+            },
+            {
+              "code": "8316",
+              "name": "三井住友FG",
+              "price": 2980.0,
+              "change_pct": 32.76,
+              "ref_price": 2244.61,
+              "ref_date": "2025-11-26"
             }
           ],
           "losers": [
             {
-              "code": "7011",
-              "name": "三菱重工業",
-              "price": 2628.0,
-              "change_pct": -31.78,
-              "ref_price": 3852.06,
-              "ref_date": "2025-11-25"
-            },
-            {
               "code": "7201",
               "name": "日産自動車",
-              "price": 256.0,
-              "change_pct": -30.43,
-              "ref_price": 368.0,
-              "ref_date": "2025-11-25"
+              "price": 255.3,
+              "change_pct": -33.19,
+              "ref_price": 382.1,
+              "ref_date": "2025-11-26"
             },
             {
-              "code": "9984",
-              "name": "ソフトバンクグループ",
-              "price": 2696.5,
-              "change_pct": -29.76,
-              "ref_price": 3838.75,
-              "ref_date": "2025-11-25"
+              "code": "7011",
+              "name": "三菱重工業",
+              "price": 2622.0,
+              "change_pct": -32.87,
+              "ref_price": 3905.71,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "7974",
               "name": "任天堂",
-              "price": 8983.0,
-              "change_pct": -29.52,
-              "ref_price": 12745.7,
-              "ref_date": "2025-11-25"
+              "price": 9082.0,
+              "change_pct": -29.36,
+              "ref_price": 12857.5,
+              "ref_date": "2025-11-26"
+            },
+            {
+              "code": "9984",
+              "name": "ソフトバンクグループ",
+              "price": 2894.0,
+              "change_pct": -28.64,
+              "ref_price": 4055.76,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "4568",
               "name": "第一三共",
-              "price": 2895.5,
-              "change_pct": -22.04,
-              "ref_price": 3714.19,
-              "ref_date": "2025-11-25"
+              "price": 2875.0,
+              "change_pct": -23.2,
+              "ref_price": 3743.27,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "6594",
               "name": "ニデック",
-              "price": 1587.0,
-              "change_pct": -17.04,
-              "ref_price": 1913.0,
-              "ref_date": "2025-11-25"
+              "price": 1564.0,
+              "change_pct": -20.12,
+              "ref_price": 1958.0,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "8801",
               "name": "三井不動産",
-              "price": 1584.0,
-              "change_pct": -9.99,
-              "ref_price": 1759.83,
-              "ref_date": "2025-11-25"
+              "price": 1559.5,
+              "change_pct": -13.12,
+              "ref_price": 1795.01,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "4519",
               "name": "中外製薬",
-              "price": 7501.0,
-              "change_pct": -7.84,
-              "ref_price": 8139.0,
-              "ref_date": "2025-11-25"
+              "price": 7381.0,
+              "change_pct": -11.49,
+              "ref_price": 8339.61,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "6902",
               "name": "デンソー",
-              "price": 1952.0,
-              "change_pct": -0.94,
-              "ref_price": 1970.61,
-              "ref_date": "2025-11-25"
+              "price": 1932.0,
+              "change_pct": -2.6,
+              "ref_price": 1983.61,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "2914",
               "name": "日本たばこ産業",
-              "price": 5629.0,
-              "change_pct": 3.35,
-              "ref_price": 5446.55,
-              "ref_date": "2025-11-25"
+              "price": 5527.0,
+              "change_pct": -1.07,
+              "ref_price": 5587.01,
+              "ref_date": "2025-11-26"
             }
           ]
         }
       }
     },
     "us": {
-      "data_date": "2026-11-25",
+      "data_date": "2026-11-27",
       "periods": {
         "day": {
           "count": 42,
           "gainers": [
             {
-              "code": "META",
-              "name": "メタ",
-              "price": 609.89,
-              "change_pct": 3.4
-            },
-            {
-              "code": "IBM",
-              "name": "IBM",
-              "price": 243.47,
-              "change_pct": 3.33
-            },
-            {
-              "code": "NKE",
-              "name": "ナイキ",
-              "price": 36.66,
-              "change_pct": 2.55
-            },
-            {
-              "code": "DIS",
-              "name": "ウォルト・ディズニー",
-              "price": 125.6,
-              "change_pct": 2.52
-            },
-            {
               "code": "QCOM",
               "name": "クアルコム",
-              "price": 168.66,
-              "change_pct": 2.24
+              "price": 179.27,
+              "change_pct": 6.29
             },
             {
-              "code": "HD",
-              "name": "ホーム・デポ",
-              "price": 361.26,
-              "change_pct": 2.14
-            },
-            {
-              "code": "CRM",
-              "name": "セールスフォース",
-              "price": 197.21,
-              "change_pct": 2.04
-            },
-            {
-              "code": "MA",
-              "name": "マスターカード",
-              "price": 659.97,
-              "change_pct": 1.94
-            },
-            {
-              "code": "V",
-              "name": "ビザ",
-              "price": 424.39,
-              "change_pct": 1.83
-            },
-            {
-              "code": "UNH",
-              "name": "ユナイテッドヘルス",
-              "price": 346.19,
-              "change_pct": 1.26
-            }
-          ],
-          "losers": [
-            {
-              "code": "ORCL",
-              "name": "オラクル",
-              "price": 103.88,
-              "change_pct": -5.13
-            },
-            {
-              "code": "NVDA",
-              "name": "エヌビディア",
-              "price": 149.3,
-              "change_pct": -3.91
-            },
-            {
-              "code": "AMZN",
-              "name": "アマゾン",
-              "price": 244.43,
-              "change_pct": -3.12
-            },
-            {
-              "code": "GOOGL",
-              "name": "アルファベット",
-              "price": 273.1,
-              "change_pct": -2.13
-            },
-            {
-              "code": "ABBV",
-              "name": "アッヴィ",
-              "price": 294.48,
-              "change_pct": -1.93
-            },
-            {
-              "code": "AMD",
-              "name": "AMD",
-              "price": 406.03,
-              "change_pct": -1.75
-            },
-            {
-              "code": "MSFT",
-              "name": "マイクロソフト",
-              "price": 489.93,
-              "change_pct": -1.25
+              "code": "INTC",
+              "name": "インテル",
+              "price": 57.835,
+              "change_pct": 6.18
             },
             {
               "code": "TSLA",
               "name": "テスラ",
-              "price": 380.14,
-              "change_pct": -1.18
+              "price": 400.0,
+              "change_pct": 5.22
+            },
+            {
+              "code": "AMD",
+              "name": "AMD",
+              "price": 424.54,
+              "change_pct": 4.56
+            },
+            {
+              "code": "AMZN",
+              "name": "アマゾン",
+              "price": 254.31,
+              "change_pct": 4.04
+            },
+            {
+              "code": "AVGO",
+              "name": "ブロードコム",
+              "price": 312.32,
+              "change_pct": 3.81
+            },
+            {
+              "code": "ORCL",
+              "name": "オラクル",
+              "price": 107.41,
+              "change_pct": 3.4
+            },
+            {
+              "code": "META",
+              "name": "メタ",
+              "price": 628.96,
+              "change_pct": 3.13
+            },
+            {
+              "code": "CSCO",
+              "name": "シスコシステムズ",
+              "price": 97.04,
+              "change_pct": 3.01
+            },
+            {
+              "code": "NFLX",
+              "name": "ネットフリックス",
+              "price": 60.93,
+              "change_pct": 2.56
+            }
+          ],
+          "losers": [
+            {
+              "code": "ABBV",
+              "name": "アッヴィ",
+              "price": 292.01,
+              "change_pct": -0.84
+            },
+            {
+              "code": "MCD",
+              "name": "マクドナルド",
+              "price": 282.66,
+              "change_pct": -0.3
+            },
+            {
+              "code": "PG",
+              "name": "P&G",
+              "price": 172.97,
+              "change_pct": -0.15
+            },
+            {
+              "code": "KO",
+              "name": "コカ・コーラ",
+              "price": 97.53,
+              "change_pct": -0.06
             },
             {
               "code": "LLY",
               "name": "イーライリリー",
-              "price": 1392.22,
-              "change_pct": -1.09
+              "price": 1395.14,
+              "change_pct": 0.21
             },
             {
-              "code": "JNJ",
-              "name": "ジョンソン・エンド・ジョンソン",
-              "price": 273.94,
-              "change_pct": -0.91
+              "code": "PFE",
+              "name": "ファイザー",
+              "price": 28.55,
+              "change_pct": 0.32
+            },
+            {
+              "code": "HD",
+              "name": "ホーム・デポ",
+              "price": 362.46,
+              "change_pct": 0.33
+            },
+            {
+              "code": "BRK-B",
+              "name": "バークシャー・ハサウェイ",
+              "price": 581.42,
+              "change_pct": 0.36
+            },
+            {
+              "code": "PEP",
+              "name": "ペプシコ",
+              "price": 144.6,
+              "change_pct": 0.47
+            },
+            {
+              "code": "GOOGL",
+              "name": "アルファベット",
+              "price": 274.7,
+              "change_pct": 0.59
             }
           ]
         },
@@ -603,81 +603,81 @@
             {
               "code": "AMD",
               "name": "AMD",
-              "price": 406.03,
-              "change_pct": 89.59,
+              "price": 424.54,
+              "change_pct": 98.23,
               "ref_price": 214.16,
               "ref_date": "2025-12-31"
             },
             {
               "code": "INTC",
               "name": "インテル",
-              "price": 54.47,
-              "change_pct": 47.62,
+              "price": 57.835,
+              "change_pct": 56.73,
               "ref_price": 36.9,
               "ref_date": "2025-12-31"
             },
             {
               "code": "CVX",
               "name": "シェブロン",
-              "price": 210.95,
-              "change_pct": 43.46,
+              "price": 212.65,
+              "change_pct": 44.61,
               "ref_price": 147.05,
               "ref_date": "2025-12-31"
             },
             {
               "code": "KO",
               "name": "コカ・コーラ",
-              "price": 97.59,
-              "change_pct": 42.31,
+              "price": 97.53,
+              "change_pct": 42.22,
               "ref_price": 68.578,
               "ref_date": "2025-12-31"
             },
             {
               "code": "MRK",
               "name": "メルク",
-              "price": 140.29,
-              "change_pct": 36.03,
+              "price": 141.43,
+              "change_pct": 37.14,
               "ref_price": 103.13,
-              "ref_date": "2025-12-31"
-            },
-            {
-              "code": "JNJ",
-              "name": "ジョンソン・エンド・ジョンソン",
-              "price": 273.94,
-              "change_pct": 35.17,
-              "ref_price": 202.66,
               "ref_date": "2025-12-31"
             },
             {
               "code": "XOM",
               "name": "エクソンモービル",
-              "price": 158.08,
-              "change_pct": 34.84,
+              "price": 160.42,
+              "change_pct": 36.84,
               "ref_price": 117.23,
               "ref_date": "2025-12-31"
             },
             {
-              "code": "ABBV",
-              "name": "アッヴィ",
-              "price": 294.48,
-              "change_pct": 32.74,
-              "ref_price": 221.85,
+              "code": "JNJ",
+              "name": "ジョンソン・エンド・ジョンソン",
+              "price": 275.86,
+              "change_pct": 36.12,
+              "ref_price": 202.66,
               "ref_date": "2025-12-31"
             },
             {
               "code": "AAPL",
               "name": "アップル",
-              "price": 355.58,
-              "change_pct": 31.25,
+              "price": 358.54,
+              "change_pct": 32.34,
               "ref_price": 270.92,
               "ref_date": "2025-12-31"
             },
             {
               "code": "COST",
               "name": "コストコ",
-              "price": 1086.81,
-              "change_pct": 30.34,
+              "price": 1097.81,
+              "change_pct": 31.65,
               "ref_price": 833.86,
+              "ref_date": "2025-12-31"
+            },
+            {
+              "code": "ABBV",
+              "name": "アッヴィ",
+              "price": 292.01,
+              "change_pct": 31.62,
+              "ref_price": 221.85,
               "ref_date": "2025-12-31"
             }
           ],
@@ -685,81 +685,81 @@
             {
               "code": "ORCL",
               "name": "オラクル",
-              "price": 103.88,
-              "change_pct": -45.99,
+              "price": 107.41,
+              "change_pct": -44.16,
               "ref_price": 192.34,
               "ref_date": "2025-12-31"
             },
             {
               "code": "NKE",
               "name": "ナイキ",
-              "price": 36.66,
-              "change_pct": -40.94,
+              "price": 37.335,
+              "change_pct": -39.85,
               "ref_price": 62.07,
               "ref_date": "2025-12-31"
             },
             {
               "code": "NFLX",
               "name": "ネットフリックス",
-              "price": 59.41,
-              "change_pct": -36.64,
+              "price": 60.93,
+              "change_pct": -35.01,
               "ref_price": 93.76,
               "ref_date": "2025-12-31"
             },
             {
               "code": "ADBE",
               "name": "アドビ",
-              "price": 232.83,
-              "change_pct": -33.48,
+              "price": 234.79,
+              "change_pct": -32.92,
               "ref_price": 349.99,
               "ref_date": "2025-12-31"
             },
             {
               "code": "CRM",
               "name": "セールスフォース",
-              "price": 197.21,
-              "change_pct": -25.05,
+              "price": 198.43,
+              "change_pct": -24.58,
               "ref_price": 263.11,
               "ref_date": "2025-12-31"
             },
             {
               "code": "BA",
               "name": "ボーイング",
-              "price": 164.53,
-              "change_pct": -24.22,
+              "price": 167.26,
+              "change_pct": -22.96,
               "ref_price": 217.12,
               "ref_date": "2025-12-31"
             },
             {
               "code": "NVDA",
               "name": "エヌビディア",
-              "price": 149.3,
-              "change_pct": -19.76,
+              "price": 150.49,
+              "change_pct": -19.12,
               "ref_price": 186.06,
               "ref_date": "2025-12-31"
             },
             {
               "code": "IBM",
               "name": "IBM",
-              "price": 243.47,
-              "change_pct": -15.55,
+              "price": 248.17,
+              "change_pct": -13.92,
               "ref_price": 288.3,
+              "ref_date": "2025-12-31"
+            },
+            {
+              "code": "GOOGL",
+              "name": "アルファベット",
+              "price": 274.7,
+              "change_pct": -12.07,
+              "ref_price": 312.39,
               "ref_date": "2025-12-31"
             },
             {
               "code": "TSLA",
               "name": "テスラ",
-              "price": 380.14,
-              "change_pct": -15.47,
+              "price": 400.0,
+              "change_pct": -11.06,
               "ref_price": 449.72,
-              "ref_date": "2025-12-31"
-            },
-            {
-              "code": "AVGO",
-              "name": "ブロードコム",
-              "price": 300.86,
-              "change_pct": -12.59,
-              "ref_price": 344.2,
               "ref_date": "2025-12-31"
             }
           ]
@@ -770,164 +770,164 @@
             {
               "code": "AMD",
               "name": "AMD",
-              "price": 406.03,
-              "change_pct": 96.98,
-              "ref_price": 206.13,
-              "ref_date": "2025-11-25"
+              "price": 424.54,
+              "change_pct": 98.16,
+              "ref_price": 214.24,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "INTC",
               "name": "インテル",
-              "price": 54.47,
-              "change_pct": 52.02,
-              "ref_price": 35.83,
-              "ref_date": "2025-11-25"
+              "price": 57.835,
+              "change_pct": 57.12,
+              "ref_price": 36.81,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "CVX",
               "name": "シェブロン",
-              "price": 210.95,
-              "change_pct": 47.2,
-              "ref_price": 143.31,
-              "ref_date": "2025-11-25"
+              "price": 212.65,
+              "change_pct": 47.42,
+              "ref_price": 144.25,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "XOM",
               "name": "エクソンモービル",
-              "price": 158.08,
-              "change_pct": 41.71,
-              "ref_price": 111.55,
-              "ref_date": "2025-11-25"
-            },
-            {
-              "code": "KO",
-              "name": "コカ・コーラ",
-              "price": 97.59,
-              "change_pct": 37.98,
-              "ref_price": 70.73,
-              "ref_date": "2025-11-25"
+              "price": 160.42,
+              "change_pct": 43.48,
+              "ref_price": 111.81,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "MRK",
               "name": "メルク",
-              "price": 140.29,
-              "change_pct": 36.67,
-              "ref_price": 102.65,
-              "ref_date": "2025-11-25"
+              "price": 141.43,
+              "change_pct": 39.14,
+              "ref_price": 101.65,
+              "ref_date": "2025-11-26"
+            },
+            {
+              "code": "KO",
+              "name": "コカ・コーラ",
+              "price": 97.53,
+              "change_pct": 37.38,
+              "ref_price": 70.993,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "JNJ",
               "name": "ジョンソン・エンド・ジョンソン",
-              "price": 273.94,
-              "change_pct": 35.35,
-              "ref_price": 202.39,
-              "ref_date": "2025-11-25"
+              "price": 275.86,
+              "change_pct": 35.72,
+              "ref_price": 203.26,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "ABBV",
               "name": "アッヴィ",
-              "price": 294.48,
-              "change_pct": 30.84,
-              "ref_price": 225.06,
-              "ref_date": "2025-11-25"
+              "price": 292.01,
+              "change_pct": 32.1,
+              "ref_price": 221.04,
+              "ref_date": "2025-11-26"
             },
             {
-              "code": "AAPL",
-              "name": "アップル",
-              "price": 355.58,
-              "change_pct": 28.83,
-              "ref_price": 276.01,
-              "ref_date": "2025-11-25"
+              "code": "CSCO",
+              "name": "シスコシステムズ",
+              "price": 97.04,
+              "change_pct": 29.93,
+              "ref_price": 74.687,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "V",
               "name": "ビザ",
-              "price": 424.39,
-              "change_pct": 27.86,
-              "ref_price": 331.92,
-              "ref_date": "2025-11-25"
+              "price": 430.0,
+              "change_pct": 29.84,
+              "ref_price": 331.18,
+              "ref_date": "2025-11-26"
             }
           ],
           "losers": [
             {
               "code": "ORCL",
               "name": "オラクル",
-              "price": 103.88,
-              "change_pct": -46.57,
-              "ref_price": 194.43,
-              "ref_date": "2025-11-25"
+              "price": 107.41,
+              "change_pct": -46.89,
+              "ref_price": 202.25,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "NFLX",
               "name": "ネットフリックス",
-              "price": 59.41,
-              "change_pct": -43.09,
-              "ref_price": 104.4,
-              "ref_date": "2025-11-25"
+              "price": 60.93,
+              "change_pct": -42.59,
+              "ref_price": 106.14,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "NKE",
               "name": "ナイキ",
-              "price": 36.66,
-              "change_pct": -40.53,
-              "ref_price": 61.647,
-              "ref_date": "2025-11-25"
+              "price": 37.335,
+              "change_pct": -40.05,
+              "ref_price": 62.277,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "ADBE",
               "name": "アドビ",
-              "price": 232.83,
-              "change_pct": -27.14,
-              "ref_price": 319.55,
-              "ref_date": "2025-11-25"
+              "price": 234.79,
+              "change_pct": -26.06,
+              "ref_price": 317.52,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "AVGO",
               "name": "ブロードコム",
-              "price": 300.86,
-              "change_pct": -21.28,
-              "ref_price": 382.19,
-              "ref_date": "2025-11-25"
-            },
-            {
-              "code": "IBM",
-              "name": "IBM",
-              "price": 243.47,
-              "change_pct": -17.84,
-              "ref_price": 296.35,
-              "ref_date": "2025-11-25"
+              "price": 312.32,
+              "change_pct": -20.86,
+              "ref_price": 394.64,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "NVDA",
               "name": "エヌビディア",
-              "price": 149.3,
-              "change_pct": -15.84,
-              "ref_price": 177.4,
-              "ref_date": "2025-11-25"
+              "price": 150.49,
+              "change_pct": -16.32,
+              "ref_price": 179.83,
+              "ref_date": "2025-11-26"
+            },
+            {
+              "code": "IBM",
+              "name": "IBM",
+              "price": 248.17,
+              "change_pct": -15.91,
+              "ref_price": 295.12,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "GOOGL",
               "name": "アルファベット",
-              "price": 273.1,
-              "change_pct": -15.34,
-              "ref_price": 322.6,
-              "ref_date": "2025-11-25"
+              "price": 274.7,
+              "change_pct": -13.92,
+              "ref_price": 319.12,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "CRM",
               "name": "セールスフォース",
-              "price": 197.21,
-              "change_pct": -15.05,
-              "ref_price": 232.15,
-              "ref_date": "2025-11-25"
+              "price": 198.43,
+              "change_pct": -12.29,
+              "ref_price": 226.23,
+              "ref_date": "2025-11-26"
             },
             {
               "code": "BA",
               "name": "ボーイング",
-              "price": 164.53,
-              "change_pct": -9.82,
-              "ref_price": 182.44,
-              "ref_date": "2025-11-25"
+              "price": 167.26,
+              "change_pct": -10.52,
+              "ref_price": 186.92,
+              "ref_date": "2025-11-26"
             }
           ]
         }
